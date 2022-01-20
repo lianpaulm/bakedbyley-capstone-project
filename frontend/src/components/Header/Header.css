@@ -1,0 +1,220 @@
+header {
+  box-shadow: var(--shadow-1);
+  background: var(--clr-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 900;
+}
+/* styles for smallers screen */
+.navbar {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.brand {
+  color: var(--clr-primary-5);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+/* nav menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100vh;
+  background: var(--clr-primary-5);
+  box-shadow: var(--shadow-4);
+  padding: 5.5rem 1rem;
+  transition: left var(--transition);
+  z-index: 100;
+}
+.show-nav-menu {
+  left: 0;
+}
+.nav-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: var(--clr-white);
+  font-weight: 500;
+  padding: 1rem;
+  transition: var(--transition);
+}
+.nav-menu a:hover {
+  background: var(--clr-primary-6);
+  border-radius: var(--radius);
+}
+.nav-menu a svg {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+.nav-open {
+  background: none;
+  border: none;
+  display: block;
+  cursor: pointer;
+}
+.nav-open .menu-icon {
+  font-size: 1.5rem;
+  display: block;
+}
+.nav-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.1rem;
+}
+.nav-close .close-icon {
+  display: block;
+  font-size: 2rem;
+  color: var(--clr-white);
+}
+
+/* cart button */
+.nav-cta {
+  display: flex;
+  gap: 1.8rem;
+  margin-left: auto;
+}
+.cart-button {
+  display: block;
+  position: relative;
+  bottom: -5px;
+  cursor: pointer;
+}
+.cart-icon {
+  font-size: 1.5rem;
+  color: var(--clr-grey-9);
+}
+.amount-container {
+  position: absolute;
+  top: -0.9rem;
+  right: -0.9rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--clr-white);
+  border-radius: 50%;
+  background: var(--clr-primary-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.total-amount {
+  color: var(--clr-white);
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* login in button */
+.login-btn {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--clr-primary-5);
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 5rem;
+  padding: 0.2rem 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+}
+.login-btn:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  border: 1px solid transparent;
+}
+
+/* styles for bigger screen */
+@media screen and (min-width: 680px) {
+  .navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    gap: 2.7rem;
+  }
+  .brand {
+    font-size: 1.6rem;
+  }
+  .nav-open {
+    display: none;
+  }
+
+  /* nav menu */
+  .nav-menu {
+    position: unset;
+    background: unset;
+    height: unset;
+    width: unset;
+    box-shadow: unset;
+    padding: 0;
+  }
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 2.1rem;
+  }
+  .nav-menu a {
+    color: var(--clr-grey-5);
+    font-size: 1rem;
+    padding: 0;
+    position: relative;
+  }
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    display: block;
+    background: var(--clr-primary-5);
+    transition: var(--transition);
+    transform: scaleX(0);
+    /* transform-origin: left; */
+  }
+  .nav-menu a:hover {
+    background: unset;
+    border-radius: unset;
+  }
+  .nav-menu a:hover::after {
+    transform: scaleX(100%);
+  }
+  .nav-menu a svg {
+    display: none;
+  }
+  .nav-close {
+    display: none;
+  }
+
+  /* nav cta */
+  .nav-cta {
+    gap: 2.1rem;
+    margin-left: 0;
+    /* margin-left: auto; */
+  }
+  .cart-icon {
+    font-size: 1.7rem;
+  }
+  .login-btn {
+    font-size: 1rem;
+  }
+}

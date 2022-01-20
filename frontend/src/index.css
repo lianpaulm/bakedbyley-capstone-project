@@ -1,0 +1,168 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(160, 18%, 20%);
+  --clr-primary-2: hsl(160, 18%, 23%);
+  --clr-primary-3: hsl(160, 18%, 26%);
+  --clr-primary-4: hsl(160, 18%, 29%);
+  /* primary/main color */
+  --clr-primary-5: hsl(160, 18%, 33%);
+  /* accent color */
+  --clr-accent: hsl(48, 100%, 93%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(160, 13%, 39%);
+  --clr-primary-7: hsl(160, 10%, 46%);
+  --clr-primary-8: hsl(160, 9%, 73%);
+  --clr-primary-9: hsl(160, 9%, 80%);
+  --clr-primary-10: hsl(160, 9%, 87%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(0, 0%, 1%);
+  --clr-grey-2: hsl(0, 0%, 5%);
+  --clr-grey-3: hsl(0, 0%, 7%);
+  --clr-grey-4: hsl(0, 0%, 8%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(0, 0%, 9%);
+  --clr-grey-6: hsl(0, 0%, 11%);
+  --clr-grey-7: hsl(0, 0%, 12%);
+  --clr-grey-8: hsl(0, 0%, 13%);
+  --clr-grey-9: hsl(0, 0%, 22%);
+  --clr-grey-10: hsl(0, 0%, 31%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: hsl(0, 0%, 13%);
+  --transition: 0.3s;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  /* --max-width: 1280px; */
+  --max-width: 1200px;
+  --fixed-width: 620px;
+  /* shadows */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+button {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* container */
+.container {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+}
+
+/*
+=============== 
+hero
+===============
+*/

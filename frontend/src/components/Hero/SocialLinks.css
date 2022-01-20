@@ -1,0 +1,29 @@
+.social-container {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 1.8rem;
+  display: flex;
+  gap: 0.8rem;
+}
+.social-container a {
+  color: var(--clr-grey-6);
+  font-size: 1rem;
+  border: 1px solid currentColor;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+.social-container svg {
+  color: currentColor;
+}
+.social-container a:hover {
+  color: var(--clr-primary-6);
+}
+@media screen and (max-width: 680px) {
+  .social-container {
+    display: none;
+  }
+}
