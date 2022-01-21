@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 import { AiOutlineShoppingCart, AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
@@ -15,9 +16,9 @@ const Header = () => {
           <AiOutlineMenu className="menu-icon" />
         </button>
 
-        <a href="#" className="brand">
+        <Link to="/" className="brand">
           BakedbyLey
-        </a>
+        </Link>
 
         <nav className={`nav-menu ${isNavbarOpen && 'show-nav-menu'}`}>
           <button className="nav-close" onClick={() => setIsNavbarOpen(false)}>
@@ -28,10 +29,10 @@ const Header = () => {
               const { id, url, text, icon } = link;
               return (
                 <li key={id}>
-                  <a href={url}>
+                  <Link to={url}>
                     {icon}
                     {text}
-                  </a>
+                  </Link>
                 </li>
               );
             })}

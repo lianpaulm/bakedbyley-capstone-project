@@ -1,15 +1,18 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Faq from './pages/Faq/Faq';
+import Products from './pages/Products/Products';
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-      </main>
-    </>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/products" element={<Products />}></Route>
+        <Route exact path="/faq" element={<Faq />}></Route>
+      </Routes>
+    </Router>
   );
 }
 

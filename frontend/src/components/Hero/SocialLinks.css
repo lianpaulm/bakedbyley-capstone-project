@@ -4,9 +4,10 @@
   left: 1.8rem;
   display: flex;
   gap: 0.8rem;
+  color: var(--clr-grey-6);
 }
 .social-container a {
-  color: var(--clr-grey-6);
+  color: currentColor;
   font-size: 1rem;
   border: 1px solid currentColor;
   width: 2rem;
