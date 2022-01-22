@@ -40,6 +40,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <p className="copyright">© 2022 BakebyLey. All Rights Reserved.</p>
     </footer>
   );
 };

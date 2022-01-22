@@ -8,11 +8,10 @@
 }
 .social-container a {
   color: currentColor;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border: 1px solid currentColor;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.5rem;
+  width: 2.3em;
+  height: 2.3em;
   border-radius: 50%;
   display: grid;
   place-content: center;
@@ -26,5 +25,8 @@
 @media screen and (max-width: 680px) {
   .social-container {
     display: none;
+  }
+  .social-container a {
+    font-size: 0.8rem;
   }
 }

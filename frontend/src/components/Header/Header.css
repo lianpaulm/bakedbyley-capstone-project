@@ -7,11 +7,11 @@ header {
   right: 0;
   width: 100%;
   z-index: 900;
+  height: var(--header-height);
 }
 /* styles for smallers screen */
 .navbar {
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  height: 100%;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -105,10 +105,10 @@ header {
 }
 .amount-container {
   position: absolute;
-  top: -0.9rem;
-  right: -0.9rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  top: -0.6rem;
+  right: -0.7rem;
+  width: 1.3rem;
+  height: 1.3rem;
   border: 2px solid var(--clr-white);
   border-radius: 50%;
   background: var(--clr-primary-6);
@@ -119,7 +119,7 @@ header {
 .total-amount {
   color: var(--clr-white);
   margin-bottom: 0;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
@@ -146,9 +146,10 @@ header {
 
 /* styles for bigger screen */
 @media screen and (min-width: 680px) {
+  :root {
+    --header-height: 4.2rem;
+  }
   .navbar {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     justify-content: space-between;
     gap: 2.7rem;
   }
@@ -158,7 +159,6 @@ header {
   .nav-open {
     display: none;
   }
-
   /* nav menu */
   .nav-menu {
     position: unset;
@@ -213,6 +213,15 @@ header {
   }
   .cart-icon {
     font-size: 1.7rem;
+  }
+  .amount-container {
+    top: -0.7rem;
+    right: -0.9rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .total-amount {
+    font-size: 0.9rem;
   }
   .login-btn {
     font-size: 1rem;
