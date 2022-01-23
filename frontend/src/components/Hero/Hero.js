@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import HeroSlider from './HeroSlider';
-import SocialLinks from './SocialLinks.';
+import SocialLinks from './SocialLinks';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   //set up function for displaying slider
@@ -19,7 +20,9 @@ const Hero = () => {
       <div className="hero-text">
         <p className="subtitle">Freshly baked everyday</p>
         <h1>A delicious delight you'll love</h1>
-        <button className="hero-cta">Order Here!</button>
+        <Link to="/products" className="hero-cta">
+          Order Here!
+        </Link>
       </div>
 
       <div className="slider-container">{width > 680 && <HeroSlider />}</div>

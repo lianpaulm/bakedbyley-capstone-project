@@ -1,0 +1,13 @@
+.page-path {
+  margin-top: var(--header-height);
+  background-color: var(--clr-accent-light);
+  height: var(--breadcrumbs-height);
+}
+.page-path .container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.page-path p {
+  font-size: 0.9rem;
+}

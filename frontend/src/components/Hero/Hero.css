@@ -35,6 +35,7 @@
   letter-spacing: 0.8px;
   font-size: 0.9rem;
   transition: var(--transition);
+  display: inline-block;
 }
 .hero-cta:hover {
   transform: scale(1.1);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { socialLinks } from '../../data';
+import SocialLinks from '../Hero/SocialLinks';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.css';
 
@@ -10,14 +10,7 @@ const Footer = () => {
         <div>
           <p className="brand">BakedByLey</p>
           <div className="social-container">
-            {socialLinks.map((link) => {
-              const { id, url, icon } = link;
-              return (
-                <a href={url} key={id}>
-                  {icon}
-                </a>
-              );
-            })}
+            <SocialLinks />
           </div>
         </div>
         <div>

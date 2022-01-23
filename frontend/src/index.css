@@ -18,6 +18,7 @@ Variables
   /* accent color */
   --clr-accent: hsl(48, 100%, 93%);
   --clr-accent-light: hsl(50, 81%, 94%);
+  /* --clr-accent-light: hsl(40, 60%, 96%); */
   /* lighter shades of primary color */
   --clr-primary-6: hsl(160, 13%, 39%);
   --clr-primary-7: hsl(160, 10%, 46%);
@@ -35,7 +36,8 @@ Variables
   --clr-grey-7: hsl(0, 0%, 12%);
   --clr-grey-8: hsl(0, 0%, 13%);
   --clr-grey-9: hsl(0, 0%, 22%);
-  --clr-grey-10: hsl(0, 0%, 61%);
+  --clr-grey-10: hsl(0, 0%, 95%);
+  --clr-grey-11: hsl(0, 0%, 73%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
@@ -58,7 +60,11 @@ Variables
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-5: 0 4px 6px 1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
   --header-height: 3.1rem;
+  --breadcrumbs-height: 4rem;
 }
 
 /*

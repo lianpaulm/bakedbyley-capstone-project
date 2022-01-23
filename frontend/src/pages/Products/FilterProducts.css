@@ -1,0 +1,5 @@
+.filter-container {
+  background: var(--clr-grey-10);
+  height: 30rem;
+  padding: 1.5rem;
+}

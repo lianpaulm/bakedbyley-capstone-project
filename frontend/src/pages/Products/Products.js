@@ -1,107 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import FilterProducts from './FilterProducts';
+import { dataProducts } from '../../data';
 import './Products.css';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
+  const [products, setProducts] = useState(dataProducts);
   return (
     <>
       <Header />
       <main>
-        <div className="page-path">
-          <div className="container">
-            <p>Home / products</p>
-          </div>
-        </div>
+        <Breadcrumbs path={'Home / products'} />
         <div className="products container ">
-          {/* filters */}
-          <div className="filter-container">
-            <p>Filter</p>
-          </div>
+          <FilterProducts />
 
-          {/* products */}
           <div className="products-container">
-            {/* single card */}
-            <div className="card">
-              <a href="/products/product">
-                <img src="images/products/cake2.jpg" alt="" />
-              </a>
-              <div className="card-info">
-                <p className="card-name">Chocolate Cake</p>
-                <div>
-                  <div className="price">P900</div>
-                  <button className="add-cart-btn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            {/* single card */}
-            <div className="card">
-              <a href="/products/product">
-                <img src="images/products/cake2.jpg" alt="" />
-              </a>
-              <div className="card-info">
-                <p className="card-name">Chocolate Cake</p>
-                <div>
-                  <div className="price">P900</div>
-                  <button className="add-cart-btn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            {/* single card */}
-            <div className="card">
-              <a href="/products/product">
-                <img src="images/products/cake2.jpg" alt="" />
-              </a>
-              <div className="card-info">
-                <p className="card-name">Chocolate Cake</p>
-                <div>
-                  <div className="price">P900</div>
-                  <button className="add-cart-btn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            {/* single card */}
-            <div className="card">
-              <a href="/products/product">
-                <img src="images/products/cake2.jpg" alt="" />
-              </a>
-              <div className="card-info">
-                <p className="card-name">Chocolate Cake</p>
-                <div>
-                  <div className="price">P900</div>
-                  <button className="add-cart-btn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            {/* single card */}
-            <div className="card">
-              <a href="/products/product">
-                <img src="images/products/cake2.jpg" alt="" />
-              </a>
-              <div className="card-info">
-                <p className="card-name">Chocolate Cake</p>
-                <div>
-                  <div className="price">P900</div>
-                  <button className="add-cart-btn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            {/* single card */}
-            <div className="card">
-              <a href="/products/product">
-                <img src="images/products/cake2.jpg" alt="" />
-              </a>
-              <div className="card-info">
-                <p className="card-name">Chocolate Cake</p>
-                <div>
-                  <div className="price">P900</div>
-                  <button className="add-cart-btn">Add to cart</button>
-                </div>
-              </div>
-            </div>
+            {products.map((product) => {
+              const { _id, name, image, price } = product;
+              return (
+                <Link to={_id} key={_id}>
+                  <div className="card">
+                    <img src={image} alt="" />
+                    <div className="card-info">
+                      <p className="card-name">{name}</p>
+                      <div>
+                        <div className="price">P{price}</div>
+                        <button className="add-cart-btn">Add to cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
+          {/* end of products */}
         </div>
       </main>
+      <Footer />
     </>
   );
 };
