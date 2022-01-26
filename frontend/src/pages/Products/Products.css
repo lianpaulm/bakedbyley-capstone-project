@@ -3,10 +3,10 @@
   grid-template-columns: 15rem 1fr;
   gap: 1.5rem;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .products-container {
-  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.4rem;

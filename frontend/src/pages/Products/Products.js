@@ -1,14 +1,49 @@
 import React, { useState, useEffect } from 'react';
+// components
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import Loading from '../../components/Loading/Loading';
 import FilterProducts from './FilterProducts';
-import { dataProducts } from '../../data';
+// style
 import './Products.css';
+// route
 import { Link } from 'react-router-dom';
+// axios
+import axios from 'axios';
 
 const Products = () => {
-  const [products, setProducts] = useState(dataProducts);
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.get('/api/v1/products');
+      setProducts(data.products);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <main>
+          <div className="container loading-container">
+            <FilterProducts />
+            <Loading />
+          </div>
+        </main>
+      </>
+    );
+  }
+
   return (
     <>
       <Header />
