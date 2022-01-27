@@ -1,10 +1,24 @@
 import React from 'react';
 import './FilterProducts.css';
 
-const FilterProducts = () => {
+const FilterProducts = ({ categories, filterProducts }) => {
   return (
     <div className="filter-container">
-      <p>Filter</p>
+      <h4>Filter</h4>
+      <div className="categories-container">
+        <p className="filter-title">Categories</p>
+        {categories.map((category, index) => {
+          return (
+            <button
+              className="category-btn"
+              key={index}
+              onClick={() => filterProducts(category)}
+            >
+              {category}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };

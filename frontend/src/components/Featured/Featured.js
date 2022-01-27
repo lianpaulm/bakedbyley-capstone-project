@@ -90,9 +90,6 @@ const Featured = () => {
             {featuredProducts.map((product) => {
               const { _id, name, image, category, price } = product;
               return (
-                // <div key={id} className="carousel-item">
-                //   <h3>{price}</h3>
-                // </div>
                 <Link to={`/products/featured/${_id}`} key={_id}>
                   <div className="card">
                     <img src={image} alt="" />

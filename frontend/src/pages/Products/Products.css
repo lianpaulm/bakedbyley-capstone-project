@@ -21,7 +21,7 @@
   max-height: 18rem;
   max-width: 15rem;
   color: var(--clr-grey-8);
-  box-shadow: var(--shadow-5);
+  box-shadow: var(--shadow-2);
 }
 .card-info {
   /* background: var(--clr-primary-5); */

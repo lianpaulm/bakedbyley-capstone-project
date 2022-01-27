@@ -26,6 +26,7 @@ const Products = () => {
       console.log(error);
     }
   };
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -41,13 +42,31 @@ const Products = () => {
     );
   }
 
+  const allCategories = [
+    'all',
+    ...new Set(products.map((product) => product.category)),
+  ];
+
+  const filterProducts = (category) => {
+    // if (category === 'all') {
+    //   setProducts(products);
+    // }
+    // const newProducts = products.filter(
+    //   (product) => product.category === category
+    // );
+    // setProducts(newProducts);
+  };
+
   return (
     <>
       <Header />
       <main>
         <Breadcrumbs path={'Home / products'} />
         <div className="products container ">
-          <FilterProducts />
+          <FilterProducts
+            categories={allCategories}
+            filterProducts={filterProducts}
+          />
 
           <div className="products-container">
             {products.map((product) => {

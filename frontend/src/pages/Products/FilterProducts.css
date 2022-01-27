@@ -3,3 +3,23 @@
   height: 30rem;
   padding: 1.5rem;
 }
+.filter-container h4 {
+  margin-bottom: 2rem;
+}
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+.filter-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.category-btn {
+  border: transparent;
+  background: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
