@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
+// router
 const products = require('./routes/productsRoute');
+const user = require('./routes/userRoutes');
+// db
 const connectDB = require('./db/connect');
 require('dotenv').config();
+// middleware
 const notFound = require('./middleware/notFound');
 const errorHandlerMiddleware = require('./middleware/errorHandler');
 
@@ -12,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/api/v1/', products);
+app.use('/api/v1/', user);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
