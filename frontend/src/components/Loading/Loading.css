@@ -1,13 +1,7 @@
-.loading-container {
-  display: grid;
-  margin-top: calc(var(--header-height) + 2rem);
-  gap: 1.5rem;
-  grid-template-columns: 15rem 1fr;
-}
 .loading {
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--clr-grey-8);
+  height: calc(100vh + 1px);
 }

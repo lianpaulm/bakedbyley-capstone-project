@@ -13,6 +13,10 @@ function App() {
         <Route path="/faq" element={<Faq />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
+        <Route
+          path="/products/featured/:id"
+          element={<ProductDetails />}
+        ></Route>
       </Routes>
     </Router>
   );

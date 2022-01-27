@@ -35,10 +35,7 @@ const Products = () => {
       <>
         <Header />
         <main>
-          <div className="container loading-container">
-            <FilterProducts />
-            <Loading />
-          </div>
+          <Loading />
         </main>
       </>
     );
