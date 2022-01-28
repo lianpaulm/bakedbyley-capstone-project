@@ -10,7 +10,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 // Admin route
 import Dashboard from './pages/Admin/Dashboard';
-import ProductsAdmin from './pages/Admin/ProductsAdmin';
+import ProductsAdmin from './pages/Admin/ProductsAdmin/ProductsAdmin';
 import Orders from './pages/Admin/Orders';
 import Users from './pages/Admin/Users';
 import AdminErrorPage from './pages/ErrorPage/AdminErrorPage';

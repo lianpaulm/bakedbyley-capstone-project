@@ -1,0 +1,26 @@
+.table-container {
+  box-shadow: var(--shadow-1);
+  margin: 1rem 1rem 2rem;
+}
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  background: khaki;
+  padding: 1rem;
+}
+.table-header > div {
+  /* border: 1px solid black; */
+}
+.table-body {
+}
+.table-row {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.table-row:hover {
+  background: gray;
+}
