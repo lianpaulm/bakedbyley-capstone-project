@@ -1,9 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// client route
 import Home from './pages/Home/Home';
 import Faq from './pages/Faq/Faq';
 import Products from './pages/Products/Products';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+
+// Admin route
+import Dashboard from './pages/Admin/Dashboard';
+import ProductsAdmin from './pages/Admin/ProductsAdmin';
+import Orders from './pages/Admin/Orders';
+import Users from './pages/Admin/Users';
+import AdminErrorPage from './pages/ErrorPage/AdminErrorPage';
 
 function App() {
   return (
@@ -17,6 +27,14 @@ function App() {
           path="/products/featured/:id"
           element={<ProductDetails />}
         ></Route>
+        <Route path="*" element={<ErrorPage />}></Route>
+
+        {/* admin path */}
+        <Route path="/admin/dashboard" element={<Dashboard />}></Route>
+        <Route path="/admin/products" element={<ProductsAdmin />}></Route>
+        <Route path="/admin/orders" element={<Orders />}></Route>
+        <Route path="/admin/users" element={<Users />}></Route>
+        <Route path="/admin/*" element={<AdminErrorPage />}></Route>
       </Routes>
     </Router>
   );

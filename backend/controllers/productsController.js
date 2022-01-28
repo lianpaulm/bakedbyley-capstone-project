@@ -20,6 +20,12 @@ const getFeaturedProducts = asyncWrapper(async (req, res) => {
   res.status(200).json({ products });
 });
 
+// get all products -- admin
+const getAdminProducts = asyncWrapper(async (req, res) => {
+  const products = await Product.find({});
+  res.status(200).json({ products });
+});
+
 // create product -- admin
 const createProduct = asyncWrapper(async (req, res) => {
   const product = await Product.create(req.body);
@@ -43,4 +49,5 @@ module.exports = {
   getProductDetails,
   deleteProduct,
   updateProduct,
+  getAdminProducts,
 };

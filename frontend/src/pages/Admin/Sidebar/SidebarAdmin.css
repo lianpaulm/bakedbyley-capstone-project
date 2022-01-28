@@ -1,0 +1,5 @@
+.sidebar-admin {
+  background: white;
+  box-shadow: var(--shadow-1);
+  padding: 2rem 0;
+}

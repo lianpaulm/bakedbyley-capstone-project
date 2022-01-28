@@ -1,0 +1,38 @@
+:root {
+  --header-height-admin: 3rem;
+}
+.header-admin {
+  height: var(--header-height-admin);
+  background: var(--clr-primary-5);
+}
+.header-admin .header-container {
+  display: flex;
+  align-items: center;
+  max-width: 1480px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.header-admin .brand {
+  margin-right: auto;
+  color: var(--clr-white);
+  width: 15rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.header-admin button {
+  cursor: pointer;
+  background: none;
+  display: grid;
+  place-items: center;
+  border: none;
+  margin: 0 0.8rem;
+}
+.header-admin button > svg {
+  font-size: 1.5rem;
+  padding: 0;
+  color: var(--clr-white);
+}
+.header-admin button:first-of-type > svg {
+  font-size: 1.8rem;
+}

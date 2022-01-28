@@ -9,9 +9,11 @@ const {
   getProductDetails,
   deleteProduct,
   updateProduct,
+  getAdminProducts,
 } = require('../controllers/productsController');
 
 router.route('/products').get(getAllProducts);
+router.route('/admin/products').get(getAdminProducts);
 router.route('/products/featured').get(getFeaturedProducts);
 router.route('/products/new').post(createProduct);
 router
