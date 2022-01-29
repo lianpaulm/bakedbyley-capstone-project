@@ -34,12 +34,17 @@ const createProduct = asyncWrapper(async (req, res) => {
 
 // delete product -- admin
 const deleteProduct = asyncWrapper(async (req, res) => {
-  res.status(201).json({ msg: 'delete product' });
+  const { id: productId } = req.params;
+  const product = await Product.findOneAndDelete({ _id: productId });
+  if (!product) {
+    return res.status(404).json({ msg: `No task with id: ${productId}` });
+  }
+  res.status(200).json({ product });
 });
 
 // update product -- admin
 const updateProduct = asyncWrapper(async (req, res) => {
-  res.status(201).json({ msg: 'update product' });
+  res.status(201).json({ msg: 'Product Updated' });
 });
 
 module.exports = {

@@ -1,26 +1,80 @@
+/* header */
+.products-admin-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 1.5rem;
+}
+.products-admin-header > h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0;
+  font-weight: 800;
+  margin-left: 15rem;
+  color: var(--clr-grey-9);
+}
+.products-admin-header > button {
+  background: none;
+  border: 2px solid var(--clr-primary-5);
+  padding: 0.5em 0.7em;
+  color: var(--clr-primary-5);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+.products-admin-header > button:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+
+/* table */
 .table-container {
   box-shadow: var(--shadow-1);
-  margin: 1rem 1rem 2rem;
+  margin: 0 1rem 2rem 0;
 }
 .table-header {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 15rem 1fr 7rem 10rem 8rem;
   width: 100%;
-  background: khaki;
+  background: var(--clr-accent);
+  gap: 1rem;
   padding: 1rem;
 }
 .table-header > div {
-  /* border: 1px solid black; */
-}
-.table-body {
+  font-weight: 600;
+  color: var(--clr-grey-9);
+  /* border: 1px solid red; */
 }
 .table-row {
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  cursor: pointer;
+  grid-template-columns: 15rem 1fr 7rem 10rem 8rem;
+  gap: 1rem;
   transition: background 0.3s;
 }
 .table-row:hover {
-  background: gray;
+  background: var(--clr-primary-9);
+}
+.table-row > div {
+  font-size: 0.9rem;
+}
+.table-row div:last-child {
+  display: flex;
+}
+/* action btn */
+.action-edit-btn,
+.action-delete-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  display: flex;
+}
+.action-edit-btn svg {
+  color: var(--clr-primary-7);
+  font-size: 1.4rem;
+}
+.action-delete-btn svg {
+  color: var(--clr-red-light);
+  font-size: 1.5rem;
 }
