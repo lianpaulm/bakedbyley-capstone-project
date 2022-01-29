@@ -14,8 +14,8 @@ const ProductsAdmin = () => {
   const [products, setProducts] = useState([]);
 
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -59,13 +59,13 @@ const ProductsAdmin = () => {
     <>
       <HeaderAdmin />
       <main>
-        {show && <AddProduct handleClose={handleClose} />}
+        {show && <AddProduct setShow={setShow} />}
         <div className="dashboard-container">
           <SidebarAdmin />
           <div className="products-admin-container">
             <div className="products-admin-header">
               {/* add product button */}
-              <button onClick={handleShow}>Add Product</button>
+              <button onClick={() => setShow(true)}>Add Product</button>
               <h3>All Products</h3>
             </div>
             <div className="table-container">
