@@ -11,6 +11,11 @@
   margin-left: 15rem;
   color: var(--clr-grey-9);
 }
+.peso-sign {
+  font-size: 0.9rem;
+  color: var(--clr-grey-8);
+  padding-right: 0.2rem;
+}
 .products-admin-header > button {
   background: none;
   border: 2px solid var(--clr-primary-5);

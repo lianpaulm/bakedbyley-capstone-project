@@ -9,7 +9,7 @@ const AddProduct = ({ setShow }) => {
   const [category, setCategory] = useState('');
   const [desc, setDesc] = useState('');
   const [price, setPrice] = useState('');
-  const [featured, setFeatured] = useState(true);
+  const [featured, setFeatured] = useState(false);
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -29,6 +29,7 @@ const AddProduct = ({ setShow }) => {
         category,
         description: desc,
         price,
+        featured,
       };
       console.log(newProduct);
       // post request
@@ -54,6 +55,7 @@ const AddProduct = ({ setShow }) => {
             <input
               type="file"
               id="image"
+              required={true}
               onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
@@ -64,6 +66,8 @@ const AddProduct = ({ setShow }) => {
             <input
               type="text"
               id="name"
+              required={true}
+              autoComplete="off"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -75,6 +79,7 @@ const AddProduct = ({ setShow }) => {
             <input
               type="number"
               id="price"
+              required={true}
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
@@ -87,6 +92,7 @@ const AddProduct = ({ setShow }) => {
               rows="3"
               type="text"
               id="desc"
+              required={true}
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             ></textarea>
@@ -98,21 +104,21 @@ const AddProduct = ({ setShow }) => {
             <input
               type="text"
               id="category"
+              required={true}
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             />
           </div>
 
           {/* featured */}
-          <div className="form-control featured-control">
-            <label htmlFor="featured">Featured</label>
-            <input
-              type="checkbox"
-              id="featured"
-              name="featured"
-              value={featured}
-              onChange={(e) => setFeatured(e.target.value)}
-            />
+          <div className="form-control">
+            <button
+              type="button"
+              className={`featured-btn ${featured && 'featured-active'}`}
+              onClick={() => setFeatured(!featured)}
+            >
+              Featured Product
+            </button>
           </div>
 
           {/* submit btn */}

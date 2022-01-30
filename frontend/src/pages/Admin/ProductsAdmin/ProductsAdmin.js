@@ -83,7 +83,10 @@ const ProductsAdmin = () => {
                     <div key={id} className="table-row">
                       <div>{id}</div>
                       <div>{name}</div>
-                      <div>&#8369;{price}.00</div>
+                      <div>
+                        <span className="peso-sign">&#8369;</span>
+                        {price}.00
+                      </div>
                       <div>{category}</div>
                       <div>
                         <button className="action-edit-btn">

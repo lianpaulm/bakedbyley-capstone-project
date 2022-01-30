@@ -76,7 +76,22 @@ textarea {
   margin-top: 1rem;
   cursor: pointer;
   transition: background 0.3s;
+  border-radius: 3px;
 }
 .add-product-form .create-product-btn:hover {
   background: var(--clr-primary-7);
+}
+.featured-btn {
+  padding: 0.4em;
+  border: 1px solid var(--clr-grey-11);
+  color: var(--clr-grey-9);
+  margin-top: 0.4rem;
+  cursor: pointer;
+  width: 10rem;
+  border-radius: 3px;
+}
+.featured-active {
+  color: white;
+  border: 1px solid transparent;
+  background: coral;
 }
