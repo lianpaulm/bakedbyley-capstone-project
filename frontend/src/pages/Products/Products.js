@@ -14,12 +14,14 @@ import axios from 'axios';
 
 const Products = () => {
   const [loading, setLoading] = useState(true);
+  const [productsFetch, setProductsFetch] = useState([]);
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
     setLoading(true);
     try {
       const { data } = await axios.get('/api/v1/products');
+      setProductsFetch(data.products);
       setProducts(data.products);
       setLoading(false);
     } catch (error) {
@@ -44,17 +46,18 @@ const Products = () => {
 
   const allCategories = [
     'all',
-    ...new Set(products.map((product) => product.category)),
+    ...new Set(productsFetch.map((product) => product.category)),
   ];
 
   const filterProducts = (category) => {
-    // if (category === 'all') {
-    //   setProducts(products);
-    // }
-    // const newProducts = products.filter(
-    //   (product) => product.category === category
-    // );
-    // setProducts(newProducts);
+    if (category === 'all') {
+      setProducts(productsFetch);
+      return;
+    }
+    const newProducts = productsFetch.filter(
+      (product) => product.category === category
+    );
+    setProducts(newProducts);
   };
 
   return (
@@ -78,7 +81,10 @@ const Products = () => {
                     <div className="card-info">
                       <p className="card-name">{name}</p>
                       <div>
-                        <div className="price">P{price}</div>
+                        <div className="price">
+                          <span className="peso-sign">&#8369;</span>
+                          {price}.00
+                        </div>
                         <button className="add-cart-btn">Add to cart</button>
                       </div>
                     </div>

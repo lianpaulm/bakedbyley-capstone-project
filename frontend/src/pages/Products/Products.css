@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 15rem 1fr;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }
 .card img {
   object-fit: cover;
@@ -21,7 +21,13 @@
   max-height: 18rem;
   max-width: 15rem;
   color: var(--clr-grey-8);
-  box-shadow: var(--shadow-2);
+  background: var(--clr-white);
+  /* box-shadow: var(--shadow-card); */
+  box-shadow: var(--dark-shadow);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-2px);
 }
 .card-info {
   /* background: var(--clr-primary-5); */
@@ -40,6 +46,11 @@
 .price {
   color: var(--clr-grey-5);
 }
+.price .peso-sign {
+  font-size: 1rem;
+  color: var(--clr-grey-9);
+  margin-right: 0;
+}
 .add-cart-btn {
   font-size: 0.8rem;
   padding: 0.2em;
@@ -54,4 +65,13 @@
   background: var(--clr-primary-5);
   color: var(--clr-white);
   border: 1px solid transparent;
+}
+
+@media screen and (max-width: 760px) {
+  .products {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    /* margin-top: 1.5rem;
+    margin-bottom: 3rem; */
+  }
 }

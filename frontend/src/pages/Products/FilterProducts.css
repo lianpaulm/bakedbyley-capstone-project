@@ -1,25 +1,61 @@
 .filter-container {
   background: var(--clr-grey-10);
+  /* background: #fbf7ef; */
   height: 30rem;
   padding: 1.5rem;
 }
 .filter-container h4 {
   margin-bottom: 2rem;
+  color: var(--clr-grey-8);
+  font-weight: 900;
 }
 .categories-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.9rem;
+  gap: 0.5rem;
 }
 .filter-title {
+  color: var(--clr-grey-8);
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
+
+/* styles for single category */
 .category-btn {
   border: transparent;
   background: none;
   text-transform: capitalize;
   cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.category-btn p {
+  color: var(--clr-grey-9);
+}
+.category-box {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid var(--clr-grey-9);
+  border-radius: 3px;
+}
+
+/* category active */
+.category-active p {
+  font-weight: 500;
+  color: var(--clr-primary-5);
+}
+.category-active .category-box {
+  background: var(--clr-primary-6);
+  border: transparent;
+}
+
+@media screen and (max-width: 760px) {
+  .filter-container {
+    height: auto;
+  }
 }
