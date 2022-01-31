@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react';
+import './Alert.css';
 
-const Alert = ({ type, msg, removeAlert, stateVar }) => {
+const Alert = ({ type, msg, removeAlert }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       removeAlert();
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(timeout);
-  }, [stateVar]);
-  return <p className={`alert alert-${type}`}>{msg}</p>;
+  }, []);
+
+  return (
+    <div className="alert-overlay">
+      <p className={`alert alert-${type}`}>{msg}</p>;
+    </div>
+  );
 };
 
 export default Alert;

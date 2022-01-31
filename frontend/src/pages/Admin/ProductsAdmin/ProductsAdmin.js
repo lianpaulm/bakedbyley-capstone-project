@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
+// styles
+import './ProductsAdmin.css';
+// icons
+import { AiFillDelete } from 'react-icons/ai';
+import { FaEdit } from 'react-icons/fa';
+// components
+import Loading from '../../../components/Loading/Loading';
+import Alert from '../../../components/Alert/Alert';
+// pages
 import HeaderAdmin from '../Header/HeaderAdmin';
 import SidebarAdmin from '../Sidebar/SidebarAdmin';
 import AddProduct from './AddProduct';
-import './ProductsAdmin.css';
-import Loading from '../../../components/Loading/Loading';
+// axios
 import axios from 'axios';
-// icon
-import { AiFillDelete } from 'react-icons/ai';
-import { FaEdit } from 'react-icons/fa';
 
 const ProductsAdmin = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-
   const [show, setShow] = useState(false);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  const [alert, setAlert] = useState({
+    show: false,
+    msg: '',
+    type: '',
+  });
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -24,6 +31,7 @@ const ProductsAdmin = () => {
       setProducts(data.products);
       setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -33,12 +41,20 @@ const ProductsAdmin = () => {
 
   // delete product
   const deleteProduct = async (id) => {
+    setLoading(true);
     try {
       await axios.delete(`/api/v1/products/${id}`);
+      setLoading(false);
+      showAlert(true, 'danger', 'product deleted successfully');
       fetchProducts();
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
+  };
+
+  const showAlert = (show = false, type = '', msg = '') => {
+    setAlert({ show, type, msg });
   };
 
   if (loading) {
@@ -54,12 +70,18 @@ const ProductsAdmin = () => {
       </>
     );
   }
-
   return (
     <>
       <HeaderAdmin />
       <main>
-        {show && <AddProduct setShow={setShow} />}
+        {alert.show && <Alert {...alert} removeAlert={showAlert} />}
+        {show && (
+          <AddProduct
+            setShow={setShow}
+            fetchProducts={fetchProducts}
+            showAlert={showAlert}
+          />
+        )}
         <div className="dashboard-container">
           <SidebarAdmin />
           <div className="products-admin-container">
@@ -80,7 +102,6 @@ const ProductsAdmin = () => {
               <div className="table-body">
                 {products.map((product) => {
                   const { _id: id, name, category, price, image } = product;
-                  console.log(product);
                   return (
                     <div key={id} className="table-row">
                       <div>{id}</div>

@@ -9,10 +9,10 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 // Admin route
-import Dashboard from './pages/Admin/Dashboard';
+import Dashboard from './pages/Admin/Dashboard/Dashboard';
 import ProductsAdmin from './pages/Admin/ProductsAdmin/ProductsAdmin';
-import Orders from './pages/Admin/Orders';
-import Users from './pages/Admin/Users';
+import Orders from './pages/Admin/Orders/Orders';
+import Users from './pages/Admin/Users/Users';
 import AdminErrorPage from './pages/ErrorPage/AdminErrorPage';
 
 function App() {

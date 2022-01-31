@@ -1,8 +1,8 @@
 import React from 'react';
-import HeaderAdmin from './Header/HeaderAdmin';
-import SidebarAdmin from './Sidebar/SidebarAdmin';
+import HeaderAdmin from '../Header/HeaderAdmin';
+import SidebarAdmin from '../Sidebar/SidebarAdmin';
 
-const Users = () => {
+const Orders = () => {
   return (
     <>
       <HeaderAdmin />
@@ -10,7 +10,7 @@ const Users = () => {
         <div className="dashboard-container">
           <SidebarAdmin />
           <div className="new-product-container">
-            <h2>Users</h2>
+            <h2>Orders</h2>
           </div>
         </div>
       </main>
@@ -18,4 +18,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default Orders;

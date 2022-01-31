@@ -1,7 +1,7 @@
 import React from 'react';
-import HeaderAdmin from './Header/HeaderAdmin';
-import SidebarAdmin from './Sidebar/SidebarAdmin';
-import './LayoutAdmin.css';
+import HeaderAdmin from '../Header/HeaderAdmin';
+import SidebarAdmin from '../Sidebar/SidebarAdmin';
+import '../LayoutAdmin.css';
 
 const DashboardAdmin = () => {
   return (

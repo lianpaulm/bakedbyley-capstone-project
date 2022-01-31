@@ -3,7 +3,7 @@ import './AddProduct.css';
 import { IoMdClose } from 'react-icons/io';
 import axios from 'axios';
 
-const AddProduct = ({ setShow }) => {
+const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
   const [file, setFile] = useState(null);
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
@@ -31,10 +31,12 @@ const AddProduct = ({ setShow }) => {
         price,
         featured,
       };
-      console.log(newProduct);
+
       // post request
       await axios.post('/api/v1/products/new', newProduct);
-      setShow();
+      setShow(false);
+      showAlert(true, 'success', 'product added successfully');
+      fetchProducts();
     } catch (error) {
       console.log(error);
     }
@@ -104,8 +106,8 @@ const AddProduct = ({ setShow }) => {
             <input
               type="text"
               id="category"
-              required={true}
               value={category}
+              required={true}
               onChange={(e) => setCategory(e.target.value)}
             />
           </div>

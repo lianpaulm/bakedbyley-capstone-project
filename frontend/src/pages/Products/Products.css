@@ -22,7 +22,6 @@
   max-width: 15rem;
   color: var(--clr-grey-8);
   background: var(--clr-white);
-  /* box-shadow: var(--shadow-card); */
   box-shadow: var(--dark-shadow);
   transition: 0.3s;
 }
@@ -31,7 +30,7 @@
 }
 .card-info {
   /* background: var(--clr-primary-5); */
-  padding: 0.7rem;
+  padding: 0.6rem;
 }
 .card-info div {
   display: flex;
@@ -39,9 +38,13 @@
   margin-top: 0.2rem;
 }
 .card-name {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: currentColor;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
 }
 .price {
   color: var(--clr-grey-5);
@@ -71,7 +74,5 @@
   .products {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    /* margin-top: 1.5rem;
-    margin-bottom: 3rem; */
   }
 }

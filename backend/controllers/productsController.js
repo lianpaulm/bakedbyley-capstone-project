@@ -44,7 +44,17 @@ const deleteProduct = asyncWrapper(async (req, res) => {
 
 // update product -- admin
 const updateProduct = asyncWrapper(async (req, res) => {
-  res.status(201).json({ msg: 'Product Updated' });
+  const { id: productId } = req.params;
+  const product = await Product.findOneAndUpdate({ _id: productId }, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!product) {
+    return res.status(404).json({ msg: `No task with id: ${productId}` });
+  }
+
+  res.status(200).json({ product });
 });
 
 module.exports = {

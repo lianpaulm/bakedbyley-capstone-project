@@ -20,6 +20,6 @@ router
   .route('/products/:id')
   .get(getProductDetails)
   .delete(deleteProduct)
-  .put(updateProduct);
+  .patch(updateProduct);
 
 module.exports = router;
