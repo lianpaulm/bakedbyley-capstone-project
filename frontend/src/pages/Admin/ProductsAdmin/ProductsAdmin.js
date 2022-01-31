@@ -71,6 +71,7 @@ const ProductsAdmin = () => {
             <div className="table-container">
               <div className="table-header">
                 <div>ID</div>
+                <div>Image</div>
                 <div>Name</div>
                 <div>Price</div>
                 <div>Category</div>
@@ -78,11 +79,15 @@ const ProductsAdmin = () => {
               </div>
               <div className="table-body">
                 {products.map((product) => {
-                  const { _id: id, name, category, price } = product;
+                  const { _id: id, name, category, price, image } = product;
+                  console.log(product);
                   return (
                     <div key={id} className="table-row">
                       <div>{id}</div>
-                      <div>{name}</div>
+                      <div className="image-div">
+                        <img src={image} alt="" />
+                      </div>
+                      <div className="name-div">{name}</div>
                       <div>
                         <span className="peso-sign">&#8369;</span>
                         {price}.00
