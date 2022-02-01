@@ -25,11 +25,38 @@
   padding-left: 2rem;
   max-width: 35rem;
 }
+/* product name */
+.info-col h3 {
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+/* product desc */
+.info-col > p {
+  margin-bottom: 1.5rem;
+  color: var(--clr-grey-9);
+}
+/* product sched */
+.sched-input-container {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+/* product price */
+.info-col h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.info-col .peso-sign {
+  color: var(--clr-grey-7);
+  font-size: 1.2rem;
+  padding-right: 1px;
+}
 .info-col .flex {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1.5rem;
 }
+/* quantity cont */
 .quantity-container {
   background: whitesmoke;
   display: flex;

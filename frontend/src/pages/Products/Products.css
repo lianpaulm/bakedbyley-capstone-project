@@ -49,10 +49,10 @@
 .price {
   color: var(--clr-grey-5);
 }
-.price .peso-sign {
+.peso-sign {
   font-size: 1rem;
   color: var(--clr-grey-9);
-  margin-right: 0;
+  padding-right: 0.15rem;
 }
 .add-cart-btn {
   font-size: 0.8rem;

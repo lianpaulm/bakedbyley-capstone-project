@@ -96,7 +96,10 @@ const Featured = () => {
                     <div className="card-info">
                       <p className="card-name">{name}</p>
                       <div>
-                        <div className="price">P{price}</div>
+                        <div className="price">
+                          <span className="peso-sign">&#8369;</span>
+                          {price}.00
+                        </div>
                         <button className="add-cart-btn">Add to cart</button>
                       </div>
                     </div>
