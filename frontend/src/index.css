@@ -17,6 +17,7 @@ Variables
   /* primary/main color */
   --clr-primary-5: hsl(160, 18%, 33%);
   /* accent color */
+  --clr-accent-main: hsl(6, 93%, 71%);
   --clr-accent: hsl(48, 100%, 93%);
   --clr-accent-light: hsl(50, 81%, 94%);
   /* --clr-accent-light: hsl(40, 60%, 96%); */

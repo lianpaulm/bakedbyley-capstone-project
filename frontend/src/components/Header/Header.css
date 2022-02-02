@@ -92,6 +92,7 @@ header {
   display: flex;
   gap: 1.8rem;
   margin-left: auto;
+  align-items: center;
 }
 .cart-button {
   display: block;
@@ -105,13 +106,14 @@ header {
 }
 .amount-container {
   position: absolute;
-  top: -0.6rem;
-  right: -0.8rem;
+  top: -0.7rem;
+  right: -0.9rem;
   /* width: 1.5rem;
   height: 1.3rem; */
   border: 2px solid var(--clr-white);
   border-radius: 5rem;
-  background: var(--clr-primary-6);
+  /* background: var(--clr-primary-6); */
+  background: var(--clr-accent-main);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +135,8 @@ header {
   background: none;
   border: 1px solid currentColor;
   border-radius: 5rem;
-  padding: 0.2rem 1.3rem;
+  padding: 0.1rem 1rem;
+  display: inline-block;
   cursor: pointer;
   box-shadow: var(--shadow-1);
   transition: var(--transition);
@@ -212,11 +215,11 @@ header {
     /* margin-left: auto; */
   }
   .cart-icon {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .amount-container {
-    top: -0.8rem;
-    right: -0.9rem;
+    top: -0.9rem;
+    right: -1rem;
     /* width: 1.8rem;
     height: 1.6rem; */
   }
@@ -228,5 +231,6 @@ header {
   }
   .login-btn {
     font-size: 1rem;
+    padding: 0.2rem 1.5rem;
   }
 }

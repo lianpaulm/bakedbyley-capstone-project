@@ -71,20 +71,19 @@ const ProductDetails = () => {
                 {/* <button className="quantity-btn">-</button>
                 <p className="quantity">0</p>
                 <button className="quantity-btn">+</button> */}
-                <div className="qty-list">
-                  <div>Qty</div>
-                  <div>
-                    <select
-                      value={qty}
-                      onChange={(e) => setQty(e.target.value)}
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </div>
+                <label htmlFor="qty">Qty</label>
+                <div>
+                  <select
+                    id="qty"
+                    value={qty}
+                    onChange={(e) => setQty(e.target.value)}
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
                 </div>
               </div>
               <button onClick={addToCartHandler} className="add-to-cart-btn">

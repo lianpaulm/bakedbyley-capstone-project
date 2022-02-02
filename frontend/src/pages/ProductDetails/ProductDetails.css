@@ -39,7 +39,11 @@
 .sched-input-container {
   margin-bottom: 2rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
+}
+input[type='date'],
+input[type='time'] {
+  padding: 0.4rem;
 }
 /* product price */
 .info-col h4 {
@@ -54,13 +58,22 @@
 }
 .info-col .flex {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.8rem;
 }
 /* quantity cont */
 .quantity-container {
-  background: whitesmoke;
+  /* background: whitesmoke; */
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+}
+.quantity-container label {
+  /* font-weight: 500; */
+  font-size: 1.1rem;
+}
+.quantity-container select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 .quantity-btn {
   font-size: 1rem;
@@ -70,9 +83,16 @@
 }
 .add-to-cart-btn {
   border: transparent;
-  background: orange;
+  background: var(--clr-accent-main);
+  color: white;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
+  letter-spacing: 0.2px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.add-to-cart-btn:hover {
+  background: rgb(255, 101, 84);
 }
 
 @media screen and (min-height: 780px) {

@@ -19,7 +19,7 @@
   color: var(--clr-grey-8);
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 /* styles for single category */
@@ -28,11 +28,12 @@
   background: none;
   text-transform: capitalize;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   width: 100%;
+  /* margin-bottom: 0.1rem; */
 }
 .category-btn p {
   color: var(--clr-grey-9);
@@ -47,10 +48,12 @@
 /* category active */
 .category-active p {
   font-weight: 500;
-  color: var(--clr-primary-5);
+  /* color: var(--clr-primary-5); */
+  color: var(--clr-accent-main);
 }
 .category-active .category-box {
-  background: var(--clr-primary-6);
+  /* background: var(--clr-primary-6); */
+  background-color: var(--clr-accent-main);
   border: transparent;
 }
 

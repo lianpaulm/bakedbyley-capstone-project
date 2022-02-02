@@ -6,6 +6,7 @@ const Breadcrumbs = (props) => {
     <div className="page-path">
       <div className="container">
         <p>{props.path}</p>
+        <h3>{props.title}</h3>
       </div>
     </div>
   );
