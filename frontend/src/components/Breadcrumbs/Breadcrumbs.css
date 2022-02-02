@@ -12,8 +12,8 @@
   font-size: 0.9rem;
 }
 .page-path h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0;
-  color: var(--clr-grey-9);
+  color: rgb(80, 80, 80);
 }

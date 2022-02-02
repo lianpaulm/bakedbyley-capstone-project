@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { addToCart } from '../../actions/cartActions';
+import { addToCart, removeFromCart } from '../../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
+
+import './Carts.css';
+import { IoMdClose } from 'react-icons/io';
 
 // components
 import Header from '../../components/Header/Header';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import { RiH2 } from 'react-icons/ri';
 
 const Carts = () => {
   const { id: productID } = useParams();
@@ -23,16 +25,79 @@ const Carts = () => {
     }
   }, [dispatch, productID, qty]);
 
+  const removeFromCartHandler = (id) => {
+    // delete action
+    dispatch(removeFromCart(id));
+  };
+
   return (
     <>
       <Header />
       <main>
         <Breadcrumbs title={'Your shopping cart'} />
         <section className="container">
-          {cartItems.length === 0 && <h2>No cart items</h2>}
-          {/* <h1>Cart page</h1>
-          <p>Product ID: {productID}</p>
-          <p>{qty}</p> */}
+          <div className="cart-table-container">
+            <div className="cart-table-header">
+              <div>PRODUCT</div>
+              <div>PRICE</div>
+              <div>QTY</div>
+              <div>TOTAL</div>
+              <div></div>
+            </div>
+            <div className="cart-table-body">
+              {cartItems.map((item) => {
+                const { name, image, price, product, qty } = item;
+
+                return (
+                  <div key={product} className="cart-table-row">
+                    <div className="row-product-cont">
+                      <img src={image} alt={name} />
+                      <div>
+                        <h4>{name}</h4>
+                        <p className="product-sched">
+                          Delivery Date: 02/02/2022 <br />
+                          Delivery Time: 11am
+                        </p>
+                      </div>
+                    </div>
+                    <div className="row-price">
+                      <span className="peso-sign">&#8369;</span>
+                      {price}.00
+                    </div>
+                    <div className="row-qty">
+                      <select
+                        id="qty"
+                        value={item.qty}
+                        onChange={(e) =>
+                          dispatch(
+                            addToCart(item.product),
+                            Number(e.target.value)
+                          )
+                        }
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                    <div className="row-total">
+                      <span className="peso-sign">&#8369;</span>
+                      {/* {isNaN(qty) ? price * 1 : price * qty}.00 */}
+                      {price * 1}
+                    </div>
+                    <div
+                      className="row-remove-btn"
+                      onClick={() => removeFromCartHandler(item.product)}
+                    >
+                      <IoMdClose />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </section>
       </main>
     </>

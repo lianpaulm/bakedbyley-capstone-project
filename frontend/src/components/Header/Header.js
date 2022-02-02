@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { AiOutlineShoppingCart, AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
@@ -12,6 +12,11 @@ const Header = () => {
   const { cartItems } = cart;
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const navigate = useNavigate();
+  const goToCartHandler = () => {
+    navigate('/cart', { replace: true });
+  };
 
   return (
     <header>
@@ -44,7 +49,7 @@ const Header = () => {
         </nav>
 
         <div className="nav-cta">
-          <div className="cart-button">
+          <div className="cart-button" onClick={goToCartHandler}>
             <AiOutlineShoppingCart className="cart-icon" />
             <div className="amount-container">
               {cartItems.length > 0 && (
