@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Loading from '../../components/Loading/Loading';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './ProductDetails.css';
 
 const ProductDetails = () => {

@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
 import { AiOutlineShoppingCart, AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { navLinks } from '../../data';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
@@ -43,7 +47,9 @@ const Header = () => {
           <div className="cart-button">
             <AiOutlineShoppingCart className="cart-icon" />
             <div className="amount-container">
-              <p className="total-amount">0</p>
+              {cartItems.length > 0 && (
+                <p className="total-amount">{cartItems.length}</p>
+              )}
             </div>
           </div>
 
