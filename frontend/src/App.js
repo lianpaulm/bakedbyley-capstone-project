@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import Faq from './pages/Faq/Faq';
 import Products from './pages/Products/Products';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import Carts from './pages/Carts/Carts';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 // Admin route
@@ -23,6 +24,7 @@ function App() {
         <Route path="/faq" element={<Faq />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
+        <Route path="/cart/:id" element={<Carts />}></Route>
         <Route
           path="/products/featured/:id"
           element={<ProductDetails />}

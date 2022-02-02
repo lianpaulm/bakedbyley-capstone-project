@@ -5,11 +5,12 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Loading from '../../components/Loading/Loading';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
   const { id: productID } = useParams();
+  const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(true);
   const [productDetails, setProductDetails] = useState([]);
 
@@ -29,6 +30,11 @@ const ProductDetails = () => {
   }, []);
   const { name, category, image, price, description } = productDetails;
 
+  const navigate = useNavigate();
+  const addToCartHandler = () => {
+    navigate(`/cart/${productID}?qty=${qty}`, { replace: true });
+  };
+
   if (loading) {
     return (
       <>
@@ -39,6 +45,7 @@ const ProductDetails = () => {
       </>
     );
   }
+
   return (
     <>
       <Header />
@@ -61,11 +68,28 @@ const ProductDetails = () => {
             </h4>
             <div className="flex">
               <div className="quantity-container">
-                <button className="quantity-btn">-</button>
+                {/* <button className="quantity-btn">-</button>
                 <p className="quantity">0</p>
-                <button className="quantity-btn">+</button>
+                <button className="quantity-btn">+</button> */}
+                <div className="qty-list">
+                  <div>Qty</div>
+                  <div>
+                    <select
+                      value={qty}
+                      onChange={(e) => setQty(e.target.value)}
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <button className="add-to-cart-btn">Add to cart</button>
+              <button onClick={addToCartHandler} className="add-to-cart-btn">
+                Add to cart
+              </button>
             </div>
           </div>
         </section>
