@@ -22,11 +22,11 @@ const AdminSidebar = () => {
           navigate(itemId);
         }}
         items={[
-          {
-            title: 'Dashboard',
-            itemId: '/admin/dashboard',
-            elemBefore: () => <RiDashboardLine />,
-          },
+          // {
+          //   title: 'Dashboard',
+          //   itemId: '/admin/dashboard',
+          //   elemBefore: () => <RiDashboardLine />,
+          // },
           {
             title: 'Products',
             itemId: '/admin/products',

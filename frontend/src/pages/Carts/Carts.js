@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -25,10 +25,29 @@ const Carts = () => {
     }
   }, [dispatch, productID, qty]);
 
+  // delete action
   const removeFromCartHandler = (id) => {
-    // delete action
     dispatch(removeFromCart(id));
   };
+
+  if (cartItems.length === 0) {
+    return (
+      <>
+        <Header />
+        <main>
+          <Breadcrumbs title={'Your shopping cart'} />
+          <section className="container no-shopping-cart-cont">
+            <div className="empty-cart-text">
+              <h3>Your shopping cart is currently empty</h3>
+              <Link to="/products">
+                <p>Go Shopping</p>
+              </Link>
+            </div>
+          </section>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
@@ -47,7 +66,7 @@ const Carts = () => {
             <div className="cart-table-body">
               {cartItems.map((item) => {
                 const { name, image, price, product, qty } = item;
-
+                // const quantityValue = qty;
                 return (
                   <div key={product} className="cart-table-row">
                     <div className="row-product-cont">
@@ -64,15 +83,14 @@ const Carts = () => {
                       <span className="peso-sign">&#8369;</span>
                       {price}.00
                     </div>
+                    {console.log(qty)}
+
                     <div className="row-qty">
                       <select
                         id="qty"
-                        value={item.qty}
+                        value={qty}
                         onChange={(e) =>
-                          dispatch(
-                            addToCart(item.product),
-                            Number(e.target.value)
-                          )
+                          dispatch(addToCart(product, Number(e.target.value)))
                         }
                       >
                         <option value="1">1</option>
@@ -82,10 +100,10 @@ const Carts = () => {
                         <option value="5">5</option>
                       </select>
                     </div>
+
                     <div className="row-total">
                       <span className="peso-sign">&#8369;</span>
-                      {/* {isNaN(qty) ? price * 1 : price * qty}.00 */}
-                      {price * 1}
+                      {price * qty}.00
                     </div>
                     <div
                       className="row-remove-btn"
@@ -96,6 +114,24 @@ const Carts = () => {
                   </div>
                 );
               })}
+            </div>
+            <div className="cart-footer">
+              <div className="cart-summary-cont">
+                <div className="cart-summary-flex">
+                  <p>SUBTOTAL</p>
+                  <p className="subtotal-value">
+                    <span className="peso-sign">&#8369;</span>
+                    {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                  </p>
+                </div>
+                <div className="cart-summary-flex">
+                  <p>ITEMS</p>
+                  <p className="items-qty-text">
+                    {cartItems.reduce((a, c) => a + c.qty, 0)} items
+                  </p>
+                </div>
+                <div className="checkout-btn">Checkout</div>
+              </div>
             </div>
           </div>
         </section>

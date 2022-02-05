@@ -22,7 +22,7 @@ export const navLinks = [
   {
     id: 3,
     url: '/faq',
-    text: 'FAQ',
+    text: 'FAQs',
     icon: <RiQuestionAnswerLine />,
   },
 ];
@@ -30,7 +30,7 @@ export const navLinks = [
 export const socialLinks = [
   {
     id: 1,
-    url: 'https://www.facebook.com',
+    url: 'https://www.facebook.com/leaportugues30',
     icon: <FaFacebookF />,
   },
   {
@@ -40,7 +40,7 @@ export const socialLinks = [
   },
   {
     id: 3,
-    url: 'https://www.instagram.com',
+    url: 'https://www.instagram.com/leeyahyahyah/',
     icon: <FaInstagram />,
   },
 ];

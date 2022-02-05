@@ -27,8 +27,8 @@ const Footer = () => {
           <div className="flex location">
             <FaMapMarkerAlt />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore
+              Blk 1, lot 60, Sampaguita street. Maligaya Park Subdivision,
+              Novaliches Quezon City
             </p>
           </div>
         </div>
