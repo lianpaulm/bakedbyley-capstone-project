@@ -27,6 +27,7 @@
 }
 .hero-cta {
   border: none;
+  /* background: var(--clr-accent-main); */
   background: var(--clr-primary-5);
   color: var(--clr-white);
   padding: 0.5em 1.4em;

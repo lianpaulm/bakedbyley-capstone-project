@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { AiOutlineShoppingCart, AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
@@ -25,9 +25,9 @@ const Header = () => {
           <AiOutlineMenu className="menu-icon" />
         </button>
 
-        <Link to="/" className="brand">
+        <NavLink to="/" className="brand">
           BakedbyLey
-        </Link>
+        </NavLink>
 
         <nav className={`nav-menu ${isNavbarOpen && 'show-nav-menu'}`}>
           <button className="nav-close" onClick={() => setIsNavbarOpen(false)}>
@@ -38,10 +38,17 @@ const Header = () => {
               const { id, url, text, icon } = link;
               return (
                 <li key={id}>
-                  <Link to={url}>
+                  <NavLink
+                    to={url}
+                    className={(navData) =>
+                      navData.isActive
+                        ? 'main-nav-link main-nav-active'
+                        : 'main-nav-link'
+                    }
+                  >
                     {icon}
                     {text}
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}
