@@ -57,7 +57,7 @@
   /* color: var(--clr-grey-8); */
   color: var(--clr-primary-4);
 }
-.form-control input:not(input[type='file']),
+.add-product-form .form-control input:not(input[type='file']),
 textarea {
   font-size: 1rem;
   padding: 0.1em 0.5rem;

@@ -15,6 +15,7 @@ Variables
   --clr-primary-3: hsl(160, 18%, 26%);
   --clr-primary-4: hsl(160, 18%, 29%);
   /* primary/main color */
+  --clr-primary-5: #6c63ff;
   --clr-primary-5: hsl(160, 18%, 33%);
   /* accent color */
   --clr-accent-main: hsl(6, 93%, 71%);
@@ -25,6 +26,8 @@ Variables
   --clr-primary-6: hsl(160, 13%, 39%);
   --clr-primary-7: hsl(160, 10%, 46%);
   --clr-primary-8: hsl(160, 9%, 73%);
+  --clr-primary-8: #b4c0bc;
+  --clr-primary-9: #b6b3ff;
   --clr-primary-9: hsl(160, 9%, 80%);
   --clr-primary-10: hsl(160, 9%, 87%);
   /* darkest grey - used for headings */
@@ -40,6 +43,7 @@ Variables
   --clr-grey-9: hsl(0, 0%, 22%);
   --clr-grey-10: hsl(0, 0%, 95%);
   --clr-grey-11: hsl(0, 0%, 73%);
+  --clr-grey-12: hsl(0, 0%, 36%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);

@@ -65,7 +65,9 @@ const Header = () => {
             </div>
           </div>
 
-          <button className="login-btn">login</button>
+          <NavLink to="/login" className="login-btn">
+            login
+          </NavLink>
         </div>
       </div>
     </header>

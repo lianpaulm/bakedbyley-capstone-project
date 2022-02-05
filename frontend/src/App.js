@@ -15,6 +15,8 @@ import ProductsAdmin from './pages/Admin/ProductsAdmin/ProductsAdmin';
 import Orders from './pages/Admin/Orders/Orders';
 import Users from './pages/Admin/Users/Users';
 import AdminErrorPage from './pages/ErrorPage/AdminErrorPage';
+import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           path="/products/featured/:id"
           element={<ProductDetails />}
         ></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
 
         {/* admin path */}

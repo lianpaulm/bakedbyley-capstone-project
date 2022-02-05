@@ -1,0 +1,95 @@
+.user-form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  height: 100%;
+}
+.user-form-section .col-1 {
+  width: 100%;
+  max-width: 45rem;
+  margin-left: auto;
+  padding: 1.5rem 1rem;
+  display: grid;
+  justify-content: center;
+}
+.user-form {
+  max-width: 30rem;
+  width: 25rem;
+}
+.user-form h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  padding-top: 4rem;
+  color: var(--clr-grey-8);
+  letter-spacing: 0.2px;
+}
+.user-form h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--clr-grey-12);
+  margin-bottom: 3rem;
+}
+.user-form .form-control {
+  margin-bottom: 1rem;
+}
+.user-form .form-control label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-grey-9);
+  margin-bottom: 0.2rem;
+}
+.user-form .form-control input {
+  padding: 0.5rem 0.5rem;
+}
+.user-form .login-btn {
+  border: none;
+  background: var(--clr-primary-5);
+  border-radius: 3px;
+  color: var(--clr-white);
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-top: 0.3rem;
+  margin-bottom: 2.8rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.user-form .login-btn:hover {
+  background: var(--clr-primary-6);
+}
+.new-customer {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.new-customer a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+.new-customer a:active {
+  color: var(--clr-primary-5);
+}
+.user-form-section .col-2 {
+  width: 100%;
+  max-width: 50rem;
+  margin-right: auto;
+  background: var(--clr-primary-5);
+  display: grid;
+  place-items: center;
+}
+.user-form-section .col-2 img {
+  width: 30rem;
+  display: block;
+  /* margin: 7rem auto; */
+  padding: 0.5rem;
+}
+.user-form-section .col-2 .signup-svg {
+  width: 32rem;
+}
+
+@media screen and (min-height: 780px) {
+  .user-form-section {
+    min-height: 680px;
+  }
+}
