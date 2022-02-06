@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -28,6 +28,11 @@ const Carts = () => {
   // delete action
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
+  };
+
+  const navigate = useNavigate();
+  const checkoutHandler = () => {
+    navigate(`/login?redirect=checkout`);
   };
 
   if (cartItems.length === 0) {
@@ -83,7 +88,6 @@ const Carts = () => {
                       <span className="peso-sign">&#8369;</span>
                       {price}.00
                     </div>
-                    {console.log(qty)}
 
                     <div className="row-qty">
                       <select
@@ -130,7 +134,9 @@ const Carts = () => {
                     {cartItems.reduce((a, c) => a + c.qty, 0)} items
                   </p>
                 </div>
-                <div className="checkout-btn">Checkout</div>
+                <div className="checkout-btn" onClick={checkoutHandler}>
+                  Checkout
+                </div>
               </div>
             </div>
           </div>

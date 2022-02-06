@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import './Header.css';
+import { MdArrowDropDown } from 'react-icons/md';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { AiOutlineShoppingCart, AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { navLinks } from '../../data';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../actions/userActions';
 
 const Header = () => {
+  // cart
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  // login
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
@@ -18,6 +24,10 @@ const Header = () => {
     navigate('/cart', { replace: true });
   };
 
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <header>
       <div className="navbar container">
@@ -64,10 +74,23 @@ const Header = () => {
               )}
             </div>
           </div>
-
-          <NavLink to="/login" className="login-btn">
-            login
-          </NavLink>
+          {userInfo ? (
+            <div className="dropdown">
+              <NavLink to="#">
+                {`${userInfo.name}'s Account `}
+                <MdArrowDropDown className="dropdown-icon" />
+              </NavLink>
+              <ul className="dropdown-content">
+                <NavLink to="#logout" onClick={logoutHandler}>
+                  Log Out
+                </NavLink>
+              </ul>
+            </div>
+          ) : (
+            <NavLink to="/login" className="login-btn">
+              login
+            </NavLink>
+          )}
         </div>
       </div>
     </header>

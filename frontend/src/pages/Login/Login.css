@@ -87,9 +87,34 @@
 .user-form-section .col-2 .signup-svg {
   width: 32rem;
 }
+.form-error-alert {
+  background: var(--clr-red-light);
+  padding: 0.2rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.9rem;
+}
+.form-loading {
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+}
 
 @media screen and (min-height: 780px) {
   .user-form-section {
     min-height: 680px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .user-form-section {
+    grid-template-columns: 1fr;
+  }
+  .user-form-section .col-2 {
+    display: none;
   }
 }

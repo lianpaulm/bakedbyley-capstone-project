@@ -8,20 +8,23 @@ const registerUser = asyncWrapper(async (req, res) => {
 });
 
 // login user
-const loginUser = asyncWrapper(async (req, res) => {
+const loginUser = asyncWrapper(async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return res.status(400).json({ msg: 'Please enter email and password' });
+    // const error = new Error('Please enter email and password');
+    // error.status = 400;
+    // return next(error);
+    return res.status(400).json({ message: 'Please enter email and password' });
   }
 
   const user = await User.findOne({ email }).select('+password');
   if (!user) {
-    return res.status(401).json({ msg: 'Invalid email and password' });
+    return res.status(401).json({ message: 'Invalid email and password' });
   }
 
   const isPasswordMatched = await user.comparePassword(password);
   if (!isPasswordMatched) {
-    return res.status(401).json({ msg: 'Invalid email and password' });
+    return res.status(401).json({ message: 'Invalid email and password' });
   }
 
   res.status(200).json({ user });
@@ -29,7 +32,7 @@ const loginUser = asyncWrapper(async (req, res) => {
 
 // logout user
 const logout = asyncWrapper(async (req, res) => {
-  res.status(200).json({ msg: 'Logged Out' });
+  res.status(200).json({ message: 'Logged Out' });
 });
 
 // get all users -- admin
@@ -43,7 +46,7 @@ const getSingleUser = asyncWrapper(async (req, res) => {
   const { id: userID } = req.params;
   const user = await User.findOne({ _id: userID });
   if (!user) {
-    return res.status(404).json({ msg: 'user not found' });
+    return res.status(404).json({ message: 'user not found' });
   }
   res.status(200).json({ user });
 });
