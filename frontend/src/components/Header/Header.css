@@ -229,10 +229,13 @@ header {
     width: unset;
     box-shadow: unset;
     padding: 0;
+
+    /* for changing header align */
+    /* margin-right: auto; */
   }
   .nav-menu ul {
     flex-direction: row;
-    gap: 2.1rem;
+    gap: 2.2rem;
   }
   .main-nav-link {
     color: var(--clr-grey-5);
@@ -279,7 +282,7 @@ header {
 
   /* nav cta */
   .nav-cta {
-    gap: 2.1rem;
+    /* gap: 2.1rem; */
     margin-left: 0;
     /* margin-left: auto; */
   }
