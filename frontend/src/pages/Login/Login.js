@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { login } from '../../actions/userActions';
-import Loading from '../../components/Loading/Loading';
 import './Login.css';
 
 const Login = () => {
@@ -10,7 +9,9 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const location = useLocation();
-  const redirect = location.search ? location.search.split('=')[1] : '/';
+  const redirect = location.search
+    ? location.search.split('=')[1]
+    : '/products';
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo, loading, error } = userLogin;
@@ -70,7 +71,8 @@ const Login = () => {
               </div>
               {/* link to register */}
               <p className="new-customer">
-                Don't have an account yet? <Link to="/signup">Sign Up</Link>
+                Don't have an account yet?{' '}
+                <Link to={`/signup?redirect=${redirect}`}>Sign Up</Link>
               </p>
             </form>
           </div>

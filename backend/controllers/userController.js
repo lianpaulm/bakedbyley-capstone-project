@@ -3,6 +3,23 @@ const asyncWrapper = require('../middleware/asyncWrapper');
 
 // register a user
 const registerUser = asyncWrapper(async (req, res) => {
+  const { name, email, password } = req.body;
+  if (!name || !email || !password) {
+    return res
+      .status(400)
+      .json({ message: 'Please enter name, email and password' });
+  }
+  if (name.length < 4) {
+    return res
+      .status(400)
+      .json({ message: 'Name should be at least 4 characters' });
+  }
+  if (password.length <= 6) {
+    return res
+      .status(400)
+      .json({ message: 'Password should be greater than 6 characters' });
+  }
+
   const user = await User.create(req.body);
   res.status(201).json({ user });
 });
