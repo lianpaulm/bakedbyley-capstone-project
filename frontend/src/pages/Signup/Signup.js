@@ -75,7 +75,7 @@ const Signup = () => {
               </div>
               {/* sumbmit btn */}
               <div className="form-control">
-                <button type="submit" className="login-btn">
+                <button type="submit" className="form-submit-btn">
                   Create Account
                 </button>
               </div>

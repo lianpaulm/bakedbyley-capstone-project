@@ -12,10 +12,6 @@
   display: grid;
   justify-content: center;
 }
-.user-form {
-  max-width: 30rem;
-  width: 25rem;
-}
 .user-form h3 {
   font-size: 1rem;
   font-weight: 400;
@@ -39,23 +35,13 @@
   color: var(--clr-grey-9);
   margin-bottom: 0.2rem;
 }
-.user-form .form-control input {
-  padding: 0.5rem 0.5rem;
-}
-.user-form .login-btn {
-  border: none;
+.user-form .form-submit-btn {
   background: var(--clr-primary-5);
-  border-radius: 3px;
-  color: var(--clr-white);
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
   margin-top: 0.3rem;
   margin-bottom: 2.8rem;
-  cursor: pointer;
   transition: background 0.3s;
 }
-.user-form .login-btn:hover {
+.user-form .form-submit-btn:hover {
   background: var(--clr-primary-6);
 }
 .new-customer {
@@ -86,22 +72,6 @@
 }
 .user-form-section .col-2 .signup-svg {
   width: 32rem;
-}
-.form-error-alert {
-  background: var(--clr-red-light);
-  padding: 0.2rem;
-  text-align: center;
-  margin: 0.5rem 0;
-  border-radius: 3px;
-  color: white;
-  font-size: 0.9rem;
-}
-.form-loading {
-  display: grid;
-  place-items: center;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  padding-bottom: 0.5rem;
 }
 
 @media screen and (min-height: 780px) {

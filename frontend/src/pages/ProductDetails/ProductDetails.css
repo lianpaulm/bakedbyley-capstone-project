@@ -80,29 +80,9 @@ input[type='time'] {
   display: block;
 }
 .quantity-container select {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   font-size: 1rem;
 }
-.quantity-btn {
-  font-size: 1rem;
-  border: transparent;
-  padding: 0.3em 1.5em;
-  cursor: pointer;
-}
-.add-to-cart-btn {
-  border: transparent;
-  background: var(--clr-accent-main);
-  color: white;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  letter-spacing: 0.2px;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-.add-to-cart-btn:hover {
-  background: rgb(255, 101, 84);
-}
-
 @media screen and (min-height: 780px) {
   .product-section {
     min-height: 680px;

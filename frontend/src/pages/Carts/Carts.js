@@ -32,7 +32,7 @@ const Carts = () => {
 
   const navigate = useNavigate();
   const checkoutHandler = () => {
-    navigate(`/login?redirect=checkout`);
+    navigate('/login?redirect=/shipping');
   };
 
   if (cartItems.length === 0) {
@@ -45,7 +45,7 @@ const Carts = () => {
             <div className="empty-cart-text">
               <h3>Your shopping cart is currently empty</h3>
               <Link to="/products">
-                <p>Go Shopping</p>
+                <p className="form-submit-btn">Go Shopping</p>
               </Link>
             </div>
           </section>
@@ -134,7 +134,7 @@ const Carts = () => {
                     {cartItems.reduce((a, c) => a + c.qty, 0)} items
                   </p>
                 </div>
-                <div className="checkout-btn" onClick={checkoutHandler}>
+                <div className="form-submit-btn" onClick={checkoutHandler}>
                   Checkout
                 </div>
               </div>

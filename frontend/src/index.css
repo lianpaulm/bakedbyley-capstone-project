@@ -19,6 +19,7 @@ Variables
   --clr-primary-5: hsl(160, 18%, 33%);
   /* accent color */
   --clr-accent-main: hsl(6, 93%, 71%);
+  --clr-accent-main-hover: hsl(6, 100%, 67%);
   --clr-accent: hsl(48, 100%, 93%);
   --clr-accent-light: hsl(50, 81%, 94%);
   /* --clr-accent-light: hsl(40, 60%, 96%); */
@@ -179,6 +180,58 @@ img {
     padding-left: 1.8rem;
     padding-right: 1.8rem;
   }
+}
+
+/*
+=============== 
+form
+===============
+*/
+.user-form {
+  max-width: 30rem;
+  width: 25rem;
+}
+.form-control input {
+  padding: 0.5rem 0.5rem;
+}
+input,
+select {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid var(--clr-grey-8);
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+.form-submit-btn {
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background: var(--clr-accent-main);
+  color: var(--clr-white);
+  transition: background 0.3s;
+}
+.form-submit-btn:hover {
+  background: var(--clr-accent-main-hover);
+}
+/* form alert */
+.form-error-alert {
+  background: var(--clr-red-light);
+  padding: 0.2rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.9rem;
+}
+.form-loading {
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
 }
 
 /*

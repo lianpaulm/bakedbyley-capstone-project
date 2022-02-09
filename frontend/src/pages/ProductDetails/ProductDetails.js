@@ -74,9 +74,6 @@ const ProductDetails = () => {
             </h4>
             <div className="flex">
               <div className="quantity-container">
-                {/* <button className="quantity-btn">-</button>
-                <p className="quantity">0</p>
-                <button className="quantity-btn">+</button> */}
                 <label htmlFor="qty">Qty</label>
                 <div>
                   <select
@@ -92,7 +89,7 @@ const ProductDetails = () => {
                   </select>
                 </div>
               </div>
-              <button onClick={addToCartHandler} className="add-to-cart-btn">
+              <button onClick={addToCartHandler} className="form-submit-btn">
                 Add to cart
               </button>
             </div>

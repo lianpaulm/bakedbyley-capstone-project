@@ -1,0 +1,31 @@
+.checkout-steps {
+  display: flex;
+  margin-top: calc(var(--header-height) + 0.4rem);
+  max-width: 1300px;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+.checkout-steps > div {
+  border-top: 0.4rem solid grey;
+  color: grey;
+  flex: 1;
+  padding: 0.5rem;
+  letter-spacing: 0.5px;
+}
+.checkout-steps > div.active {
+  border-top-color: salmon;
+  color: salmon;
+}
+.checkout-form {
+  max-width: 35rem;
+  width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.checkout-form h3 {
+  font-size: 1.6rem;
+  margin: 1.5rem 0;
+  color: var(--clr-grey-8);
+}
