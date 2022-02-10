@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { saveShippingAddress } from '../../actions/cartActions';
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps';
 import Header from '../../components/Header/Header';
+import './Checkout.css';
 
 const ShippingAddress = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
   const cart = useSelector((state) => state.cart);
-  const { cartItems, shippingAddress } = cart;
+  const { shippingAddress } = cart;
 
   const navigate = useNavigate();
   // if not login - redirect to login page
@@ -19,18 +20,16 @@ const ShippingAddress = () => {
       navigate('/login');
     }
   }, []);
-  // if empty cart redirect to product page
-  useEffect(() => {
-    if (!cartItems.length) {
-      navigate('/products');
-    }
-  }, []);
 
-  const [fullName, setFullName] = useState(shippingAddress.fullName);
-  const [phoneNumber, setPhoneNumber] = useState(shippingAddress.phoneNumber);
-  const [address, setAddress] = useState(shippingAddress.address);
-  const [city, setCity] = useState(shippingAddress.city);
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+  const [fullName, setFullName] = useState(shippingAddress.fullName || '');
+  const [phoneNumber, setPhoneNumber] = useState(
+    shippingAddress.phoneNumber || ''
+  );
+  const [address, setAddress] = useState(shippingAddress.address || '');
+  const [city, setCity] = useState(shippingAddress.city || '');
+  const [postalCode, setPostalCode] = useState(
+    shippingAddress.postalCode || ''
+  );
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {
@@ -45,7 +44,7 @@ const ShippingAddress = () => {
     <div>
       <Header />
       <CheckoutSteps step1 step2 />
-      <form className="form" onSubmit={submitHandler} className="checkout-form">
+      <form className="form checkout-form" onSubmit={submitHandler}>
         <div>
           <h3>Shipping Address</h3>
         </div>
@@ -57,7 +56,6 @@ const ShippingAddress = () => {
             placeholder="Enter full name"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            required
           />
         </div>
 

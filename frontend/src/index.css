@@ -187,9 +187,22 @@ img {
 form
 ===============
 */
-.user-form {
+.form {
   max-width: 30rem;
-  width: 25rem;
+  width: 100%;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+}
+.form-control label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-grey-8);
+  margin-bottom: 0.2rem;
 }
 .form-control input {
   padding: 0.5rem 0.5rem;

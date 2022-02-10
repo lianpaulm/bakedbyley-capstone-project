@@ -33,7 +33,7 @@ const Login = () => {
       <main>
         <section className="user-form-section">
           <div className="col-1">
-            <form className="user-form" onSubmit={submitHandler}>
+            <form className="user-form form" onSubmit={submitHandler}>
               <div className="header">
                 <Link to="/" className="brand">
                   BakedbyLey

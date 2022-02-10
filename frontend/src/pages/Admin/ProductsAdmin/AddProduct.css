@@ -46,18 +46,16 @@
   width: 100%;
   padding: 0 2rem 2rem;
 }
-/* .add-product-form .form-control:first-child {
-  width: 50%;
-} */
-.form-control {
-  display: flex;
-  flex-direction: column;
+.add-product-form .form-control:first-child input {
+  /* width: 50%; */
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.add-product-form .form-control {
   margin-bottom: 0.5rem;
 }
-.form-control label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  /* color: var(--clr-grey-8); */
+.add-product-form .form-control label {
   color: var(--clr-primary-4);
 }
 /* .form-prices-cont {

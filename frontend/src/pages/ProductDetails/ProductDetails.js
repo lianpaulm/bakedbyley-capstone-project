@@ -59,11 +59,11 @@ const ProductDetails = () => {
             <h3>{name}</h3>
             <p>{description}</p>
             <div className="sched-input-container">
-              <div className="input-control">
+              <div className="form-control">
                 <label htmlFor="deliveryDate">Delivery Date</label>
                 <input type="date" id="deliveryDate" />
               </div>
-              <div className="input-control">
+              <div className="form-control">
                 <label htmlFor="deliveryTime">Delivery Time</label>
                 <input type="time" />
               </div>
