@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { savePaymentMethod } from '../../actions/cartActions';
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps';
 import Header from '../../components/Header/Header';
+import { HiOutlineCash } from 'react-icons/hi';
+import { BsPaypal } from 'react-icons/bs';
 
 const PaymentMethod = () => {
   const cart = useSelector((state) => state.cart);
@@ -35,27 +37,32 @@ const PaymentMethod = () => {
           <h3>Payment Method</h3>
         </div>
 
-        <div className="form-control">
-          <label htmlFor="paypal">PayPal</label>
-          <input
-            type="radio"
-            id="paypal"
-            value="PayPal"
-            name="paymentMethod"
-            checked={true}
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          />
+        <div className="form-control form-control-payment ">
+          <label className="payment-label">
+            <BsPaypal className="paypal-icon" />
+            PayPal
+            <input
+              type="radio"
+              value="PayPal"
+              name="paymentMethod"
+              checked={true}
+              required
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            />
+          </label>
         </div>
 
-        <div className="form-control">
-          <label htmlFor="cod">Cash on delivery</label>
-          <input
-            type="radio"
-            id="cod"
-            value="Cash on delivery"
-            name="paymentMethod"
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          />
+        <div className="form-control form-control-payment ">
+          <label className="payment-label">
+            <HiOutlineCash />
+            Cash on delivery
+            <input
+              type="radio"
+              value="Cash on delivery"
+              name="paymentMethod"
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            />
+          </label>
         </div>
         <div className="form-control">
           <button type="submit" className="form-submit-btn">

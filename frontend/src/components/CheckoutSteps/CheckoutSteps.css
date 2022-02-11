@@ -15,6 +15,6 @@
   letter-spacing: 0.5px;
 }
 .checkout-steps > div.active {
-  border-top-color: salmon;
-  color: salmon;
+  border-top-color: var(--clr-accent-main);
+  color: var(--clr-accent-main);
 }

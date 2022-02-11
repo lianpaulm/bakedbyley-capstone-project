@@ -20,6 +20,8 @@ Variables
   /* accent color */
   --clr-accent-main: hsl(6, 93%, 71%);
   --clr-accent-main-hover: hsl(6, 100%, 67%);
+  --clr-accent-main: hsl(148, 84%, 36%);
+  --clr-accent-main-hover: hsl(148, 80%, 29%);
   --clr-accent: hsl(48, 100%, 93%);
   --clr-accent-light: hsl(50, 81%, 94%);
   /* --clr-accent-light: hsl(40, 60%, 96%); */
@@ -50,6 +52,7 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
+  --clr-green: hsl(148, 84%, 36%);
   --clr-black: hsl(0, 0%, 13%);
   --transition: 0.3s;
   --spacing: 0.1rem;
@@ -202,7 +205,7 @@ form
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--clr-grey-8);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 .form-control input {
   padding: 0.5rem 0.5rem;
@@ -210,7 +213,7 @@ form
 input,
 select {
   background: hsl(0, 0%, 100%);
-  border: 1px solid var(--clr-grey-8);
+  border: 1px solid var(--clr-grey-12);
   border-radius: 3px;
   font-size: 0.9rem;
 }
