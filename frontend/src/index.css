@@ -18,10 +18,10 @@ Variables
   --clr-primary-5: #6c63ff;
   --clr-primary-5: hsl(160, 18%, 33%);
   /* accent color */
-  --clr-accent-main: hsl(6, 93%, 71%);
-  --clr-accent-main-hover: hsl(6, 100%, 67%);
   --clr-accent-main: hsl(148, 84%, 36%);
   --clr-accent-main-hover: hsl(148, 80%, 29%);
+  --clr-accent-main: hsl(6, 93%, 71%);
+  --clr-accent-main-hover: hsl(6, 100%, 67%);
   --clr-accent: hsl(48, 100%, 93%);
   --clr-accent-light: hsl(50, 81%, 94%);
   /* --clr-accent-light: hsl(40, 60%, 96%); */
