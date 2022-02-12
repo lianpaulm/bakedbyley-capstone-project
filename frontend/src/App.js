@@ -19,6 +19,7 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import ShippingAddress from './pages/ShippingAddress/ShippingAddress';
 import PaymentMethod from './pages/PaymentMethod/PaymentMethod';
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/shipping" element={<ShippingAddress />}></Route>
         <Route path="/payment" element={<PaymentMethod />}></Route>
+        <Route path="/placeorder" element={<PlaceOrder />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
 
         {/* admin path */}

@@ -6,6 +6,7 @@ import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps';
 import Header from '../../components/Header/Header';
 import { HiOutlineCash } from 'react-icons/hi';
 import { BsPaypal } from 'react-icons/bs';
+import './PaymentMethod.css';
 
 const PaymentMethod = () => {
   const cart = useSelector((state) => state.cart);
