@@ -8,8 +8,31 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [desc, setDesc] = useState('');
-  const [price, setPrice] = useState('');
+  const [variation, setVariation] = useState('');
+  const [inputList, setInputList] = useState([
+    { variationName: '', price: '' },
+  ]);
   const [featured, setFeatured] = useState(false);
+
+  // handle input change
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...inputList];
+    list[index][name] = value;
+    setInputList(list);
+  };
+
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const list = [...inputList];
+    list.splice(index, 1);
+    setInputList(list);
+  };
+
+  // handle click event of the Add button
+  const handleAddClick = () => {
+    setInputList([...inputList, { variationName: '', price: '' }]);
+  };
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -28,7 +51,8 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
         image: url,
         category,
         description: desc,
-        price,
+        variation,
+        price: inputList,
         featured,
       };
 
@@ -75,17 +99,49 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
             />
           </div>
 
-          {/* price */}
+          {/* variation */}
           <div className="form-control">
-            <label htmlFor="price">Price</label>
+            <label htmlFor="variation">Variation Name</label>
             <input
-              type="number"
-              id="price"
-              required={true}
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              type="text"
+              id="variation"
+              autoComplete="off"
+              value={variation}
+              onChange={(e) => setVariation(e.target.value)}
             />
           </div>
+          {inputList.map((x, i) => {
+            return (
+              <div key={i} className="form-prices-cont">
+                <input
+                  name="variationName"
+                  placeholder="enter variation name"
+                  value={x.variationName}
+                  onChange={(e) => handleInputChange(e, i)}
+                />
+                <input
+                  className="ml10"
+                  name="price"
+                  placeholder="enter price"
+                  value={x.price}
+                  onChange={(e) => handleInputChange(e, i)}
+                />
+                <div className="btn-box">
+                  {inputList.length !== 1 && (
+                    <button
+                      className="mr10"
+                      onClick={() => handleRemoveClick(i)}
+                    >
+                      Remove
+                    </button>
+                  )}
+                  {inputList.length - 1 === i && (
+                    <button onClick={handleAddClick}>Add</button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
 
           {/* description */}
           <div className="form-control">

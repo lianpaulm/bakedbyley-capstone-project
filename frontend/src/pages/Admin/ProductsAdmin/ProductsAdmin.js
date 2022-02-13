@@ -111,7 +111,7 @@ const ProductsAdmin = () => {
                       <div className="name-div">{name}</div>
                       <div>
                         <span className="peso-sign">&#8369;</span>
-                        {price}.00
+                        {price[0].price}.00
                       </div>
                       <div>{category}</div>
                       <div>

@@ -13,6 +13,9 @@ const ProductDetails = () => {
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(true);
   const [productDetails, setProductDetails] = useState([]);
+  const [varIndex, setVarIndex] = useState(0);
+  const [varName, setVarName] = useState('');
+  const [varPrice, setVarPrice] = useState(0);
 
   const fetchProductDetails = async () => {
     setLoading(true);
@@ -28,12 +31,9 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProductDetails();
   }, []);
-  const { name, category, image, price, description } = productDetails;
-
+  const { name, category, image, variation, price, description } =
+    productDetails;
   const navigate = useNavigate();
-  const addToCartHandler = () => {
-    navigate(`/cart/${productID}?qty=${qty}`, { replace: true });
-  };
 
   if (loading) {
     return (
@@ -45,6 +45,21 @@ const ProductDetails = () => {
       </>
     );
   }
+  const addToCartHandler = () => {
+    navigate(
+      `/cart/${productID}?qty=${qty}&price=${
+        !varPrice ? price[varIndex].price : varPrice
+      }&${variation}=${!varName ? price[varIndex].variationName : varName}`,
+      {
+        replace: true,
+      }
+    );
+  };
+  const changePrice = (index) => {
+    setVarIndex(index);
+    setVarName(price[index].variationName);
+    setVarPrice(price[index].price);
+  };
 
   return (
     <>
@@ -58,7 +73,8 @@ const ProductDetails = () => {
           <div className="info-col">
             <h3>{name}</h3>
             <p>{description}</p>
-            <div className="sched-input-container">
+
+            {/* <div className="sched-input-container">
               <div className="form-control">
                 <label htmlFor="deliveryDate">Delivery Date</label>
                 <input type="date" id="deliveryDate" />
@@ -67,11 +83,34 @@ const ProductDetails = () => {
                 <label htmlFor="deliveryTime">Delivery Time</label>
                 <input type="time" />
               </div>
+            </div> */}
+
+            <h4>{variation}</h4>
+            <div className="sizes-container">
+              {price.map((variation, i) => {
+                const { _id: id, variationName } = variation;
+                return (
+                  <button
+                    key={id}
+                    className={`${
+                      varIndex === i
+                        ? 'var-button var-button-active'
+                        : 'var-button'
+                    }`}
+                    onClick={() => changePrice(i)}
+                  >
+                    {variationName}
+                  </button>
+                );
+              })}
             </div>
+
             <h4>
               <span className="peso-sign">&#8369;</span>
-              {price}.00
+              {/* {price[varIndex].price}.00 */}
+              {!varPrice ? price[varIndex].price : varPrice}.00
             </h4>
+
             <div className="flex">
               <div className="quantity-container">
                 <label htmlFor="qty">Qty</label>

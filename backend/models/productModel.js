@@ -20,10 +20,24 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, 'product description must be provided'],
   },
+  variation: {
+    type: String,
+    required: [true, 'product variation must be provided'],
+  },
   price: {
-    type: Number,
-    required: [true, 'product price must be provided'],
-    maxLength: [8, 'Price cannot exceed 8 characters'],
+    type: [
+      {
+        variationName: {
+          type: String,
+          required: [true, 'variationName must be provided'],
+        },
+        price: {
+          type: Number,
+          required: [true, 'product price must be provided'],
+          maxLength: [8, 'Price cannot exceed 8 characters'],
+        },
+      },
+    ],
   },
   featured: {
     type: Boolean,

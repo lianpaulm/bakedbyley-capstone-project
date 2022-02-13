@@ -58,14 +58,14 @@
 .add-product-form .form-control label {
   color: var(--clr-primary-4);
 }
-/* .form-prices-cont {
+.form-prices-cont {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.5rem;
 }
 .form-prices-cont > input {
   width: 100%;
-} */
+}
 .add-product-form .form-control input:not(input[type='file']),
 textarea {
   font-size: 1rem;

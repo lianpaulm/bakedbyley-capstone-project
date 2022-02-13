@@ -13,7 +13,18 @@ import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 const Carts = () => {
   const { id: productID } = useParams();
   const location = useLocation();
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+  const qty = location.search
+    ? Number(location.search.split('&')[0].split('=')[1])
+    : 1;
+  const varPrice = location.search
+    ? Number(location.search.split('&')[1].split('=')[1])
+    : 1;
+  const varName = location.search
+    ? location.search.split('&')[2].split('=')[1]
+    : '6x4';
+  const variation = location.search
+    ? location.search.split('&')[2].split('=')[0]
+    : 'sizes';
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -21,9 +32,9 @@ const Carts = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (productID) {
-      dispatch(addToCart(productID, qty));
+      dispatch(addToCart(productID, qty, varPrice, varName, variation));
     }
-  }, [dispatch, productID, qty]);
+  }, [dispatch, productID, qty, varPrice, varName, variation]);
 
   // delete action
   const removeFromCartHandler = (id) => {
@@ -70,23 +81,32 @@ const Carts = () => {
             </div>
             <div className="cart-table-body">
               {cartItems.map((item) => {
-                const { name, image, price, product, qty } = item;
-                // const quantityValue = qty;
+                const {
+                  name,
+                  image,
+                  varPrice,
+                  varName,
+                  variation,
+                  product,
+                  qty,
+                } = item;
                 return (
                   <div key={product} className="cart-table-row">
                     <div className="row-product-cont">
                       <img src={image} alt={name} />
                       <div>
                         <h4>{name}</h4>
-                        <p className="product-sched">
+                        {/* <p className="product-sched">
                           Delivery Date: 02/02/2022 <br />
                           Delivery Time: 11am
-                        </p>
+                        </p> */}
+                        <p>{variation}</p>
+                        <p>{varName}</p>
                       </div>
                     </div>
                     <div className="row-price">
                       <span className="peso-sign">&#8369;</span>
-                      {price}.00
+                      {varPrice}.00
                     </div>
 
                     <div className="row-qty">
@@ -94,7 +114,15 @@ const Carts = () => {
                         id="qty"
                         value={qty}
                         onChange={(e) =>
-                          dispatch(addToCart(product, Number(e.target.value)))
+                          dispatch(
+                            addToCart(
+                              product,
+                              Number(e.target.value),
+                              varPrice,
+                              varName,
+                              variation
+                            )
+                          )
                         }
                       >
                         <option value="1">1</option>
@@ -107,7 +135,7 @@ const Carts = () => {
 
                     <div className="row-total">
                       <span className="peso-sign">&#8369;</span>
-                      {price * qty}.00
+                      {varPrice * qty}.00
                     </div>
                     <div
                       className="row-remove-btn"
@@ -125,7 +153,7 @@ const Carts = () => {
                   <p>SUBTOTAL</p>
                   <p className="subtotal-value">
                     <span className="peso-sign">&#8369;</span>
-                    {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                    {cartItems.reduce((a, c) => a + c.varPrice * c.qty, 0)}
                   </p>
                 </div>
                 <div className="cart-summary-flex">

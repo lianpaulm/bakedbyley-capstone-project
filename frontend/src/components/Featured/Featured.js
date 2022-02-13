@@ -88,7 +88,7 @@ const Featured = () => {
         <div className="carousel-container">
           <Slider {...settings}>
             {featuredProducts.map((product) => {
-              const { _id, name, image, category, price } = product;
+              const { _id, name, image, price } = product;
               return (
                 <Link to={`/products/featured/${_id}`} key={_id}>
                   <div className="card">
@@ -98,7 +98,7 @@ const Featured = () => {
                       <div>
                         <div className="price">
                           <span className="peso-sign">&#8369;</span>
-                          {price}.00
+                          {price[0].price}.00
                         </div>
                         <button className="add-cart-btn">Add to cart</button>
                       </div>

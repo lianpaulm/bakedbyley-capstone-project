@@ -83,7 +83,7 @@ const Products = () => {
                       <div>
                         <div className="price">
                           <span className="peso-sign">&#8369;</span>
-                          {price}.00
+                          {price[0].price}.00
                         </div>
                         <button className="add-cart-btn">View Cake</button>
                       </div>
