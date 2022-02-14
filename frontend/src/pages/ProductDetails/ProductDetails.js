@@ -107,8 +107,7 @@ const ProductDetails = () => {
 
             <h4>
               <span className="peso-sign">&#8369;</span>
-              {/* {price[varIndex].price}.00 */}
-              {!varPrice ? price[varIndex].price : varPrice}.00
+              {price[varIndex].price}.00
             </h4>
 
             <div className="flex">

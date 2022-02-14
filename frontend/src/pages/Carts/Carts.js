@@ -95,13 +95,17 @@ const Carts = () => {
                     <div className="row-product-cont">
                       <img src={image} alt={name} />
                       <div>
-                        <h4>{name}</h4>
+                        <Link to={`/products/${product}`}>
+                          <h4>{name}</h4>
+                        </Link>
                         {/* <p className="product-sched">
                           Delivery Date: 02/02/2022 <br />
                           Delivery Time: 11am
                         </p> */}
-                        <p>{variation}</p>
-                        <p>{varName}</p>
+                        <p className="var-text">
+                          <span>{variation}: </span>
+                          {varName}
+                        </p>
                       </div>
                     </div>
                     <div className="row-price">

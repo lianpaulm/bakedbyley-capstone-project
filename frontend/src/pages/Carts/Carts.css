@@ -74,20 +74,23 @@
   width: 225px;
   color: var(--clr-grey-8);
 }
-.row-product-cont p {
+/* .row-product-cont p {
   font-size: 0.9rem;
+} */
+.var-text span {
+  color: var(--clr-grey-12);
+  font-weight: 400;
 }
-
-/* table price */
-.row-price {
+.var-text,
+span {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /* table qty */
 .row-qty select {
   padding: 0.3rem 1.5rem;
-}
-
-.row-total {
 }
 
 /* table remove btn */

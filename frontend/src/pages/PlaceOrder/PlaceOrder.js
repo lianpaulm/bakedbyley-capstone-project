@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps';
 import Header from '../../components/Header/Header';
+import './PlaceOrder.css';
 
 const PlaceOrder = () => {
   const cart = useSelector((state) => state.cart);
@@ -16,15 +17,29 @@ const PlaceOrder = () => {
     }
   });
 
+  // order summary calculation
+  const toPrice = (num) => Number(num.toFixed(2));
+  cart.itemPrice = toPrice(
+    cartItems.reduce((a, c) => a + c.qty * c.varPrice, 0)
+  );
+  cart.shippingPrice = cart.itemPrice > 100 ? toPrice(40) : toPrice(0);
+  cart.totalPrice = cart.itemPrice + cart.shippingPrice;
+
+  // place order handler
+  const placeOrderHandler = (e) => {
+    e.preventDefault();
+    // TODO: dispatch place order action
+  };
+
   return (
     <div>
       <Header />
       <CheckoutSteps step1 step2 step3 step4 />
-      <div className="row top">
-        <div className="col-2">
+      <div className="place-order-section container">
+        <div className="col-1">
           {/* SHIPPING INFO */}
           <div className="card-body">
-            <h2>Shipping</h2>
+            <h3>Shipping</h3>
             <p>
               <strong>Name:</strong> {shippingAddress.fullName}
             </p>
@@ -39,7 +54,7 @@ const PlaceOrder = () => {
 
           {/* PAYMENT METHOD */}
           <div className="card-body">
-            <h2>Payment</h2>
+            <h3>Payment</h3>
             <p>
               <strong>Method:</strong> {paymentMethod}
             </p>
@@ -47,11 +62,83 @@ const PlaceOrder = () => {
 
           {/* ORDER ITEMS */}
           <div className="card-body">
-            <h2>Order Items</h2>
-            {/* todo: price info */}
+            <h3>Order Items</h3>
+            <div className="cart-table-body">
+              {cartItems.map((item) => {
+                const {
+                  name,
+                  image,
+                  varPrice,
+                  varName,
+                  variation,
+                  product,
+                  qty,
+                } = item;
+                return (
+                  <div key={product} className="order-table-row">
+                    <div className="col-product-cont">
+                      <img src={image} alt={name} />
+                      <div>
+                        <Link to={`/products/${product}`}>
+                          <h4>{name}</h4>
+                        </Link>
+                        {/* <p className="product-sched">
+                          Delivery Date: 02/02/2022 <br />
+                          Delivery Time: 11am
+                        </p> */}
+                      </div>
+                    </div>
+                    <div className="col-variation-cont">
+                      <p className="var-text">
+                        <span>{variation}: </span>
+                        {varName}
+                      </p>
+                    </div>
+                    <div className="col-price">
+                      {qty} x <span className="peso-sign">&#8369;</span>
+                      {varPrice}.00 = <span className="peso-sign">&#8369;</span>
+                      {qty * varPrice}.00
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-        <div className="col-1"></div>
+        <div className="col-2">
+          <div className="card-body">
+            <h3>Order Summary</h3>
+            <div className="row">
+              <strong>Items</strong>
+              <dir>
+                <span className="peso-sign">&#8369;</span>
+                {cart.itemPrice}.00
+              </dir>
+            </div>
+            <div className="row">
+              <strong>Shipping</strong>
+              <dir>
+                <span className="peso-sign">&#8369;</span>
+                {cart.shippingPrice}.00
+              </dir>
+            </div>
+            <div className="row order-total">
+              <strong>Order Total</strong>
+              <div>
+                <span className="peso-sign">&#8369;</span>
+                {cart.totalPrice}.00
+              </div>
+            </div>
+            <button
+              type="button"
+              className="form-submit-btn"
+              onClick={placeOrderHandler}
+              disabled={cartItems.length === 0}
+            >
+              Place Order
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

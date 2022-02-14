@@ -1,18 +1,20 @@
 .checkout-steps {
   display: flex;
   margin-top: calc(var(--header-height) + 0.4rem);
-  max-width: 1300px;
-  max-width: var(--max-width);
+  padding: 0 1rem;
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .checkout-steps > div {
-  border-top: 0.4rem solid grey;
+  border-top: 0.3rem solid grey;
   color: grey;
   flex: 1;
   padding: 0.5rem;
   letter-spacing: 0.5px;
+  font-size: 0.9em;
+  font-weight: 600;
 }
 .checkout-steps > div.active {
   border-top-color: var(--clr-accent-main);
