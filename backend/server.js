@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 // router
 const products = require('./routes/productsRoute');
+const orders = require('./routes/orderRoute');
 const user = require('./routes/userRoutes');
 // db
 const connectDB = require('./db/connect');
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/api/v1/', products);
+app.use('/api/v1/', orders);
 app.use('/api/v1/', user);
 
 app.use(notFound);
