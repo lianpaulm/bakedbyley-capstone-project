@@ -242,6 +242,26 @@ select {
   color: white;
   font-size: 0.9rem;
 }
+.form-error-alert-success {
+  background: var(--clr-green);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  /* display: inline-block; */
+  color: white;
+  font-size: 1rem;
+}
+.form-error-alert-danger {
+  background: var(--clr-red-light);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  /* display: inline-block; */
+  color: white;
+  font-size: 1rem;
+}
 .form-loading {
   display: grid;
   place-items: center;

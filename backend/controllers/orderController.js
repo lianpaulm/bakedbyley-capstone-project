@@ -17,4 +17,12 @@ const createOrder = asyncWrapper(async (req, res) => {
   res.status(201).json({ message: 'New Order Created', order: createdOrder });
 });
 
-module.exports = { createOrder };
+const getOrder = asyncWrapper(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+  if (!order) {
+    res.status(404).json({ message: 'Order Not Found' });
+  }
+  res.status(200).json({ order });
+});
+
+module.exports = { createOrder, getOrder };
