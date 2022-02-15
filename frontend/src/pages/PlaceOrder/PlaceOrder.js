@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { createOrder } from '../../actions/orderAction';
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps';
 import Header from '../../components/Header/Header';
+import { ORDER_CREATE_RESET } from '../../constants/orderConstants';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress, paymentMethod, cartItems } = cart;
 
-  console.log(cartItems);
   const navigate = useNavigate();
   useEffect(() => {
     if (!paymentMethod) {
       navigate('/payment', { replace: true });
     }
   });
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { loading, success, error, order } = orderCreate;
 
   // order summary calculation
   const toPrice = (num) => Number(num.toFixed(2));
@@ -26,11 +29,17 @@ const PlaceOrder = () => {
   cart.totalPrice = cart.itemPrice + cart.shippingPrice;
 
   // place order handler
-  const placeOrderHandler = (e) => {
-    e.preventDefault();
-    // TODO: dispatch place order action
+  const dispatch = useDispatch();
+  const placeOrderHandler = () => {
+    dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
   };
-
+  console.log(success);
+  useEffect(() => {
+    if (success) {
+      navigate(`/order/${order._id}`);
+      dispatch({ type: ORDER_CREATE_RESET });
+    }
+  }, [success]);
   return (
     <div>
       <Header />
@@ -138,6 +147,8 @@ const PlaceOrder = () => {
               Place Order
             </button>
           </div>
+          {loading && <div className="form-loading">Loading...</div>}
+          {error && <p className="form-error-alert">{error}</p>}
         </div>
       </div>
     </div>
