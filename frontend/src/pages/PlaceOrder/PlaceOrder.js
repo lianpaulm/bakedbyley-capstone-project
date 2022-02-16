@@ -33,13 +33,12 @@ const PlaceOrder = () => {
   const placeOrderHandler = () => {
     dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
   };
-  console.log(success);
   useEffect(() => {
     if (success) {
       navigate(`/order/${order._id}`);
       dispatch({ type: ORDER_CREATE_RESET });
     }
-  }, [success]);
+  }, [dispatch, success, navigate, order]);
   return (
     <div>
       <Header />

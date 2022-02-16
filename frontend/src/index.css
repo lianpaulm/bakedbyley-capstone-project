@@ -50,6 +50,7 @@ Variables
   --clr-white: hsl(0, 0%, 100%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
+  --clr-red-light-2: rgb(255, 199, 199);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-green: hsl(148, 84%, 36%);
@@ -240,27 +241,28 @@ select {
   margin: 0.5rem 0;
   border-radius: 3px;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .form-error-alert-success {
-  background: var(--clr-green);
+  background: hsl(124, 100%, 89%);
+  color: hsl(148, 83%, 16%);
   padding: 0.5rem;
   margin-top: 0.5rem;
   letter-spacing: 0.5px;
   border-radius: 3px;
   /* display: inline-block; */
-  color: white;
   font-size: 1rem;
 }
 .form-error-alert-danger {
-  background: var(--clr-red-light);
+  background: var(--clr-red-light-2);
   padding: 0.5rem;
   margin-top: 0.5rem;
   letter-spacing: 0.5px;
   border-radius: 3px;
   /* display: inline-block; */
   color: white;
-  font-size: 1rem;
+  color: var(--clr-red-dark);
+  font-size: 0.9rem;
 }
 .form-loading {
   display: grid;

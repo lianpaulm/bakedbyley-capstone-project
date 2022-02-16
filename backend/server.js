@@ -4,6 +4,7 @@ const app = express();
 const products = require('./routes/productsRoute');
 const orders = require('./routes/orderRoute');
 const user = require('./routes/userRoutes');
+const config = require('./routes/configRoute');
 // db
 const connectDB = require('./db/connect');
 require('dotenv').config();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/', products);
 app.use('/api/v1/', orders);
 app.use('/api/v1/', user);
+app.use('/api/v1/config', config);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);

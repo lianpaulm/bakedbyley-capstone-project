@@ -3,7 +3,7 @@ const asyncWrapper = require('../middleware/asyncWrapper');
 
 const createOrder = asyncWrapper(async (req, res) => {
   if (req.body.orderItems.length === 0) {
-    res.status(400).json({ message: 'Cart is empty' });
+    return res.status(400).json({ message: 'Cart is empty' });
   }
   const order = new Order({
     orderItems: req.body.orderItems,
@@ -20,9 +20,26 @@ const createOrder = asyncWrapper(async (req, res) => {
 const getOrder = asyncWrapper(async (req, res) => {
   const order = await Order.findById(req.params.id);
   if (!order) {
-    res.status(404).json({ message: 'Order Not Found' });
+    return res.status(404).json({ message: 'Order Not Found' });
   }
   res.status(200).json({ order });
 });
 
-module.exports = { createOrder, getOrder };
+const updatePayment = asyncWrapper(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+  if (!order) {
+    return res.status(404).json({ message: 'Order Not Found' });
+  }
+  order.isPaid = true;
+  order.paidAt = Date.now();
+  order.paymentResult = {
+    id: req.body.id,
+    status: req.body.status,
+    update_time: req.body.update_time,
+    email_address: req.body.email_address,
+  };
+  const updatedOrder = await order.save();
+  res.json({ message: 'Order Paid', order: updatedOrder });
+});
+
+module.exports = { createOrder, getOrder, updatePayment };
