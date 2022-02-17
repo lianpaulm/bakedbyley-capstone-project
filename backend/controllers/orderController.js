@@ -42,4 +42,12 @@ const updatePayment = asyncWrapper(async (req, res) => {
   res.json({ message: 'Order Paid', order: updatedOrder });
 });
 
-module.exports = { createOrder, getOrder, updatePayment };
+const getOrderMine = asyncWrapper(async (req, res) => {
+  const orders = await Order.find({ orderId: req._id });
+  if (!orders) {
+    return res.status(404).json({ message: 'Orders Not Found' });
+  }
+  res.json({ orders });
+});
+
+module.exports = { createOrder, getOrder, updatePayment, getOrderMine };

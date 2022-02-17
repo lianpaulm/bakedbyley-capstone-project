@@ -21,6 +21,7 @@ import ShippingAddress from './pages/ShippingAddress/ShippingAddress';
 import PaymentMethod from './pages/PaymentMethod/PaymentMethod';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Order from './pages/Order/Order';
+import OrderHistory from './pages/OrderHistory/OrderHistory';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/payment" element={<PaymentMethod />}></Route>
         <Route path="/placeorder" element={<PlaceOrder />}></Route>
         <Route path="/order/:id" element={<Order />}></Route>
+        <Route path="/orderhistory" element={<OrderHistory />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
 
         {/* admin path */}

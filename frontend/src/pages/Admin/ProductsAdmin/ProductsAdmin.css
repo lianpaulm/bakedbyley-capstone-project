@@ -37,6 +37,15 @@
 }
 .table-header {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+  width: 100%;
+  background: var(--clr-accent);
+  gap: 1rem;
+  padding: 1rem;
+}
+.products-admin-container .table-header {
+  display: grid;
   grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
   width: 100%;
   background: var(--clr-accent);
@@ -49,6 +58,17 @@
   /* border: 1px solid red; */
 }
 .table-row {
+  padding: 0.3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  transition: background 0.3s;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-grey-11);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.products-admin-container .table-row {
   padding: 0.3rem 1rem;
   display: grid;
   grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;

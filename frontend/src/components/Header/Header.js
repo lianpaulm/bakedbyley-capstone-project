@@ -81,9 +81,14 @@ const Header = () => {
                 <MdArrowDropDown className="dropdown-icon" />
               </NavLink>
               <ul className="dropdown-content">
-                <NavLink to="#logout" onClick={logoutHandler}>
-                  Log Out
-                </NavLink>
+                <li>
+                  <NavLink to="/orderhistory">Order History</NavLink>
+                </li>
+                <li>
+                  <NavLink to="#logout" onClick={logoutHandler}>
+                    Log Out
+                  </NavLink>
+                </li>
               </ul>
             </div>
           ) : (
