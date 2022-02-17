@@ -112,17 +112,17 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
           </div>
           {inputList.map((x, i) => {
             return (
-              <div key={i} className="form-prices-cont">
+              <div key={i} className="form-prices-cont form-control">
                 <input
                   name="variationName"
-                  placeholder="enter variation name"
+                  placeholder="Enter variation"
                   value={x.variationName}
                   onChange={(e) => handleInputChange(e, i)}
                 />
                 <input
                   className="ml10"
                   name="price"
-                  placeholder="enter price"
+                  placeholder="Enter price"
                   value={x.price}
                   onChange={(e) => handleInputChange(e, i)}
                 />

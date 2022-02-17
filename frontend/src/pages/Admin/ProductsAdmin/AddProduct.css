@@ -58,6 +58,15 @@
 .add-product-form .form-control label {
   color: var(--clr-primary-4);
 }
+.form-prices-cont input::placeholder {
+  font-size: 0.9rem;
+}
+.form-prices-cont button {
+  padding: 0.1em 0.5rem;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
 .form-prices-cont {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

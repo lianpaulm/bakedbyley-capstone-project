@@ -87,8 +87,8 @@ const ProductsAdmin = () => {
           <div className="products-admin-container">
             <div className="products-admin-header">
               {/* add product button */}
-              <button onClick={() => setShow(true)}>Add Product</button>
-              <h3>All Products</h3>
+              <button onClick={() => setShow(true)}>Add Cake</button>
+              <h3>All Cakes</h3>
             </div>
             <div className="table-container">
               <div className="table-header">
