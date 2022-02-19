@@ -73,7 +73,7 @@ const ProductsAdmin = () => {
   return (
     <>
       <HeaderAdmin />
-      <main>
+      <main className="main">
         {alert.show && <Alert {...alert} removeAlert={showAlert} />}
         {show && (
           <AddProduct

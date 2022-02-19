@@ -1,0 +1,22 @@
+.order-history-cont {
+  margin-top: var(--header-height);
+  max-width: 1100px;
+}
+.order-history-cont h1 {
+  padding: 1.4rem 0;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  color: var(--clr-grey-8);
+}
+.order-history-cont .table-header {
+  grid-template-columns: 16rem repeat(5, 1fr);
+  background: var(--clr-accent);
+  padding: 1rem;
+}
+.order-history-cont .table-row {
+  padding: 0.3rem 1rem;
+  grid-template-columns: 16rem repeat(5, 1fr);
+  transition: background 0.3s;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}

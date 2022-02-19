@@ -46,6 +46,7 @@ Variables
   --clr-grey-9: hsl(0, 0%, 22%);
   --clr-grey-10: hsl(0, 0%, 95%);
   --clr-grey-11: hsl(0, 0%, 73%);
+  --clr-grey-border: hsl(0, 0%, 85%);
   --clr-grey-12: hsl(0, 0%, 36%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-red-dark: hsl(360, 67%, 44%);
@@ -274,6 +275,42 @@ select {
 
 /*
 =============== 
-hero
+table
 ===============
 */
+.table-container {
+  box-shadow: var(--shadow-1);
+  margin: 0 1rem 2rem 0;
+}
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+  width: 100%;
+  background: var(--clr-accent);
+  gap: 1rem;
+  padding: 1rem;
+}
+.table-row {
+  padding: 0.3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  transition: background 0.3s;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-grey-border);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.table-row:hover {
+  background: var(--clr-primary-9);
+}
+.table-action-btn {
+  padding: 0.4rem 1.5rem;
+  font-size: 0.9rem;
+  background: var(--clr-accent-main);
+  color: white;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 5rem;
+}
