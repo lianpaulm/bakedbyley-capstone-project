@@ -8,6 +8,7 @@ import { IoMdClose } from 'react-icons/io';
 import { navLinks } from '../../data';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../actions/userActions';
+// import { FaRegUserCircle } from 'react-icons/fa';
 
 const Header = () => {
   // cart
@@ -77,7 +78,8 @@ const Header = () => {
           {userInfo ? (
             <div className="dropdown">
               <NavLink to="#">
-                {`${userInfo.name}'s Account `}
+                {/* <FaRegUserCircle className="avatar-svg" /> */}
+                {userInfo.name}
                 <MdArrowDropDown className="dropdown-icon" />
               </NavLink>
               <ul className="dropdown-content">

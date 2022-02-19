@@ -13,8 +13,21 @@ import SidebarAdmin from '../Sidebar/SidebarAdmin';
 import AddProduct from './AddProduct';
 // axios
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const ProductsAdmin = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const navigate = useNavigate();
+  // if not login - redirect to login page
+  useEffect(() => {
+    if (!userInfo) {
+      navigate('/login');
+    }
+  }, [navigate, userInfo]);
+
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [show, setShow] = useState(false);

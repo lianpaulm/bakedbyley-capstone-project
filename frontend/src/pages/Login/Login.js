@@ -23,7 +23,10 @@ const Login = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (userInfo) {
+    if (userInfo && userInfo.role === 'admin') {
+      navigate('/admin/products');
+    }
+    if (userInfo && userInfo.role === 'user') {
       navigate(redirect, { replace: true });
     }
   }, [userInfo, redirect, navigate]);

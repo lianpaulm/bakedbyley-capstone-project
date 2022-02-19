@@ -20,7 +20,7 @@
   font-size: 1.3rem;
   font-weight: 800;
 }
-.header-admin button {
+/* .header-admin button {
   cursor: pointer;
   background: none;
   display: grid;
@@ -32,7 +32,16 @@
   font-size: 1.5rem;
   padding: 0;
   color: var(--clr-white);
+} */
+.header-admin .dropdown a {
+  color: white;
 }
-.header-admin button:first-of-type > svg {
-  font-size: 1.8rem;
+.header-admin .avatar-svg,
+.profile .avatar-svg {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+.profile {
+  display: flex;
 }
