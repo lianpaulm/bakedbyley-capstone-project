@@ -2,13 +2,16 @@
 .products-admin-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 0 1.5rem;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
 }
 .products-admin-header > h3 {
   font-size: 1.7rem;
   margin-bottom: 0;
   font-weight: 800;
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
   color: var(--clr-grey-9);
 }
 .table-row .peso-sign {
@@ -18,7 +21,7 @@
 .products-admin-header > button {
   background: none;
   border: 2px solid var(--clr-primary-5);
-  padding: 0.5em 0.7em;
+  padding: 0.5em 1em;
   color: var(--clr-primary-5);
   font-weight: 500;
   cursor: pointer;
@@ -35,33 +38,15 @@
   grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
   padding: 1rem;
 }
-.table-header > div {
-  font-weight: 600;
-  color: var(--clr-grey-9);
-}
-
 .products-admin-container .table-row {
   padding: 0.3rem 1rem;
   grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
 }
-
-.table-row > div {
-  font-size: 0.9rem;
-}
-.table-row > div:first-child {
+.products-admin-container .table-row .name-div {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.table-row .image-div img {
-  width: 4rem;
-  height: 4rem;
-  object-fit: cover;
-}
-.table-row .name-div {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.table-row div:last-child {
+.products-admin-container .table-row div:last-child {
   display: flex;
 }
 /* action btn */

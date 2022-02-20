@@ -23,7 +23,7 @@ const ProductsAdmin = () => {
   const navigate = useNavigate();
   // if not login - redirect to login page
   useEffect(() => {
-    if (!userInfo) {
+    if (!userInfo || userInfo.role === 'user') {
       navigate('/login');
     }
   }, [navigate, userInfo]);
@@ -100,8 +100,8 @@ const ProductsAdmin = () => {
           <div className="products-admin-container">
             <div className="products-admin-header">
               {/* add product button */}
-              <button onClick={() => setShow(true)}>Add Cake</button>
               <h3>All Cakes</h3>
+              <button onClick={() => setShow(true)}>Add Cake</button>
             </div>
             <div className="table-container">
               <div className="table-header">

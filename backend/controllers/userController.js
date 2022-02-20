@@ -54,8 +54,8 @@ const logout = asyncWrapper(async (req, res) => {
 
 // get all users -- admin
 const getAllUsers = asyncWrapper(async (req, res) => {
-  const user = await User.find({});
-  res.status(200).json({ user });
+  const users = await User.find({});
+  res.status(200).json({ users });
 });
 
 // get single user -- admin

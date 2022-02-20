@@ -1,0 +1,8 @@
+.users-admin-container .table-header {
+  grid-template-columns: 16rem 9rem 17rem 10rem 1fr;
+  padding: 1rem;
+}
+.users-admin-container .table-row {
+  padding: 1rem;
+  grid-template-columns: 16rem 9rem 17rem 10rem 1fr;
+}
