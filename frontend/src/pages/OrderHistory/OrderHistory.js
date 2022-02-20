@@ -8,14 +8,20 @@ import { listOrderMine } from '../../actions/orderAction';
 import './OrderHistory.css';
 
 const OrderHistory = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const orderMineList = useSelector((state) => state.orderMineList);
   const { loading, error, orders } = orderMineList;
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
+    if (!userInfo) {
+      navigate('/login');
+    }
     dispatch(listOrderMine());
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   return (
     <>
