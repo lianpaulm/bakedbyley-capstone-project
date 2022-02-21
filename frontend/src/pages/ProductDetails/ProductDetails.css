@@ -28,16 +28,16 @@
 /* product name */
 .info-col h3 {
   font-weight: 800;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 /* product desc */
 .info-col > p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--clr-grey-9);
 }
 /* product sched */
 .sched-input-container {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   display: flex;
   gap: 0.8rem;
 }
@@ -45,58 +45,70 @@
   font-size: 0.8rem;
   font-weight: 500;
 }
-input[type='date'],
-input[type='time'] {
-  padding: 0.4rem;
+.info-col .var-name {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: var(--clr-grey-8);
 }
-
 /* product variations */
 .sizes-container {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.8rem;
+  margin-bottom: 1.1rem;
 }
 .var-button {
   cursor: pointer;
   border: 1px solid grey;
+  letter-spacing: 0.2px;
   font-size: 1.1rem;
   padding: 0.3rem 1.5rem;
   background: transparent;
+  border-radius: 3px;
 }
 .var-button-active {
-  border: 1px solid var(--clr-accent-main);
-  color: var(--clr-accent-main);
+  /* border: 1px solid var(--clr-accent-main);
+  color: var(--clr-accent-main); */
+  background: var(--clr-accent-main);
+  border: 1px solid transparent;
+  color: white;
 }
 
 /* product price */
 .info-col h4 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 0.9rem;
+  color: var(--clr-accent-main);
 }
 .info-col .peso-sign {
-  color: var(--clr-grey-7);
+  color: var(--clr-accent-main);
   font-size: 1.2rem;
   padding-right: 1px;
 }
 .info-col .flex {
   display: flex;
   gap: 0.8rem;
-}
-/* quantity cont */
-.quantity-container {
-  /* background: whitesmoke; */
-  display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
+
 .quantity-container label {
-  /* font-weight: 500; */
-  font-size: 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.quantity-container select,
+.delivery-time-select,
+.form-control .delivery-date-select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-grey-8);
+  font-family: 'Poppins', sans-serif;
+  border-color: gray;
+  max-width: 11rem;
 }
 .quantity-container select {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  margin-bottom: 0.6rem;
 }
 
 @media screen and (min-height: 780px) {

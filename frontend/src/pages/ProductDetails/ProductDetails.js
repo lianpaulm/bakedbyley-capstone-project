@@ -5,6 +5,10 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Loading from '../../components/Loading/Loading';
+// date picker package
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import { useNavigate, useParams } from 'react-router-dom';
 import './ProductDetails.css';
 
@@ -16,6 +20,28 @@ const ProductDetails = () => {
   const [varIndex, setVarIndex] = useState(0);
   const [varName, setVarName] = useState('');
   const [varPrice, setVarPrice] = useState(0);
+  const [deliveryTime, setDeliveryTime] = useState('9am - 1pm');
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  // delivery Date
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  const month = selectedDate.getMonth();
+  const day = selectedDate.getDate();
+  const year = selectedDate.getFullYear();
+  const deliveryDate = `${months[month]}/${day}/${year}`;
 
   const fetchProductDetails = async () => {
     setLoading(true);
@@ -74,18 +100,32 @@ const ProductDetails = () => {
             <h3>{name}</h3>
             <p>{description}</p>
 
-            {/* <div className="sched-input-container">
+            <div className="sched-input-container">
               <div className="form-control">
                 <label htmlFor="deliveryDate">Delivery Date</label>
-                <input type="date" id="deliveryDate" />
+                <DatePicker
+                  className="delivery-date-select"
+                  selected={selectedDate}
+                  onChange={(date) => setSelectedDate(date)}
+                  minDate={new Date()}
+                ></DatePicker>
               </div>
               <div className="form-control">
                 <label htmlFor="deliveryTime">Delivery Time</label>
-                <input type="time" />
+                <select
+                  className="delivery-time-select"
+                  id="deliveryTime"
+                  value={deliveryTime}
+                  onChange={(e) => setDeliveryTime(e.target.value)}
+                >
+                  <option value="9am - 1pm">9am - 1pm</option>
+                  <option value="1pm - 4pm">1pm - 4pm</option>
+                  <option value="4pm - 6pm">4pm - 6pm</option>
+                </select>
               </div>
-            </div> */}
+            </div>
 
-            <h4>{variation}</h4>
+            <h4 className="var-name">{variation}</h4>
             <div className="sizes-container">
               {price.map((variation, i) => {
                 const { _id: id, variationName } = variation;
@@ -111,8 +151,8 @@ const ProductDetails = () => {
             </h4>
 
             <div className="flex">
-              <div className="quantity-container">
-                <label htmlFor="qty">Qty</label>
+              <div className="quantity-container form-control">
+                <label htmlFor="qty">Quantity</label>
                 <div>
                   <select
                     id="qty"

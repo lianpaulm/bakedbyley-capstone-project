@@ -68,7 +68,6 @@ export const listOrderMine = () => async (dispatch) => {
   dispatch({ type: ORDER_MINE_LIST_REQUEST });
   try {
     const { data } = await axios.get('/api/v1/orders/mine');
-    console.log(data);
     dispatch({ type: ORDER_MINE_LIST_SUCCESS, payload: data.orders });
   } catch (error) {
     const message =
