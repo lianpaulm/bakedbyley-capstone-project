@@ -1,0 +1,12 @@
+.order-admin-container .table-header {
+  grid-template-columns: 15rem repeat(5, 1fr);
+  background: var(--clr-accent);
+  padding: 1rem;
+}
+.order-admin-container .table-row {
+  padding: 0.3rem 1rem;
+  grid-template-columns: 15rem repeat(5, 1fr);
+  transition: background 0.3s;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}

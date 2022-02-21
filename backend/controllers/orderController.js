@@ -50,4 +50,19 @@ const getOrderMine = asyncWrapper(async (req, res) => {
   res.json({ orders });
 });
 
-module.exports = { createOrder, getOrder, updatePayment, getOrderMine };
+// ADMIN
+const getOrderAdmin = asyncWrapper(async (req, res) => {
+  const orders = await Order.find({ orderId: req._id });
+  if (!orders) {
+    return res.status(404).json({ message: 'Orders Not Found' });
+  }
+  res.json({ orders });
+});
+
+module.exports = {
+  createOrder,
+  getOrder,
+  updatePayment,
+  getOrderMine,
+  getOrderAdmin,
+};

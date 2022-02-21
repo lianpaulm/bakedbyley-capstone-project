@@ -1,6 +1,9 @@
 import axios from 'axios';
 import {
   CART_EMPTY,
+  ORDER_ADMIN_LIST_FAIL,
+  ORDER_ADMIN_LIST_REQUEST,
+  ORDER_ADMIN_LIST_SUCCESS,
   ORDER_CREATE_FAIL,
   ORDER_CREATE_REQUEST,
   ORDER_CREATE_SUCCESS,
@@ -75,5 +78,20 @@ export const listOrderMine = () => async (dispatch) => {
         ? error.response.data.message
         : error.message;
     dispatch({ type: ORDER_MINE_LIST_FAIL, payload: message });
+  }
+};
+
+// ADMIN
+export const listOrderAdmin = () => async (dispatch) => {
+  dispatch({ type: ORDER_ADMIN_LIST_REQUEST });
+  try {
+    const { data } = await axios.get('/api/v1/orders/admin');
+    dispatch({ type: ORDER_ADMIN_LIST_SUCCESS, payload: data.orders });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: ORDER_ADMIN_LIST_FAIL, payload: message });
   }
 };

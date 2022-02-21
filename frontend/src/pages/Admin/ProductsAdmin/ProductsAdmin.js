@@ -50,7 +50,7 @@ const ProductsAdmin = () => {
   };
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [alert]);
 
   // delete product
   const deleteProduct = async (id) => {
@@ -83,6 +83,7 @@ const ProductsAdmin = () => {
       </>
     );
   }
+
   return (
     <>
       <HeaderAdmin />

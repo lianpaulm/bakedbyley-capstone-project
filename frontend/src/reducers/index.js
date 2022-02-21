@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { cartReducer } from './cartReducer';
 import {
+  orderAdminListReducer,
   orderCreateReducer,
   orderDetailsReducer,
   orderMineListReducer,
@@ -23,4 +24,5 @@ export default combineReducers({
   orderDetails: orderDetailsReducer,
   orderPay: orderPayReducer,
   orderMineList: orderMineListReducer,
+  orderAdminList: orderAdminListReducer,
 });

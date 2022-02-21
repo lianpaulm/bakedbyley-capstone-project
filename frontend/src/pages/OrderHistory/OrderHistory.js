@@ -36,8 +36,8 @@ const OrderHistory = () => {
           <div className="table-container">
             <div className="table-header">
               <div>ID</div>
-              <div>Date</div>
-              <div>Total</div>
+              <div>Ordered Date</div>
+              <div>Total Price</div>
               <div>Paid</div>
               <div>Delivered</div>
               <div>Action</div>
