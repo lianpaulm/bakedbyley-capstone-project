@@ -96,7 +96,7 @@ const Order = () => {
             </p>
             {order.isDelivered ? (
               <p className="form-error-alert-success">
-                Delivered at {order.deliveredAt}
+                Delivered at {order.deliveredAt.substring(0, 10)}
               </p>
             ) : (
               <p className="form-error-alert-danger">Not Delivered</p>
@@ -110,7 +110,9 @@ const Order = () => {
               <strong>Method:</strong> {order.paymentMethod}
             </p>
             {order.isPaid ? (
-              <p className="form-error-alert-success">Paid at {order.paidAt}</p>
+              <p className="form-error-alert-success">
+                Paid at {order.paidAt.substring(0, 10)}
+              </p>
             ) : (
               <p className="form-error-alert-danger">Not Paid</p>
             )}
