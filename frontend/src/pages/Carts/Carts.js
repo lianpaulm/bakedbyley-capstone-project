@@ -25,6 +25,12 @@ const Carts = () => {
   const variation = location.search
     ? location.search.split('&')[2].split('=')[0]
     : 'sizes';
+  const deliveryDate = location.search
+    ? location.search.split('&')[3].split('=')[1]
+    : '';
+  const deliveryTime = location.search
+    ? location.search.split('&')[4].split('=')[1]
+    : '';
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -32,9 +38,28 @@ const Carts = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (productID) {
-      dispatch(addToCart(productID, qty, varPrice, varName, variation));
+      dispatch(
+        addToCart(
+          productID,
+          qty,
+          varPrice,
+          varName,
+          variation,
+          deliveryDate,
+          deliveryTime
+        )
+      );
     }
-  }, [dispatch, productID, qty, varPrice, varName, variation]);
+  }, [
+    dispatch,
+    productID,
+    qty,
+    varPrice,
+    varName,
+    variation,
+    deliveryDate,
+    deliveryTime,
+  ]);
 
   // delete action
   const removeFromCartHandler = (id) => {
@@ -75,6 +100,7 @@ const Carts = () => {
             <div className="cart-table-header">
               <div>PRODUCT</div>
               <div>PRICE</div>
+              <div>VARIATION</div>
               <div>QTY</div>
               <div>TOTAL</div>
               <div></div>
@@ -89,7 +115,10 @@ const Carts = () => {
                   variation,
                   product,
                   qty,
+                  deliveryDate,
+                  deliveryTime,
                 } = item;
+
                 return (
                   <div key={product} className="cart-table-row">
                     <div className="row-product-cont">
@@ -98,19 +127,23 @@ const Carts = () => {
                         <Link to={`/products/${product}`}>
                           <h4>{name}</h4>
                         </Link>
-                        {/* <p className="product-sched">
-                          Delivery Date: 02/02/2022 <br />
-                          Delivery Time: 11am
-                        </p> */}
-                        <p className="var-text">
-                          <span>{variation}: </span>
-                          {varName}
+                        <p className="product-sched">
+                          <span>Delivery Date:</span> {deliveryDate} <br />
+                          <span>Delivery Time:</span> {deliveryTime}
                         </p>
                       </div>
                     </div>
+
                     <div className="row-price">
                       <span className="peso-sign">&#8369;</span>
                       {varPrice}.00
+                    </div>
+
+                    <div className="row-price">
+                      <p className="var-text">
+                        <span>{variation}: </span>
+                        {varName}
+                      </p>
                     </div>
 
                     <div className="row-qty">
@@ -124,7 +157,9 @@ const Carts = () => {
                               Number(e.target.value),
                               varPrice,
                               varName,
-                              variation
+                              variation,
+                              deliveryDate,
+                              deliveryTime
                             )
                           )
                         }

@@ -20,7 +20,7 @@ const ProductDetails = () => {
   const [varIndex, setVarIndex] = useState(0);
   const [varName, setVarName] = useState('');
   const [varPrice, setVarPrice] = useState(0);
-  const [deliveryTime, setDeliveryTime] = useState('9am - 1pm');
+  const [deliveryTime, setDeliveryTime] = useState('9am-1pm');
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   // delivery Date
@@ -60,6 +60,7 @@ const ProductDetails = () => {
   const { name, category, image, variation, price, description } =
     productDetails;
   const navigate = useNavigate();
+  console.log(deliveryTime);
 
   if (loading) {
     return (
@@ -75,7 +76,9 @@ const ProductDetails = () => {
     navigate(
       `/cart/${productID}?qty=${qty}&price=${
         !varPrice ? price[varIndex].price : varPrice
-      }&${variation}=${!varName ? price[varIndex].variationName : varName}`,
+      }&${variation}=${
+        !varName ? price[varIndex].variationName : varName
+      }&deliveryDate=${deliveryDate}&deliveryTime=${deliveryTime}`,
       {
         replace: true,
       }
@@ -118,9 +121,9 @@ const ProductDetails = () => {
                   value={deliveryTime}
                   onChange={(e) => setDeliveryTime(e.target.value)}
                 >
-                  <option value="9am - 1pm">9am - 1pm</option>
-                  <option value="1pm - 4pm">1pm - 4pm</option>
-                  <option value="4pm - 6pm">4pm - 6pm</option>
+                  <option value="9am-1pm">9am - 1pm</option>
+                  <option value="1pm-4pm">1pm - 4pm</option>
+                  <option value="4pm-6pm">4pm - 6pm</option>
                 </select>
               </div>
             </div>

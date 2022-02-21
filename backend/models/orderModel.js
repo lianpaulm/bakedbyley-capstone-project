@@ -15,6 +15,8 @@ const orderSchema = new mongoose.Schema(
         varName: { type: String, required: true },
         varPrice: { type: Number, required: true },
         variation: { type: String, required: true },
+        deliveryDate: { type: String, required: true },
+        deliveryTime: { type: String, required: true },
       },
     ],
     shippingAddress: {

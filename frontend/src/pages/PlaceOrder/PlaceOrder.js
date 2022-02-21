@@ -81,6 +81,8 @@ const PlaceOrder = () => {
                   variation,
                   product,
                   qty,
+                  deliveryDate,
+                  deliveryTime,
                 } = item;
                 return (
                   <div key={product} className="order-table-row">
@@ -90,16 +92,16 @@ const PlaceOrder = () => {
                         <Link to={`/products/${product}`}>
                           <h4>{name}</h4>
                         </Link>
-                        {/* <p className="product-sched">
-                          Delivery Date: 02/02/2022 <br />
-                          Delivery Time: 11am
-                        </p> */}
+                        <p className="order-var-text">
+                          <span>{variation}: </span>
+                          {varName}
+                        </p>
                       </div>
                     </div>
                     <div className="col-variation-cont">
-                      <p className="var-text">
-                        <span>{variation}: </span>
-                        {varName}
+                      <p className="product-sched">
+                        <span>Delivery Date:</span> {deliveryDate} <br />
+                        <span>Delivery Time:</span> {deliveryTime}
                       </p>
                     </div>
                     <div className="col-price">

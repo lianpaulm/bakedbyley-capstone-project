@@ -31,7 +31,7 @@
 .cart-table-header {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-columns: 20rem 1fr 1fr 1fr 5rem;
+  grid-template-columns: 21rem 1fr 1fr 1fr 1fr 4rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid var(--clr-grey-11);
 }
@@ -46,7 +46,7 @@
 /* table row */
 .cart-table-row {
   display: grid;
-  grid-template-columns: 20rem 1fr 1fr 1fr 5rem;
+  grid-template-columns: 21rem 1fr 1fr 1fr 1fr 4rem;
   align-items: center;
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--clr-grey-11);
@@ -73,21 +73,23 @@
   white-space: wrap;
   width: 225px;
   color: var(--clr-grey-8);
+  color: var(--clr-primary-4);
 }
-/* .row-product-cont p {
-  font-size: 0.9rem;
-} */
 .var-text span {
-  color: var(--clr-grey-12);
+  color: var(--clr-grey-9);
   font-weight: 400;
 }
-.var-text,
-span {
+.var-text {
   text-transform: capitalize;
   font-size: 1rem;
   font-weight: 500;
 }
-
+.product-sched span,
+.product-sched {
+  font-size: 0.9rem;
+  color: var(--clr-grey-9);
+  font-weight: 400;
+}
 /* table qty */
 .row-qty select {
   padding: 0.3rem 1.5rem;
