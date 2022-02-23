@@ -211,8 +211,14 @@ const Order = () => {
               </div>
             )}
           </div>
-          {order.paymentMethod === 'Cash on delivery' && (
+          {!order.isPaid && order.paymentMethod === 'Cash on delivery' && (
             <div className="cod-payment">Pay when you receive</div>
+          )}
+
+          {order.isDelivered && order.isPaid ? (
+            <div className="order-completed">COMPLETED</div>
+          ) : (
+            <div className="order-pending">PENDING</div>
           )}
         </div>
       </div>

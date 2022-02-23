@@ -16,6 +16,9 @@ import {
   ORDER_MINE_LIST_FAIL,
   ORDER_MINE_LIST_REQUEST,
   ORDER_MINE_LIST_SUCCESS,
+  ORDER_PAY_COD_FAIL,
+  ORDER_PAY_COD_REQUEST,
+  ORDER_PAY_COD_SUCCESS,
   ORDER_PAY_FAIL,
   ORDER_PAY_REQUEST,
   ORDER_PAY_SUCCESS,
@@ -81,6 +84,20 @@ export const deliverOrder = (orderId) => async (dispatch) => {
         ? error.response.data.message
         : error.message;
     dispatch({ type: ORDER_DELIVER_FAIL, payload: message });
+  }
+};
+
+export const payCodOrder = (orderId) => async (dispatch) => {
+  dispatch({ type: ORDER_PAY_COD_REQUEST, payload: orderId });
+  try {
+    const { data } = axios.put(`/api/v1/orders/${orderId}/paycod`, {});
+    dispatch({ type: ORDER_PAY_COD_SUCCESS, payload: data });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: ORDER_PAY_COD_FAIL, payload: message });
   }
 };
 

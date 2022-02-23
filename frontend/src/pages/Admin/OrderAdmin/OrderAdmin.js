@@ -3,9 +3,16 @@ import HeaderAdmin from '../Header/HeaderAdmin';
 import SidebarAdmin from '../Sidebar/SidebarAdmin';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { deliverOrder, detailsOrder } from '../../../actions/orderAction';
+import {
+  deliverOrder,
+  detailsOrder,
+  payCodOrder,
+} from '../../../actions/orderAction';
 import Loading from '../../../components/Loading/Loading';
-import { ORDER_DELIVER_RESET } from '../../../constants/orderConstants';
+import {
+  ORDER_DELIVER_RESET,
+  ORDER_PAY_COD_RESET,
+} from '../../../constants/orderConstants';
 import './OrderAdmin.css';
 
 const OrderAdmin = () => {
@@ -21,16 +28,33 @@ const OrderAdmin = () => {
     success: successDeliver,
   } = orderDeliver;
 
+  const orderPayCod = useSelector((state) => state.orderPayCod);
+  const {
+    loading: loadingCodPay,
+    error: errorCodPay,
+    success: successCodPay,
+  } = orderPayCod;
+
   const dispatch = useDispatch();
   useEffect(() => {
-    if (!order || successDeliver || (order && order._id !== orderId)) {
+    if (
+      !order ||
+      successDeliver ||
+      successCodPay ||
+      (order && order._id !== orderId)
+    ) {
       dispatch({ type: ORDER_DELIVER_RESET });
+      dispatch({ type: ORDER_PAY_COD_RESET });
       dispatch(detailsOrder(orderId));
     }
-  }, [dispatch, orderId, order, successDeliver]);
+  }, [dispatch, orderId, order, successDeliver, successCodPay]);
 
   const deliverHandler = () => {
     dispatch(deliverOrder(order._id));
+  };
+
+  const CodPayHandler = () => {
+    dispatch(payCodOrder(order._id));
   };
 
   if (loading) {
@@ -43,8 +67,6 @@ const OrderAdmin = () => {
       </>
     );
   }
-
-  console.log(order);
 
   return (
     <>
@@ -174,8 +196,22 @@ const OrderAdmin = () => {
                     </div>
                   </div>
                 </div>
-                {order.paymentMethod === 'Cash on delivery' && (
-                  <button className="form-submit-btn">COD Paid</button>
+                {!order.isPaid && order.paymentMethod === 'Cash on delivery' && (
+                  <div>
+                    {loadingCodPay && (
+                      <div className="form-loading">Loading...</div>
+                    )}
+                    {errorCodPay && (
+                      <p className="form-error-alert-danger">{errorDeliver}</p>
+                    )}
+                    <button
+                      className="form-submit-btn"
+                      type="button"
+                      onClick={CodPayHandler}
+                    >
+                      COD Paid
+                    </button>
+                  </div>
                 )}
                 {!order.isDelivered && (
                   <div>
@@ -190,7 +226,7 @@ const OrderAdmin = () => {
                       type="button"
                       onClick={deliverHandler}
                     >
-                      Deliver Order
+                      Order Delivered
                     </button>
                   </div>
                 )}

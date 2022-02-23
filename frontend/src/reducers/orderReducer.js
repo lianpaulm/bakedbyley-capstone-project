@@ -16,6 +16,10 @@ import {
   ORDER_MINE_LIST_FAIL,
   ORDER_MINE_LIST_REQUEST,
   ORDER_MINE_LIST_SUCCESS,
+  ORDER_PAY_COD_FAIL,
+  ORDER_PAY_COD_REQUEST,
+  ORDER_PAY_COD_RESET,
+  ORDER_PAY_COD_SUCCESS,
   ORDER_PAY_FAIL,
   ORDER_PAY_REQUEST,
   ORDER_PAY_RESET,
@@ -74,6 +78,21 @@ export const orderDeliverReducer = (state = {}, action) => {
     case ORDER_DELIVER_FAIL:
       return { loading: false, error: action.payload };
     case ORDER_DELIVER_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
+export const orderPayCodReducer = (state = {}, action) => {
+  switch (action.type) {
+    case ORDER_PAY_COD_REQUEST:
+      return { loading: true };
+    case ORDER_PAY_COD_SUCCESS:
+      return { loading: false, success: true };
+    case ORDER_PAY_COD_FAIL:
+      return { loading: false, error: action.payload };
+    case ORDER_PAY_COD_RESET:
       return {};
     default:
       return state;

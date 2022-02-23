@@ -6,6 +6,7 @@ import {
   orderDeliverReducer,
   orderDetailsReducer,
   orderMineListReducer,
+  orderPayCodReducer,
   orderPayReducer,
 } from './orderReducer';
 import { productListReducer } from './productListReducer';
@@ -27,4 +28,5 @@ export default combineReducers({
   orderMineList: orderMineListReducer,
   orderAdminList: orderAdminListReducer,
   orderDeliver: orderDeliverReducer,
+  orderPayCod: orderPayCodReducer,
 });

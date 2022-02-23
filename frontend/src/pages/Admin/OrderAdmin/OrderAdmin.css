@@ -40,7 +40,14 @@
   font-weight: 500;
   padding: 0.3rem;
 }
-
+.order-pending {
+  background: var(--clr-violet);
+  color: var(--clr-white);
+  text-align: center;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  padding: 0.3rem;
+}
 /* order items row */
 /* .order-table-row {
   display: flex;
