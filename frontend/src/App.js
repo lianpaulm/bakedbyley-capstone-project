@@ -22,6 +22,7 @@ import PaymentMethod from './pages/PaymentMethod/PaymentMethod';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Order from './pages/Order/Order';
 import OrderHistory from './pages/OrderHistory/OrderHistory';
+import OrderAdmin from './pages/Admin/OrderAdmin/OrderAdmin';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="/admin/dashboard" element={<Dashboard />}></Route>
         <Route path="/admin/products" element={<ProductsAdmin />}></Route>
         <Route path="/admin/orders" element={<Orders />}></Route>
+        <Route path="/admin/orders/:id" element={<OrderAdmin />}></Route>
         <Route path="/admin/users" element={<Users />}></Route>
         <Route path="/admin/*" element={<AdminErrorPage />}></Route>
       </Routes>

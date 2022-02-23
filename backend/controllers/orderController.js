@@ -51,6 +51,7 @@ const getOrderMine = asyncWrapper(async (req, res) => {
 });
 
 // ADMIN
+// get order -- admin
 const getOrderAdmin = asyncWrapper(async (req, res) => {
   const orders = await Order.find({ orderId: req._id });
   if (!orders) {
@@ -59,10 +60,38 @@ const getOrderAdmin = asyncWrapper(async (req, res) => {
   res.json({ orders });
 });
 
+// update order -- admin
+const updateOrderAdmin = asyncWrapper(async (req, res) => {
+  const { id: orderId } = req.params;
+  const order = await Order.findOneAndUpdate({ _id: orderId }, req.body, {
+    new: true,
+    runValidators: true,
+  });
+  if (!order) {
+    return res.status(404).json({ msg: `No order with id: ${orderId}` });
+  }
+  res.status(200).json({ order });
+});
+
+const editDeliverAdmin = asyncWrapper(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+  if (order) {
+    order.isDelivered = true;
+    order.deliveredAt = Date.now();
+
+    const updatedOrder = await order.save();
+    res.send({ message: 'Order Delivered', order: updatedOrder });
+  } else {
+    res.status(404).send({ message: 'Order Not Found' });
+  }
+});
+
 module.exports = {
   createOrder,
   getOrder,
   updatePayment,
   getOrderMine,
   getOrderAdmin,
+  updateOrderAdmin,
+  editDeliverAdmin,
 };

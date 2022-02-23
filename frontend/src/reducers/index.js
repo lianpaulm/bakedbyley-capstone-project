@@ -3,6 +3,7 @@ import { cartReducer } from './cartReducer';
 import {
   orderAdminListReducer,
   orderCreateReducer,
+  orderDeliverReducer,
   orderDetailsReducer,
   orderMineListReducer,
   orderPayReducer,
@@ -25,4 +26,5 @@ export default combineReducers({
   orderPay: orderPayReducer,
   orderMineList: orderMineListReducer,
   orderAdminList: orderAdminListReducer,
+  orderDeliver: orderDeliverReducer,
 });

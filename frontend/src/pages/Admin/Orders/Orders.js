@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { listOrderAdmin } from '../../../actions/orderAction';
 import Loading from '../../../components/Loading/Loading';
 import HeaderAdmin from '../Header/HeaderAdmin';
@@ -10,6 +11,7 @@ const Orders = () => {
   const orderAdminList = useSelector((state) => state.orderAdminList);
   const { loading, error, orders } = orderAdminList;
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listOrderAdmin());
@@ -84,7 +86,13 @@ const Orders = () => {
                         {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
                       </div>
                       <div>
-                        <button className="table-action-btn" type="button">
+                        <button
+                          className="table-action-btn"
+                          type="button"
+                          onClick={() => {
+                            navigate(`/admin/orders/${id}`);
+                          }}
+                        >
                           Details
                         </button>
                       </div>

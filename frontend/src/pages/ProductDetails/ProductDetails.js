@@ -60,7 +60,6 @@ const ProductDetails = () => {
   const { name, category, image, variation, price, description } =
     productDetails;
   const navigate = useNavigate();
-  console.log(deliveryTime);
 
   if (loading) {
     return (

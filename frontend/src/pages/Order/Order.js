@@ -215,6 +215,5 @@ const Order = () => {
     </div>
   );
 };
-// {loading && <div className="form-loading">Loading...</div>}
-//           {error && <p className="form-error-alert">{error}</p>}
+
 export default Order;
