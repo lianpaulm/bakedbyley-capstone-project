@@ -57,9 +57,9 @@ const Orders = () => {
               <div className="table-header">
                 <div>ID</div>
                 <div>Ordered Date</div>
-                <div>Total Price</div>
                 <div>Paid</div>
                 <div>Delivered</div>
+                <div>Status</div>
                 <div>Action</div>
               </div>
               <div className="table-body">
@@ -77,13 +77,20 @@ const Orders = () => {
                     <div key={id} className="table-row">
                       <div>{id}</div>
                       <div>{createdAt.substring(0, 10)}</div>
-                      <div>
+                      {/* <div>
                         <span className="peso-sign">&#8369;</span>
                         {totalPrice.toFixed(2)}
-                      </div>
+                      </div> */}
                       <div>{isPaid ? paidAt.substring(0, 10) : 'No'}</div>
                       <div>
                         {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
+                      </div>
+                      <div>
+                        {!isPaid || !isDelivered
+                          ? 'Pending'
+                          : isPaid && isDelivered
+                          ? 'Completed'
+                          : 'Pending'}
                       </div>
                       <div>
                         <button
