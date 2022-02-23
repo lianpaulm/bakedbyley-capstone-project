@@ -1,0 +1,9 @@
+.cod-payment {
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: var(--clr-primary-5);
+  text-align: center;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  padding: 0.3rem;
+}

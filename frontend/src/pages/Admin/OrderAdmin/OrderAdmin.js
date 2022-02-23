@@ -20,7 +20,6 @@ const OrderAdmin = () => {
     error: errorDeliver,
     success: successDeliver,
   } = orderDeliver;
-  console.log(orderDeliver);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -28,7 +27,7 @@ const OrderAdmin = () => {
       dispatch({ type: ORDER_DELIVER_RESET });
       dispatch(detailsOrder(orderId));
     }
-  }, [dispatch, orderId, order, successDeliver, loadingDeliver]);
+  }, [dispatch, orderId, order, successDeliver]);
 
   const deliverHandler = () => {
     dispatch(deliverOrder(order._id));
@@ -44,14 +43,8 @@ const OrderAdmin = () => {
       </>
     );
   }
-  if (error) {
-    return (
-      <>
-        <HeaderAdmin />
-        <main>{error && <p className="form-error-alert">{error}</p>}</main>
-      </>
-    );
-  }
+
+  console.log(order);
 
   return (
     <>
@@ -181,6 +174,9 @@ const OrderAdmin = () => {
                     </div>
                   </div>
                 </div>
+                {order.paymentMethod === 'Cash on delivery' && (
+                  <button className="form-submit-btn">COD Paid</button>
+                )}
                 {!order.isDelivered && (
                   <div>
                     {loadingDeliver && (

@@ -7,6 +7,7 @@ import { detailsOrder, payOrder } from '../../actions/orderAction';
 import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
 import { ORDER_PAY_RESET } from '../../constants/orderConstants';
+import './Order.css';
 
 const Order = () => {
   const { id: orderId } = useParams();
@@ -189,7 +190,7 @@ const Order = () => {
                 {order.totalPrice}.00
               </div>
             </div>
-            {!order.isPaid && (
+            {!order.isPaid && order.paymentMethod === 'PayPal' && (
               <div>
                 {!sdkReady ? (
                   <div className="form-loading">Loading...</div>
@@ -210,6 +211,9 @@ const Order = () => {
               </div>
             )}
           </div>
+          {order.paymentMethod === 'Cash on delivery' && (
+            <div className="cod-payment">Pay when you receive</div>
+          )}
         </div>
       </div>
     </div>
