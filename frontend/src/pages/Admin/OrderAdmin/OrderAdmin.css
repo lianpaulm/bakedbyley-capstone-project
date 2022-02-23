@@ -41,12 +41,28 @@
   padding: 0.3rem;
 }
 .order-pending {
-  background: var(--clr-violet);
+  background: var(--clr-pending);
   color: var(--clr-white);
   text-align: center;
   letter-spacing: 0.6px;
   font-weight: 500;
   padding: 0.3rem;
+}
+.order-status {
+  border-radius: 5rem;
+  padding: 0.3rem 0.6rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+.pending {
+  color: var(--clr-pending-2);
+  border: 1px solid var(--clr-pending-2);
+}
+.completed {
+  color: var(--clr-green);
+  border: 1px solid var(--clr-green);
 }
 /* order items row */
 /* .order-table-row {

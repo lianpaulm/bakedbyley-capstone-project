@@ -45,29 +45,6 @@ const PlaceOrder = () => {
       <CheckoutSteps step1 step2 step3 step4 />
       <div className="place-order-section container">
         <div className="col-1">
-          {/* SHIPPING INFO */}
-          <div className="card-body">
-            <h3>Shipping</h3>
-            <p>
-              <strong>Name:</strong> {shippingAddress.fullName}
-            </p>
-            <p>
-              <strong>Phone Number:</strong> {shippingAddress.phoneNumber}
-            </p>
-            <p>
-              <strong>Address:</strong> {shippingAddress.address},{' '}
-              {shippingAddress.city}, {shippingAddress.postalCode}
-            </p>
-          </div>
-
-          {/* PAYMENT METHOD */}
-          <div className="card-body">
-            <h3>Payment</h3>
-            <p>
-              <strong>Method:</strong> {paymentMethod}
-            </p>
-          </div>
-
           {/* ORDER ITEMS */}
           <div className="card-body">
             <h3>Order Items</h3>
@@ -113,6 +90,29 @@ const PlaceOrder = () => {
                 );
               })}
             </div>
+          </div>
+
+          {/* SHIPPING INFO */}
+          <div className="card-body">
+            <h3>Shipping</h3>
+            <p>
+              <strong>Name:</strong> {shippingAddress.fullName}
+            </p>
+            <p>
+              <strong>Phone Number:</strong> {shippingAddress.phoneNumber}
+            </p>
+            <p>
+              <strong>Address:</strong> {shippingAddress.address},{' '}
+              {shippingAddress.city}, {shippingAddress.postalCode}
+            </p>
+          </div>
+
+          {/* PAYMENT METHOD */}
+          <div className="card-body">
+            <h3>Payment</h3>
+            <p>
+              <strong>Method:</strong> {paymentMethod}
+            </p>
           </div>
         </div>
         <div className="col-2">

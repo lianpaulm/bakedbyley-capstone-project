@@ -82,43 +82,6 @@ const Order = () => {
       </div>
       <div className="place-order-section container">
         <div className="col-1">
-          {/* SHIPPING INFO */}
-          <div className="card-body">
-            <h3>Shipping</h3>
-            <p>
-              <strong>Name:</strong> {order.shippingAddress.fullName}
-            </p>
-            <p>
-              <strong>Phone Number:</strong> {order.shippingAddress.phoneNumber}
-            </p>
-            <p>
-              <strong>Address:</strong> {order.shippingAddress.address},{' '}
-              {order.shippingAddress.city}, {order.shippingAddress.postalCode}
-            </p>
-            {order.isDelivered ? (
-              <p className="form-error-alert-success">
-                Delivered at {order.deliveredAt.substring(0, 10)}
-              </p>
-            ) : (
-              <p className="form-error-alert-danger">Not Delivered</p>
-            )}
-          </div>
-
-          {/* PAYMENT METHOD */}
-          <div className="card-body">
-            <h3>Payment</h3>
-            <p>
-              <strong>Method:</strong> {order.paymentMethod}
-            </p>
-            {order.isPaid ? (
-              <p className="form-error-alert-success">
-                Paid at {order.paidAt.substring(0, 10)}
-              </p>
-            ) : (
-              <p className="form-error-alert-danger">Not Paid</p>
-            )}
-          </div>
-
           {/* ORDER ITEMS */}
           <div className="card-body">
             <h3>Order Items</h3>
@@ -164,6 +127,43 @@ const Order = () => {
                 );
               })}
             </div>
+          </div>
+
+          {/* SHIPPING INFO */}
+          <div className="card-body">
+            <h3>Shipping</h3>
+            <p>
+              <strong>Name:</strong> {order.shippingAddress.fullName}
+            </p>
+            <p>
+              <strong>Phone Number:</strong> {order.shippingAddress.phoneNumber}
+            </p>
+            <p>
+              <strong>Address:</strong> {order.shippingAddress.address},{' '}
+              {order.shippingAddress.city}, {order.shippingAddress.postalCode}
+            </p>
+            {order.isDelivered ? (
+              <p className="form-error-alert-success">
+                Delivered at {order.deliveredAt.substring(0, 10)}
+              </p>
+            ) : (
+              <p className="form-error-alert-danger">Not Delivered</p>
+            )}
+          </div>
+
+          {/* PAYMENT METHOD */}
+          <div className="card-body">
+            <h3>Payment</h3>
+            <p>
+              <strong>Method:</strong> {order.paymentMethod}
+            </p>
+            {order.isPaid ? (
+              <p className="form-error-alert-success">
+                Paid at {order.paidAt.substring(0, 10)}
+              </p>
+            ) : (
+              <p className="form-error-alert-danger">Not Paid</p>
+            )}
           </div>
         </div>
         <div className="col-2">

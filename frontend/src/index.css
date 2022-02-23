@@ -16,7 +16,8 @@ Variables
   --clr-primary-4: hsl(160, 18%, 29%);
   /* primary/main color */
   --clr-primary-5: #6c63ff;
-  --clr-violet: hsl(243, 100%, 80%);
+  --clr-pending: #f7cb73;
+  --clr-pending-2: #f29339;
   --clr-primary-5: hsl(160, 18%, 33%);
   /* accent color */
   --clr-accent-main: hsl(148, 84%, 36%);

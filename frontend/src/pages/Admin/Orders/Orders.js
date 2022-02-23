@@ -86,11 +86,21 @@ const Orders = () => {
                         {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
                       </div>
                       <div>
-                        {!isPaid || !isDelivered
-                          ? 'Pending'
-                          : isPaid && isDelivered
-                          ? 'Completed'
-                          : 'Pending'}
+                        <div
+                          className={`${
+                            !isPaid || !isDelivered
+                              ? 'order-status pending'
+                              : isPaid && isDelivered
+                              ? 'order-status completed'
+                              : 'order-status pending'
+                          }`}
+                        >
+                          {!isPaid || !isDelivered
+                            ? 'Pending'
+                            : isPaid && isDelivered
+                            ? 'Completed'
+                            : 'Pending'}
+                        </div>
                       </div>
                       <div>
                         <button

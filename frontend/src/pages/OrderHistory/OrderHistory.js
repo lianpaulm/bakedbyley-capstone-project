@@ -65,18 +65,28 @@ const OrderHistory = () => {
                       {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
                     </div>
                     <div>
-                      {/* {!isPaid
+                      <div
+                        className={`${
+                          !isPaid || !isDelivered
+                            ? 'order-status pending'
+                            : isPaid && isDelivered
+                            ? 'order-status completed'
+                            : 'order-status pending'
+                        }`}
+                      >
+                        {/* {!isPaid
                         ? 'To Pay'
                         : !isDelivered
                         ? 'To Receive'
                         : isPaid && isDelivered
                         ? 'Completed'
                         : 'Pending'} */}
-                      {!isPaid || !isDelivered
-                        ? 'Pending'
-                        : isPaid && isDelivered
-                        ? 'Completed'
-                        : 'Pending'}
+                        {!isPaid || !isDelivered
+                          ? 'Pending'
+                          : isPaid && isDelivered
+                          ? 'Completed'
+                          : 'Pending'}
+                      </div>
                     </div>
                     <div>
                       <button
