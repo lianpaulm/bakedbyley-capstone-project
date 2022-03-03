@@ -76,7 +76,7 @@ const ProductDetails = () => {
       `/cart/${productID}?qty=${qty}&price=${
         !varPrice ? price[varIndex].price : varPrice
       }&${variation}=${
-        !varName ? price[varIndex].variationName : varName
+        !varName ? price[varIndex].variationName.trim() : varName.trim()
       }&deliveryDate=${deliveryDate}&deliveryTime=${deliveryTime}`,
       {
         replace: true,
