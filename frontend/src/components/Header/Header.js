@@ -37,6 +37,7 @@ const Header = () => {
         </button>
 
         <NavLink to="/" className="brand">
+          {/* <img className="logo-img" src="./images/logo1.jpg" alt="" /> */}
           BakedbyLey
         </NavLink>
 

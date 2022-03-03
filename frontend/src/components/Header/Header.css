@@ -20,6 +20,14 @@ header {
   color: var(--clr-primary-5);
   font-size: 1.3rem;
   font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brand .logo-img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
 }
 
 /* nav menu */

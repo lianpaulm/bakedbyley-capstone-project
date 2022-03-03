@@ -49,25 +49,29 @@ export const dataSlider = [
   {
     id: '1',
     name: 'Vanilla cake',
-    image: './images/cake1.jpg',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1645698968/uploads/pxhilg1odxjirr0aqpgm.jpg',
     price: '800',
   },
   {
     id: '2',
     name: 'Cinnamon cake',
-    image: './images/cake2.jpg',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1645699324/uploads/mbwqjhbyqoo74az0wrny.jpg',
     price: '500',
   },
   {
     id: '3',
     name: 'abdul',
-    image: './images/cake3.jpg',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1645698030/uploads/z9bxxq2hxq3xdybvnjwc.jpg',
     price: '1,100',
   },
   {
     id: '4',
     name: 'adf',
-    image: './images/cake4.jpg',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1645697828/uploads/ark3zfjktrjfbgpqxods.jpg',
     price: '1,100',
   },
 ];
