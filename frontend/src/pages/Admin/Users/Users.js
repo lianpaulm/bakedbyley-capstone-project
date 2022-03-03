@@ -9,7 +9,6 @@ import './Users.css';
 const Users = () => {
   const userList = useSelector((state) => state.userList);
   const { loading, error, users } = userList;
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listUser());
@@ -57,7 +56,7 @@ const Users = () => {
                 <div>Name</div>
                 <div>Email</div>
                 <div>Role</div>
-                <div>Action</div>
+                {/* <div>Action</div> */}
               </div>
               <div className="table-body">
                 {users.map((user) => {
@@ -67,8 +66,10 @@ const Users = () => {
                       <div>{id}</div>
                       <div>{name}</div>
                       <div>{email}</div>
-                      <div>{role}</div>
-                      <div>Edit</div>
+                      <div>
+                        <div className="user-role">{role}</div>
+                      </div>
+                      {/* <div>Edit</div> */}
                     </div>
                   );
                 })}

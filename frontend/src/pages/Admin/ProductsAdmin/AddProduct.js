@@ -93,6 +93,7 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
               type="text"
               id="name"
               required={true}
+              placeholder="Enter name"
               autoComplete="off"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -105,6 +106,7 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
             <input
               type="text"
               id="variation"
+              placeholder="Enter variation name"
               autoComplete="off"
               value={variation}
               onChange={(e) => setVariation(e.target.value)}
@@ -151,6 +153,7 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
               type="text"
               id="desc"
               required={true}
+              placeholder="Enter description"
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
             ></textarea>
@@ -162,6 +165,7 @@ const AddProduct = ({ setShow, fetchProducts, showAlert }) => {
             <input
               type="text"
               id="category"
+              placeholder="Enter category"
               value={category}
               required={true}
               onChange={(e) => setCategory(e.target.value)}

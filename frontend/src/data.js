@@ -4,7 +4,7 @@ import React from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { RiQuestionAnswerLine, RiCake2Line } from 'react-icons/ri';
 // social links icons
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaFacebookMessenger, FaInstagram } from 'react-icons/fa';
 
 export const navLinks = [
   {
@@ -16,7 +16,7 @@ export const navLinks = [
   {
     id: 2,
     url: '/products',
-    text: 'products',
+    text: 'cakes',
     icon: <RiCake2Line />,
   },
   {
@@ -35,8 +35,8 @@ export const socialLinks = [
   },
   {
     id: 2,
-    url: 'https://www.twitter.com',
-    icon: <FaTwitter />,
+    url: 'https://www.facebook.com/leaportugues30/?refid=17',
+    icon: <FaFacebookMessenger />,
   },
   {
     id: 3,

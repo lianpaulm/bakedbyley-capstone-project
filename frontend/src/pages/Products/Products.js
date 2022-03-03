@@ -72,26 +72,28 @@ const Products = () => {
           />
 
           <div className="products-container">
-            {products.map((product) => {
-              const { _id, name, image, price } = product;
-              return (
-                <Link to={_id} key={_id}>
-                  <div className="card">
-                    <img src={image} alt="" />
-                    <div className="card-info">
-                      <p className="card-name">{name}</p>
-                      <div>
-                        <div className="price">
-                          <span className="peso-sign">&#8369;</span>
-                          {price[0].price}.00
+            {products
+              .map((product) => {
+                const { _id, name, image, price } = product;
+                return (
+                  <Link to={_id} key={_id}>
+                    <div className="card">
+                      <img src={image} alt="" />
+                      <div className="card-info">
+                        <p className="card-name">{name}</p>
+                        <div>
+                          <div className="price">
+                            <span className="peso-sign">&#8369;</span>
+                            {price[0].price}.00
+                          </div>
+                          <button className="add-cart-btn">View Cake</button>
                         </div>
-                        <button className="add-cart-btn">View Cake</button>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              );
-            })}
+                  </Link>
+                );
+              })
+              .reverse()}
           </div>
           {/* end of products */}
         </div>

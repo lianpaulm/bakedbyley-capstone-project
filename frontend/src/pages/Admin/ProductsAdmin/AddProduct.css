@@ -8,17 +8,18 @@
 }
 .add-modal {
   background: var(--clr-white);
-  width: 30rem;
-  /* height: 35rem; */
-  height: 100%;
+  width: 31rem;
+  height: calc(100vh - 10px);
   border-radius: 5px;
   position: relative;
+  padding-bottom: 0;
+  overflow-y: auto;
 }
 .add-modal h3 {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
-  padding: 1.5rem;
+  padding: 1.2rem;
 }
 .close-add-modal-btn {
   position: absolute;
@@ -58,8 +59,11 @@
 .add-product-form .form-control label {
   color: var(--clr-primary-4);
 }
-.form-prices-cont input::placeholder {
+.add-product-form input::placeholder,
+.add-product-form textarea::placeholder {
   font-size: 0.9rem;
+  color: var(--clr-grey-11);
+  font-weight: 300;
 }
 .form-prices-cont button {
   padding: 0.1em 0.5rem;

@@ -87,26 +87,28 @@ const Featured = () => {
         <h3>Featured Product</h3>
         <div className="carousel-container">
           <Slider {...settings}>
-            {featuredProducts.map((product) => {
-              const { _id, name, image, price } = product;
-              return (
-                <Link to={`/products/featured/${_id}`} key={_id}>
-                  <div className="card">
-                    <img src={image} alt="" />
-                    <div className="card-info">
-                      <p className="card-name">{name}</p>
-                      <div>
-                        <div className="price">
-                          <span className="peso-sign">&#8369;</span>
-                          {price[0].price}.00
+            {featuredProducts
+              .map((product) => {
+                const { _id, name, image, price } = product;
+                return (
+                  <Link to={`/products/featured/${_id}`} key={_id}>
+                    <div className="card">
+                      <img src={image} alt="" />
+                      <div className="card-info">
+                        <p className="card-name">{name}</p>
+                        <div>
+                          <div className="price">
+                            <span className="peso-sign">&#8369;</span>
+                            {price[0].price}.00
+                          </div>
+                          <button className="add-cart-btn">Add to cart</button>
                         </div>
-                        <button className="add-cart-btn">Add to cart</button>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              );
-            })}
+                  </Link>
+                );
+              })
+              .reverse()}
           </Slider>
         </div>
       </div>

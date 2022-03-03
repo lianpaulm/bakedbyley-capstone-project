@@ -35,12 +35,14 @@
 
 /* table */
 .products-admin-container .table-header {
-  grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
+  /* grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem; */
+  grid-template-columns: 15rem 7rem 11rem 8rem 1fr;
   padding: 1rem;
 }
 .products-admin-container .table-row {
   padding: 0.3rem 1rem;
-  grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
+  /* grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem; */
+  grid-template-columns: 15rem 7rem 11rem 8rem 1fr;
 }
 .products-admin-container .table-row .name-div {
   overflow: hidden;

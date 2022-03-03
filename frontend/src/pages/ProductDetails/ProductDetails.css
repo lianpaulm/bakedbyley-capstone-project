@@ -54,6 +54,8 @@
 .sizes-container {
   display: flex;
   gap: 0.8rem;
+  flex-wrap: wrap;
+  max-width: 25rem;
   margin-bottom: 1.1rem;
 }
 .var-button {
@@ -61,7 +63,9 @@
   border: 1px solid grey;
   letter-spacing: 0.2px;
   font-size: 1.1rem;
-  padding: 0.3rem 1.5rem;
+  /* padding: 0.3rem 1.5rem; */
+  width: 5rem;
+  height: 2.4rem;
   background: transparent;
   border-radius: 3px;
 }

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 // styles
 import './ProductsAdmin.css';
 // icons
-import { AiFillDelete } from 'react-icons/ai';
-import { FaEdit } from 'react-icons/fa';
+// import { AiFillDelete } from 'react-icons/ai';
+// import { FaEdit } from 'react-icons/fa';
 // components
 import Loading from '../../../components/Loading/Loading';
 import Alert from '../../../components/Alert/Alert';
@@ -53,18 +53,18 @@ const ProductsAdmin = () => {
   }, [alert]);
 
   // delete product
-  const deleteProduct = async (id) => {
-    setLoading(true);
-    try {
-      await axios.delete(`/api/v1/products/${id}`);
-      setLoading(false);
-      showAlert(true, 'danger', 'product deleted successfully');
-      fetchProducts();
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-    }
-  };
+  // const deleteProduct = async (id) => {
+  //   setLoading(true);
+  //   try {
+  //     await axios.delete(`/api/v1/products/${id}`);
+  //     setLoading(false);
+  //     showAlert(true, 'danger', 'product deleted successfully');
+  //     fetchProducts();
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.log(error);
+  //   }
+  // };
 
   const showAlert = (show = false, type = '', msg = '') => {
     setAlert({ show, type, msg });
@@ -111,7 +111,7 @@ const ProductsAdmin = () => {
                 <div>Name</div>
                 <div>Price</div>
                 <div>Category</div>
-                <div>Action</div>
+                {/* <div>Action</div> */}
               </div>
               <div className="table-body">
                 {products.map((product) => {
@@ -128,7 +128,7 @@ const ProductsAdmin = () => {
                         {price[0].price}.00
                       </div>
                       <div>{category}</div>
-                      <div>
+                      {/* <div>
                         <button className="action-edit-btn">
                           <FaEdit />
                         </button>
@@ -138,7 +138,7 @@ const ProductsAdmin = () => {
                         >
                           <AiFillDelete />
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   );
                 })}

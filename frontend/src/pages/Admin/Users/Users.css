@@ -1,8 +1,16 @@
 .users-admin-container .table-header {
-  grid-template-columns: 16rem 9rem 17rem 10rem 1fr;
+  grid-template-columns: 17rem 10rem 17rem 1fr;
   padding: 1rem;
 }
 .users-admin-container .table-row {
   padding: 1rem;
-  grid-template-columns: 16rem 9rem 17rem 10rem 1fr;
+  grid-template-columns: 17rem 10rem 17rem 1fr;
+}
+.user-role {
+  border: 1px solid currentColor;
+  display: inline-block;
+  padding: 0.1rem 0.9rem;
+  /* border-radius: 5rem; */
+  border-radius: 1rem;
+  color: var(--clr-accent-main-hover);
 }
