@@ -2,7 +2,7 @@ const Product = require('../models/productModel');
 const asyncWrapper = require('../middleware/asyncWrapper');
 
 const getAllProducts = asyncWrapper(async (req, res) => {
-  const products = await Product.find({});
+  const products = await Product.find({ disabled: false });
   res.status(200).json({ products });
 });
 
@@ -16,7 +16,7 @@ const getProductDetails = asyncWrapper(async (req, res) => {
 });
 
 const getFeaturedProducts = asyncWrapper(async (req, res) => {
-  const products = await Product.find({ featured: true });
+  const products = await Product.find({ featured: true, disabled: false });
   res.status(200).json({ products });
 });
 

@@ -31,6 +31,7 @@ const ProductsAdmin = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [show, setShow] = useState(false);
+  const [productDisabled, setProductDisabled] = useState(false);
   const [alert, setAlert] = useState({
     show: false,
     msg: '',
@@ -52,7 +53,7 @@ const ProductsAdmin = () => {
     fetchProducts();
   }, [alert]);
 
-  // delete product
+  // delete product;
   // const deleteProduct = async (id) => {
   //   setLoading(true);
   //   try {
@@ -65,6 +66,24 @@ const ProductsAdmin = () => {
   //     console.log(error);
   //   }
   // };
+
+  const disableProduct = async (id) => {
+    // const specificItem = products.find((item) => item._id === id);
+    // console.log(specificItem);
+    setProductDisabled(!productDisabled);
+
+    setLoading(true);
+    try {
+      await axios.patch(`/api/v1/products/${id}`, {
+        disabled: productDisabled,
+      });
+
+      setLoading(false);
+      fetchProducts();
+    } catch (error) {
+      setLoading(false);
+    }
+  };
 
   const showAlert = (show = false, type = '', msg = '') => {
     setAlert({ show, type, msg });
@@ -117,7 +136,12 @@ const ProductsAdmin = () => {
                 {products.map((product) => {
                   const { _id: id, name, category, price, image } = product;
                   return (
-                    <div key={id} className="table-row">
+                    <div
+                      key={id}
+                      className={`${
+                        !product.disabled ? 'table-row' : 'table-row disabled'
+                      }`}
+                    >
                       <div>{id}</div>
                       <div className="image-div">
                         <img src={image} alt="" />
@@ -128,8 +152,8 @@ const ProductsAdmin = () => {
                         {price[0].price}.00
                       </div>
                       <div>{category}</div>
-                      {/* <div>
-                        <button className="action-edit-btn">
+                      <div>
+                        {/* <button className="action-edit-btn">
                           <FaEdit />
                         </button>
                         <button
@@ -137,8 +161,14 @@ const ProductsAdmin = () => {
                           onClick={() => deleteProduct(id)}
                         >
                           <AiFillDelete />
+                        </button> */}
+                        <button
+                          className="action-disable-btn"
+                          onClick={() => disableProduct(id)}
+                        >
+                          Disable
                         </button>
-                      </div> */}
+                      </div>
                     </div>
                   );
                 })}

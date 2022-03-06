@@ -35,19 +35,49 @@
 
 /* table */
 .products-admin-container .table-header {
-  /* grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem; */
-  grid-template-columns: 15rem 7rem 11rem 8rem 1fr;
+  /* grid-template-columns: 15rem 7rem 11rem 8rem 1fr; */
+  grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
   padding: 1rem;
 }
 .products-admin-container .table-row {
+  --disabled-color: rgb(122, 122, 122);
+  --disabled-background: rgb(235, 235, 235);
   padding: 0.3rem 1rem;
-  /* grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem; */
-  grid-template-columns: 15rem 7rem 11rem 8rem 1fr;
+  /* grid-template-columns: 15rem 7rem 11rem 8rem 1fr; */
+  grid-template-columns: 14rem 6rem 1fr 7rem 10rem 8rem;
 }
 .products-admin-container .table-row .name-div {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.products-admin-container .disabled,
+.products-admin-container .disabled .peso-sign,
+.products-admin-container .disabled .action-disable-btn {
+  color: var(--disabled-color);
+  background: var(--disabled-background);
+}
+/* .products-admin-container .disabled img {
+  filter: grayscale(40%);
+} */
+.products-admin-container .action-disable-btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+.products-admin-container .disabled .action-disable-btn {
+  border-color: var(--clr-red-light-3);
+  background: var(--clr-red-light-3);
+  color: #fff;
+}
+.products-admin-container .action-disable-btn {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid var(--clr-red-light);
+  color: #fff;
+  border-radius: 0.3rem;
+  background: var(--clr-red-light);
+}
+
 .products-admin-container .table-row div:last-child {
   display: flex;
 }
