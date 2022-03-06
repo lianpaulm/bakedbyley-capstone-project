@@ -235,6 +235,12 @@ select {
   color: var(--clr-white);
   transition: background 0.3s;
 }
+@media screen and (max-width: 480px) {
+  .form-submit-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
 .form-submit-btn:hover {
   background: var(--clr-accent-main-hover);
 }

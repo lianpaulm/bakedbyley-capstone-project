@@ -15,7 +15,7 @@
   background: var(--clr-white);
   margin: 0 0.5rem;
   box-shadow: var(--shadow-1);
-  border: 1px solid var(--clr-primary-5);
+  /* border: 1px solid var(--clr-primary-5); */
 }
 .featured-section h3 {
   font-size: 1.3rem;
@@ -55,9 +55,6 @@
   .featured-section .card img {
     height: 10rem;
   }
-  .featured-section .card {
-    /* max-width: 8rem; */
-  }
   .card-info .featured-footer > div {
     justify-content: unset;
     margin-bottom: 0.2rem;
@@ -67,11 +64,3 @@
     flex-direction: column;
   }
 }
-/* @media screen and (min-width: 390px) and (max-width: 480px) {
-  .featured-section .card img {
-    height: 12rem;
-  }
-  .featured-section .card {
-    width: 9rem;
-  }
-} */

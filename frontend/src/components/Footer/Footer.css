@@ -5,14 +5,21 @@ footer {
   position: relative;
   z-index: 400;
 }
+footer .brand-cont {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
 footer .brand {
   color: var(--clr-white);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 footer .social-container {
   position: unset;
   color: var(--clr-white);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 footer .social-container a:hover {
   color: unset;
@@ -46,6 +53,13 @@ footer p {
 }
 
 @media screen and (min-width: 460px) {
+  footer .brand-cont {
+    margin: 0;
+    display: unset;
+  }
+  footer .brand {
+    margin-bottom: 1rem;
+  }
   footer .social-container {
     margin-bottom: 1.5rem;
   }

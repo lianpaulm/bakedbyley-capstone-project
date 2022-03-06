@@ -4,12 +4,12 @@
   ); */
 }
 .empty-cart-text {
-  /* text-align: center; */
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 4rem;
   font-size: 1.2rem;
-  width: 40rem;
+  max-width: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,4 +137,11 @@
 
 .cart-summary-cont .form-submit-btn {
   margin-top: 0.6rem;
+}
+
+@media screen and (max-width: 680px) {
+  .empty-cart-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.8rem;
+  }
 }

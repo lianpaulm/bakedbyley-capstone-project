@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div>
+        <div className="brand-cont">
           <p className="brand">BakedByLey</p>
           <div className="social-container">
             <SocialLinks />

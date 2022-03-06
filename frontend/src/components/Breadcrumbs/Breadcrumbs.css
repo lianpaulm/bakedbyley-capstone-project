@@ -17,3 +17,10 @@
   margin-bottom: 0;
   color: rgb(80, 80, 80);
 }
+
+@media screen and (max-width: 480px) {
+  .page-path h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}

@@ -81,7 +81,7 @@ const Products = () => {
                       <img src={image} alt="" />
                       <div className="card-info">
                         <p className="card-name">{name}</p>
-                        <div>
+                        <div className="card-info-footer">
                           <div className="price">
                             <span className="peso-sign">&#8369;</span>
                             {price[0].price}.00

@@ -61,7 +61,8 @@ header {
   padding: 1rem;
   transition: var(--transition);
 }
-.main-nav-link:hover {
+.main-nav-link:hover,
+.main-nav-link:active {
   background: var(--clr-primary-6);
   border-radius: var(--radius);
 }
