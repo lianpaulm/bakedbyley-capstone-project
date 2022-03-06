@@ -11,6 +11,8 @@ import { logout } from '../../actions/userActions';
 // import { FaRegUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+
   // cart
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -77,7 +79,12 @@ const Header = () => {
             </div>
           </div>
           {userInfo ? (
-            <div className="dropdown">
+            <div
+              className={`${
+                userMenuOpen ? 'user-menu-open dropdown' : 'dropdown'
+              }`}
+              onClick={() => setUserMenuOpen(!userMenuOpen)}
+            >
               <NavLink to="#">
                 {/* <FaRegUserCircle className="avatar-svg" /> */}
                 {userInfo.name}

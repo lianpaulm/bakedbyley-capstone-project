@@ -47,8 +47,6 @@ const Featured = () => {
     initialSlide: 0,
     // infinite: true,
     // className: 'center',
-    // centerMode: true,
-    // infinite: true,
     nextArrow: <FeaturedNextArrow />,
     prevArrow: <FeaturedPrevArrow />,
     responsive: [
@@ -62,7 +60,7 @@ const Featured = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 640,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -72,6 +70,14 @@ const Featured = () => {
       },
       {
         breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 300,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -84,7 +90,7 @@ const Featured = () => {
   return (
     <div className="featured-section">
       <div className="container">
-        <h3>Featured Product</h3>
+        <h3>Featured Products</h3>
         <div className="carousel-container">
           <Slider {...settings}>
             {featuredProducts
@@ -96,7 +102,7 @@ const Featured = () => {
                       <img src={image} alt="" />
                       <div className="card-info">
                         <p className="card-name">{name}</p>
-                        <div>
+                        <div className="featured-footer">
                           <div className="price">
                             <span className="peso-sign">&#8369;</span>
                             {price[0].price}.00
