@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Carts.css';
 import { IoMdClose } from 'react-icons/io';
 
+import { BsArrowLeft } from 'react-icons/bs';
+
 // components
 import Header from '../../components/Header/Header';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
@@ -123,7 +125,10 @@ const Carts = () => {
                   <div key={product} className="cart-table-row">
                     <div className="row-product-cont">
                       <img src={image} alt={name} />
-                      <div>
+                    </div>
+
+                    <div className="product-cart-info">
+                      <div className="row-product-info-cont">
                         <Link to={`/products/${product}`}>
                           <h4>{name}</h4>
                         </Link>
@@ -132,49 +137,49 @@ const Carts = () => {
                           <span>Delivery Time:</span> {deliveryTime}
                         </p>
                       </div>
-                    </div>
 
-                    <div className="row-price">
-                      <span className="peso-sign">&#8369;</span>
-                      {varPrice}.00
-                    </div>
+                      <div className="row-price">
+                        <span className="peso-sign">&#8369;</span>
+                        {varPrice}.00
+                      </div>
 
-                    <div className="row-price">
-                      <p className="var-text">
-                        <span>{variation}: </span>
-                        {varName}
-                      </p>
-                    </div>
+                      <div className="row-price">
+                        <p className="var-text">
+                          <span>{variation}: </span>
+                          {varName}
+                        </p>
+                      </div>
 
-                    <div className="row-qty">
-                      <select
-                        id="qty"
-                        value={qty}
-                        onChange={(e) =>
-                          dispatch(
-                            addToCart(
-                              product,
-                              Number(e.target.value),
-                              varPrice,
-                              varName,
-                              variation,
-                              deliveryDate,
-                              deliveryTime
+                      <div className="row-qty">
+                        <select
+                          id="qty"
+                          value={qty}
+                          onChange={(e) =>
+                            dispatch(
+                              addToCart(
+                                product,
+                                Number(e.target.value),
+                                varPrice,
+                                varName,
+                                variation,
+                                deliveryDate,
+                                deliveryTime
+                              )
                             )
-                          )
-                        }
-                      >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
+                          }
+                        >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
 
-                    <div className="row-total">
-                      <span className="peso-sign">&#8369;</span>
-                      {varPrice * qty}.00
+                      <div className="row-total">
+                        <span className="peso-sign">&#8369;</span>
+                        {varPrice * qty}.00
+                      </div>
                     </div>
                     <div
                       className="row-remove-btn"
@@ -185,24 +190,35 @@ const Carts = () => {
                   </div>
                 );
               })}
+              <Link to="/products" className="arrow-back-button-small">
+                <BsArrowLeft />
+                Continue shopping
+              </Link>
             </div>
             <div className="cart-footer">
-              <div className="cart-summary-cont">
-                <div className="cart-summary-flex">
-                  <p>SUBTOTAL</p>
-                  <p className="subtotal-value">
-                    <span className="peso-sign">&#8369;</span>
-                    {cartItems.reduce((a, c) => a + c.varPrice * c.qty, 0)}
-                  </p>
-                </div>
-                <div className="cart-summary-flex">
-                  <p>ITEMS</p>
-                  <p className="items-qty-text">
-                    {cartItems.reduce((a, c) => a + c.qty, 0)} items
-                  </p>
-                </div>
-                <div className="form-submit-btn" onClick={checkoutHandler}>
-                  Checkout
+              <div className="container">
+                <Link to="/products" className="arrow-back-button">
+                  <BsArrowLeft />
+                  Continue shopping
+                </Link>
+
+                <div className="cart-summary-cont">
+                  <div className="cart-summary-flex">
+                    <p>Subtotal </p>
+                    <p className="subtotal-value">
+                      <span className="peso-sign">&#8369;</span>
+                      {cartItems.reduce((a, c) => a + c.varPrice * c.qty, 0)}
+                    </p>
+                  </div>
+                  <div className="cart-summary-flex">
+                    <p>Items </p>
+                    <p className="items-qty-text">
+                      {cartItems.reduce((a, c) => a + c.qty, 0)} items
+                    </p>
+                  </div>
+                  <div className="form-submit-btn" onClick={checkoutHandler}>
+                    Checkout
+                  </div>
                 </div>
               </div>
             </div>

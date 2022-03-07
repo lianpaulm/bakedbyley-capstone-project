@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Loading from '../../components/Loading/Loading';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 // date picker package
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -93,7 +94,7 @@ const ProductDetails = () => {
     <>
       <Header />
       <main>
-        <Breadcrumbs path={`Home / products / ${category} / ${name} `} />
+        <Breadcrumbs path={`Home / Cakes / ${category} / ${name} `} />
         <section className="product-section container">
           <div className="img-col">
             <img src={image} alt="" />
@@ -170,6 +171,7 @@ const ProductDetails = () => {
                 </div>
               </div>
               <button onClick={addToCartHandler} className="form-submit-btn">
+                <AiOutlineShoppingCart />
                 Add to cart
               </button>
             </div>

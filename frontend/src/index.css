@@ -23,6 +23,7 @@ Variables
   /* accent color */
   --clr-accent-main: hsl(148, 84%, 36%);
   --clr-accent-main-hover: hsl(148, 80%, 29%);
+  --clr-accent-dark: hsl(6, 100%, 60%);
   --clr-accent-main: hsl(6, 93%, 71%);
   --clr-accent-main-hover: hsl(6, 100%, 67%);
   --clr-accent: hsl(48, 100%, 93%);
@@ -37,6 +38,7 @@ Variables
   --clr-primary-9: hsl(160, 9%, 80%);
   --clr-primary-10: hsl(160, 9%, 87%);
   /* darkest grey - used for headings */
+  --clr-grey-text: hsl(0, 0%, 15%);
   --clr-grey-1: hsl(0, 0%, 1%);
   --clr-grey-2: hsl(0, 0%, 5%);
   --clr-grey-3: hsl(0, 0%, 7%);
@@ -51,6 +53,7 @@ Variables
   --clr-grey-11: hsl(0, 0%, 73%);
   --clr-grey-border: hsl(0, 0%, 85%);
   --clr-grey-12: hsl(0, 0%, 36%);
+  --select-border-color: rgb(185, 185, 185);
   --clr-white: hsl(0, 0%, 100%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
@@ -164,8 +167,7 @@ textarea {
   }
   h1,
   h2,
-  h3,
-  h4 {
+  h3 {
     line-height: 1;
   }
 }
@@ -346,4 +348,43 @@ table
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 5rem;
+}
+
+/* arrow back button */
+
+.arrow-back-button,
+.arrow-back-button-small {
+  border: 1px solid var(--clr-grey-11);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3em 0.5em;
+  border-radius: 0.2rem;
+  color: var(--clr-grey-9);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.arrow-back-button-small {
+  display: none;
+}
+
+.arrow-back-button:hover,
+.arrow-back-button:active,
+.arrow-back-button-small:hover,
+.arrow-back-button-small:active {
+  border-color: currentColor;
+  color: var(--clr-accent-main);
+}
+@media screen and (max-width: 680px) {
+  .arrow-back-button {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .arrow-back-button {
+    font-size: 0.8rem;
+  }
+}
+.arrow-back-button svg {
+  font-size: 1.1rem;
 }

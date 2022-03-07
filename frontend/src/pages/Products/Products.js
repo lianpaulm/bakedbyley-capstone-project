@@ -64,7 +64,7 @@ const Products = () => {
     <>
       <Header />
       <main>
-        <Breadcrumbs path={'Home / products'} />
+        <Breadcrumbs path={'Home / Cakes'} />
         <div className="products container ">
           <FilterProducts
             categories={allCategories}
