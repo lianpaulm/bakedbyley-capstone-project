@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&display=swap');
 .hero-section {
   height: 100vh;
   display: grid;
@@ -8,9 +9,6 @@
   position: relative;
   max-width: 1100px;
 }
-.hero-text {
-  /* border: 1px solid red; */
-}
 .hero-text .subtitle {
   font-size: 1.3rem;
   letter-spacing: 0.6px;
@@ -18,17 +16,22 @@
   margin-bottom: 0.8rem;
 }
 .hero-text h1 {
-  font-size: 4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 4.1rem;
   font-weight: 800;
   letter-spacing: 3px;
   color: var(--clr-grey-8);
+  /* color: var(--clr-grey-7); */
   margin-bottom: 2rem;
   line-height: 1.1;
 }
+.hero-text h1 span {
+  color: var(--clr-accent-main);
+}
 .hero-cta {
   border: none;
-  /* background: var(--clr-accent-main); */
   background: var(--clr-primary-5);
+  /* background: var(--clr-accent-main); */
   color: var(--clr-white);
   padding: 0.5em 1.4em;
   border-radius: 5rem;

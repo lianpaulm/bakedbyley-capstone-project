@@ -19,7 +19,9 @@ const Hero = () => {
     <section className="hero-section container">
       <div className="hero-text">
         <p className="subtitle">Freshly baked everyday</p>
-        <h1>A delicious delight you'll love</h1>
+        <h1>
+          A delicious <span>delight</span> you'll love
+        </h1>
         <Link to="/products" className="hero-cta">
           Order Here!
         </Link>

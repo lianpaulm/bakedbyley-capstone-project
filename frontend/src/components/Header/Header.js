@@ -73,8 +73,10 @@ const Header = () => {
           <div className="cart-button" onClick={goToCartHandler}>
             <AiOutlineShoppingCart className="cart-icon" />
             <div className="amount-container">
-              {cartItems.length > 0 && (
+              {cartItems.length > 0 ? (
                 <p className="total-amount">{cartItems.length}</p>
+              ) : (
+                <p className="total-amount">0</p>
               )}
             </div>
           </div>

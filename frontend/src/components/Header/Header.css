@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Sansita+Swashed&display=swap');
+
 header {
   box-shadow: var(--shadow-1);
   background: var(--clr-white);
@@ -14,11 +16,14 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 .brand {
-  color: var(--clr-primary-5);
-  font-size: 1.2rem;
+  font-family: 'Sansita Swashed', cursive;
+  color: var(--clr-accent-main);
+  color: var(--clr-primary-4);
+  font-size: 1.3rem;
+  line-height: 1;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -122,8 +127,8 @@ header {
   position: absolute;
   top: -0.7rem;
   right: -0.9rem;
-  /* width: 1.5rem;
-  height: 1.3rem; */
+  width: 1.5rem;
+  height: 1.4rem;
   border: 2px solid var(--clr-white);
   border-radius: 5rem;
   /* background: var(--clr-primary-6); */
@@ -136,7 +141,7 @@ header {
   color: var(--clr-white);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
-  padding: 0 6px;
+  /* padding: 0 6px; */
 }
 
 /* login in button */
@@ -275,6 +280,7 @@ header {
     height: 10px;
     display: block;
     /* background: rgb(255, 206, 200); */
+    /* background: rgb(255, 191, 180); */
     background: var(--clr-primary-9);
     transition: var(--transition);
     transform: scaleY(0);
@@ -307,6 +313,7 @@ header {
   .nav-cta {
     margin-left: 0;
     /* margin-left: auto; */
+    gap: 2.2rem;
   }
   .cart-icon {
     font-size: 1.5rem;
@@ -314,11 +321,13 @@ header {
   .amount-container {
     top: -0.9rem;
     right: -1rem;
-    /* width: 1.8rem;
-    height: 1.6rem; */
+    width: 1.6rem;
+    height: 1.5rem;
+    /* width: 1.5rem;
+  height: 1.3rem; */
   }
   .total-amount {
-    padding: 0 7px;
+    /* padding: 0 7px; */
     font-size: 0.8rem;
     font-weight: 300;
     letter-spacing: 1px;
