@@ -1,0 +1,101 @@
+.testimonials-section {
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+.testimonials-header h3 {
+  font-size: 1rem;
+  color: var(--clr-grey-9);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0 0 0.3rem;
+}
+.testimonials-header p {
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  padding-top: 0.2rem;
+}
+
+/* card */
+.testimonials-carousel .slick-slide > div {
+  margin: 0 0.5rem;
+}
+.tes-card {
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: var(--shadow-card);
+  margin: 1rem 0;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 20rem;
+}
+.tes-card .quote-icon {
+  color: var(--clr-accent-main);
+  font-size: 1.5rem;
+}
+.tes-text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+.tes-card-info {
+  margin-top: 1.7rem;
+  position: relative;
+}
+.tes-card-info::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 1.8rem;
+  height: 2px;
+  background: var(--clr-accent-main);
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tes-card-info img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tes-card-info p {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  color: var(--clr-grey-9);
+  font-weight: 500;
+}
+@media screen and (max-width: 780px) {
+  .testimonials-section {
+    padding: 2.2rem 0;
+    margin-bottom: 2.5rem;
+  }
+  .testimonials-header {
+    margin-bottom: 0.8rem;
+  }
+  .testimonials-header h3 {
+    font-size: 0.8rem;
+    margin: 0 0 0.1rem;
+  }
+  .testimonials-header p {
+    font-size: 1rem;
+    padding-top: 0.1rem;
+  }
+
+  .tes-text {
+    font-size: 0.8rem;
+  }
+  .tes-card-info img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .tes-card-info p {
+    font-size: 0.8rem;
+  }
+}

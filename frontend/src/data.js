@@ -159,3 +159,46 @@ export const dataProducts = [
       'Loving the yellow hue? Heres we got for you, cake inspired by Disney Princess Belle with the yellow color and red roses is perfect for you. Belle, a sweet princess is our inspiration for this sweet cake that will surely satisfied your sweet cravings.',
   },
 ];
+
+export const testimonials = [
+  {
+    _id: '1',
+    name: 'Joshua Tanael Bernardo',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1647098595/testimonials%20user/testimonial-img-1_itahfm.jpg',
+    testimony:
+      'Highly recommended! Thank you for  the budget friendly cake and cupcakes. Maganda ang design ng cake/cupcakes at ang sarap pa! Definitely, will order again. God bless to your business maaa! 👏😊',
+  },
+  {
+    _id: '2',
+    name: 'Ana Marie Medina',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1647098595/testimonials%20user/271838354_2121208124700567_5275564418955711103_n_zjc4pc.jpg',
+    testimony:
+      'Pag mabait ka may freebies na cupcake ka hahaha char. Bait ni seller, syempre masarap yung cake and cupcakes and designss syempre super nice and gandaaa!!✨🤎🤎🤎',
+  },
+  {
+    _id: '3',
+    name: 'Jholenz Antonio',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1647098595/testimonials%20user/151208219_1288305071555718_1994082708347678621_n_plgfa0.jpg',
+    testimony:
+      'Highly recommended! Thank you for  the budget friendly cake and cupcakes. Maganda ang design ng cake/cupcakes at ang sarap pa! Definitely, will order again. God bless to your business maaa! 👏😊',
+  },
+  {
+    _id: '4',
+    name: 'Ess X Zor',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1647098595/testimonials%20user/224723221_2932889463695428_3463513414640846836_n_kygqej.jpg',
+    testimony:
+      'HIGHLY RECOMMEND ❤️ KUNG GUSTO NYO NG MASARAP,AT SWAK SA BUDGET DITO KAYO BUMILI.',
+  },
+  {
+    _id: '5',
+    name: 'Maria Rose Patotoy',
+    image:
+      'https://res.cloudinary.com/dspuu6dpz/image/upload/v1647098595/testimonials%20user/271667847_4846630322097697_1074258931605638657_n_oqgioz.jpg',
+    testimony:
+      'Super recommended ❤️ Hindi nakakaumay ung tamis nya dahil sakto lang talaga , pati bisita namin nasarapan din 😊😊 Soon order ulit ❤️',
+  },
+];
