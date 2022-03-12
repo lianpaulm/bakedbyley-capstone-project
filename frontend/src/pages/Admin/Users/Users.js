@@ -59,20 +59,22 @@ const Users = () => {
                 {/* <div>Action</div> */}
               </div>
               <div className="table-body">
-                {users.map((user) => {
-                  const { _id: id, name, email, role } = user;
-                  return (
-                    <div key={id} className="table-row">
-                      <div>{id}</div>
-                      <div>{name}</div>
-                      <div>{email}</div>
-                      <div>
-                        <div className="user-role">{role}</div>
+                {users
+                  .map((user) => {
+                    const { _id: id, name, email, role } = user;
+                    return (
+                      <div key={id} className="table-row">
+                        <div>{id}</div>
+                        <div>{name}</div>
+                        <div>{email}</div>
+                        <div>
+                          <div className="user-role">{role}</div>
+                        </div>
+                        {/* <div>Edit</div> */}
                       </div>
-                      {/* <div>Edit</div> */}
-                    </div>
-                  );
-                })}
+                    );
+                  })
+                  .reverse()}
               </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
 .checkout-steps {
   display: flex;
-  margin-top: calc(var(--header-height) + 0.4rem);
+  margin-top: calc(var(--header-height) + 0.7rem);
   padding: 0 1rem;
-  max-width: 950px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
@@ -11,12 +11,25 @@
   border-top: 0.3rem solid grey;
   color: grey;
   flex: 1;
-  padding: 0.5rem;
+  padding: 0.4rem;
   letter-spacing: 0.5px;
   font-size: 0.9em;
   font-weight: 600;
+  /* text-align: center; */
 }
 .checkout-steps > div.active {
   border-top-color: var(--clr-accent-main);
   color: var(--clr-accent-main);
+}
+
+@media screen and (max-width: 480px) {
+  .checkout-steps > div {
+    padding: 0.5rem 0.1rem;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+  .checkout-steps {
+    margin-top: calc(var(--header-height) + 1rem);
+    margin-bottom: 1.3rem;
+  }
 }

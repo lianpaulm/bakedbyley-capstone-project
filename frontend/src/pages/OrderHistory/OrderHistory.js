@@ -37,71 +37,82 @@ const OrderHistory = () => {
             <div className="table-header">
               <div>ID</div>
               <div>Ordered Date</div>
-              <div>Paid</div>
-              <div>Delivered</div>
+              <div className="is-paid">Paid</div>
+              <div className="is-delivered">Delivered</div>
               <div>Status</div>
               <div>Action</div>
             </div>
             <div className="table-body">
-              {orders.map((order) => {
-                const {
-                  _id: id,
-                  createdAt,
-                  isPaid,
-                  paidAt,
-                  isDelivered,
-                  deliveredAt,
-                } = order;
-                return (
-                  <div key={id} className="table-row">
-                    <div>{id}</div>
-                    <div>{createdAt.substring(0, 10)}</div>
-                    {/* <div>
+              {orders
+                .map((order) => {
+                  const {
+                    _id: id,
+                    createdAt,
+                    isPaid,
+                    paidAt,
+                    isDelivered,
+                    deliveredAt,
+                  } = order;
+                  return (
+                    <div key={id} className="table-row">
+                      <div>
+                        <span className="order-row-span">Order ID: </span>
+                        {id}
+                      </div>
+                      <div>
+                        <span className="order-row-span">Ordered Date: </span>
+                        {createdAt.substring(0, 10)}
+                      </div>
+                      {/* <div>
                       <span className="peso-sign">&#8369;</span>
                       {totalPrice.toFixed(2)}
                     </div> */}
-                    <div>{isPaid ? paidAt.substring(0, 10) : 'No'}</div>
-                    <div>
-                      {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
-                    </div>
-                    <div>
-                      <div
-                        className={`${
-                          !isPaid || !isDelivered
-                            ? 'order-status pending'
-                            : isPaid && isDelivered
-                            ? 'order-status completed'
-                            : 'order-status pending'
-                        }`}
-                      >
-                        {/* {!isPaid
+                      <div className="is-paid">
+                        {isPaid ? paidAt.substring(0, 10) : 'No'}
+                      </div>
+                      <div className="is-delivered">
+                        {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
+                      </div>
+                      <div>
+                        <div
+                          className={`${
+                            !isPaid || !isDelivered
+                              ? 'order-status pending'
+                              : isPaid && isDelivered
+                              ? 'order-status completed'
+                              : 'order-status pending'
+                          }`}
+                        >
+                          {/* {!isPaid
                         ? 'To Pay'
                         : !isDelivered
                         ? 'To Receive'
                         : isPaid && isDelivered
                         ? 'Completed'
                         : 'Pending'} */}
-                        {!isPaid || !isDelivered
-                          ? 'Pending'
-                          : isPaid && isDelivered
-                          ? 'Completed'
-                          : 'Pending'}
+                          {!isPaid || !isDelivered
+                            ? 'Pending'
+                            : isPaid && isDelivered
+                            ? 'Completed'
+                            : 'Pending'}
+                        </div>
+                      </div>
+                      <div>
+                        <button
+                          className="table-action-btn"
+                          type="button"
+                          onClick={() => {
+                            navigate(`/order/${id}`);
+                          }}
+                        >
+                          <span className="order-row-span">Order </span>
+                          Details
+                        </button>
                       </div>
                     </div>
-                    <div>
-                      <button
-                        className="table-action-btn"
-                        type="button"
-                        onClick={() => {
-                          navigate(`/order/${id}`);
-                        }}
-                      >
-                        Details
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })
+                .reverse()}
             </div>
           </div>
         )}

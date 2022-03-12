@@ -8,7 +8,7 @@
   font-size: 1.2rem;
   color: var(--clr-grey-9);
   font-weight: 500;
-  padding: 1.2rem 2.2rem;
+  padding: 1.2rem 2.2rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   display: block;
@@ -27,6 +27,7 @@
 .form-control-payment svg {
   font-size: 2rem;
   margin-right: 0.6rem;
+  flex-shrink: 0;
 }
 .form-control-payment .paypal-icon {
   font-size: 1.5rem;
@@ -40,6 +41,9 @@
   background: transparent;
   margin-left: auto;
 }
+.form-control-payment input[type='radio']:focus {
+  outline: none;
+}
 .form-control-payment input[type='radio']::after {
   width: 1.6rem;
   height: 1.6rem;
@@ -51,6 +55,7 @@
   color: white;
   padding-top: 3px;
   display: inline-block;
+  text-align: center;
   border: 2px solid var(--clr-grey-9);
 }
 .form-control-payment input[type='radio']:checked::after {
@@ -93,4 +98,30 @@
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.2px;
+}
+
+@media screen and (max-width: 480px) {
+  .order-id h1 {
+    font-size: 0.9rem;
+  }
+  .form-control-payment .payment-label {
+    font-size: 1.1rem;
+    padding: 1rem 2rem 1.3rem;
+  }
+
+  .form-control-payment .payment-label > p {
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+  }
+
+  .form-control-payment svg {
+    font-size: 1.8rem;
+    margin-right: 0.6rem;
+  }
+  .form-control-payment .paypal-icon {
+    font-size: 1.4rem;
+  }
+  .form-control-payment input[type='radio'] {
+    font-size: 0.9rem;
+  }
 }

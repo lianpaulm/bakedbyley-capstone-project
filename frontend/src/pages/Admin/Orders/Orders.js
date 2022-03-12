@@ -63,59 +63,61 @@ const Orders = () => {
                 <div>Action</div>
               </div>
               <div className="table-body">
-                {orders.map((order) => {
-                  const {
-                    _id: id,
-                    createdAt,
-                    totalPrice,
-                    isPaid,
-                    paidAt,
-                    isDelivered,
-                    deliveredAt,
-                  } = order;
-                  return (
-                    <div key={id} className="table-row">
-                      <div>{id}</div>
-                      <div>{createdAt.substring(0, 10)}</div>
-                      {/* <div>
+                {orders
+                  .map((order) => {
+                    const {
+                      _id: id,
+                      createdAt,
+                      totalPrice,
+                      isPaid,
+                      paidAt,
+                      isDelivered,
+                      deliveredAt,
+                    } = order;
+                    return (
+                      <div key={id} className="table-row">
+                        <div>{id}</div>
+                        <div>{createdAt.substring(0, 10)}</div>
+                        {/* <div>
                         <span className="peso-sign">&#8369;</span>
                         {totalPrice.toFixed(2)}
                       </div> */}
-                      <div>{isPaid ? paidAt.substring(0, 10) : 'No'}</div>
-                      <div>
-                        {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
-                      </div>
-                      <div>
-                        <div
-                          className={`${
-                            !isPaid || !isDelivered
-                              ? 'order-status pending'
+                        <div>{isPaid ? paidAt.substring(0, 10) : 'No'}</div>
+                        <div>
+                          {isDelivered ? deliveredAt.substring(0, 10) : 'No'}
+                        </div>
+                        <div>
+                          <div
+                            className={`${
+                              !isPaid || !isDelivered
+                                ? 'order-status pending'
+                                : isPaid && isDelivered
+                                ? 'order-status completed'
+                                : 'order-status pending'
+                            }`}
+                          >
+                            {!isPaid || !isDelivered
+                              ? 'Pending'
                               : isPaid && isDelivered
-                              ? 'order-status completed'
-                              : 'order-status pending'
-                          }`}
-                        >
-                          {!isPaid || !isDelivered
-                            ? 'Pending'
-                            : isPaid && isDelivered
-                            ? 'Completed'
-                            : 'Pending'}
+                              ? 'Completed'
+                              : 'Pending'}
+                          </div>
+                        </div>
+                        <div>
+                          <button
+                            className="table-action-btn"
+                            type="button"
+                            onClick={() => {
+                              navigate(`/admin/orders/${id}`);
+                            }}
+                          >
+                            Details
+                          </button>
                         </div>
                       </div>
-                      <div>
-                        <button
-                          className="table-action-btn"
-                          type="button"
-                          onClick={() => {
-                            navigate(`/admin/orders/${id}`);
-                          }}
-                        >
-                          Details
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })
+                  .reverse()}
               </div>
             </div>
           </div>

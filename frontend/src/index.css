@@ -210,21 +210,29 @@ form
   margin-bottom: 0.6rem;
 }
 .form-control label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--clr-grey-8);
+  color: var(--clr-grey-9);
   margin-bottom: 0.1rem;
 }
 .form-control input {
   padding: 0.5rem 0.5rem;
 }
 input,
-select {
+select,
+textarea {
   background: hsl(0, 0%, 100%);
-  border: 1px solid var(--clr-grey-12);
+  border: 1px solid var(--select-border-color);
   border-radius: 3px;
   font-size: 0.9rem;
 }
+/* .form-submit-btn:focus, */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--clr-green);
+}
+
 .form-submit-btn {
   border: none;
   border-radius: 3px;
@@ -238,11 +246,25 @@ select {
   transition: background 0.3s;
 }
 @media screen and (max-width: 480px) {
+  .form-control label {
+    font-size: 0.7rem;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 0.8rem;
+  }
   .form-submit-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
 }
+/* @media screen and (max-width: 480px) {
+  .form-submit-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+} */
 .form-submit-btn:hover {
   background: var(--clr-accent-main-hover);
 }
@@ -264,7 +286,7 @@ select {
   letter-spacing: 0.5px;
   border-radius: 3px;
   /* display: inline-block; */
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .form-error-alert-danger {
   background: var(--clr-red-light-2);
@@ -284,7 +306,18 @@ select {
   letter-spacing: 1px;
   padding-bottom: 0.5rem;
 }
-
+@media screen and (max-width: 980px) {
+  .form-error-alert-danger {
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 25rem) {
+  .form-error-alert-danger {
+    display: block;
+    font-size: 0.8rem;
+  }
+}
 /*
 =============== 
 table
@@ -294,7 +327,7 @@ table
 .table-body {
   display: flex;
   flex-direction: column;
-  flex-direction: column-reverse;
+  /* flex-direction: column-reverse; */
 }
 .table-container {
   box-shadow: var(--shadow-1);
@@ -341,7 +374,7 @@ table
   background: var(--clr-primary-9);
 }
 .table-action-btn {
-  padding: 0.4rem 1.5rem;
+  padding: 0.4em 1.5em;
   font-size: 0.9rem;
   background: var(--clr-accent-main);
   color: white;

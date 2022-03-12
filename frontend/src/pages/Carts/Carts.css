@@ -255,8 +255,8 @@
     align-self: flex-start;
     margin-top: -0.5rem;
   }
-  .product-sched span,
-  .product-sched,
+  .cart-table-row .product-sched span,
+  .cart-table-row .product-sched,
   .row-total {
     display: none;
   }

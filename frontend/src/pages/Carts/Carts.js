@@ -108,88 +108,90 @@ const Carts = () => {
               <div></div>
             </div>
             <div className="cart-table-body">
-              {cartItems.map((item) => {
-                const {
-                  name,
-                  image,
-                  varPrice,
-                  varName,
-                  variation,
-                  product,
-                  qty,
-                  deliveryDate,
-                  deliveryTime,
-                } = item;
+              {cartItems
+                .map((item) => {
+                  const {
+                    name,
+                    image,
+                    varPrice,
+                    varName,
+                    variation,
+                    product,
+                    qty,
+                    deliveryDate,
+                    deliveryTime,
+                  } = item;
 
-                return (
-                  <div key={product} className="cart-table-row">
-                    <div className="row-product-cont">
-                      <img src={image} alt={name} />
-                    </div>
-
-                    <div className="product-cart-info">
-                      <div className="row-product-info-cont">
-                        <Link to={`/products/${product}`}>
-                          <h4>{name}</h4>
-                        </Link>
-                        <p className="product-sched">
-                          <span>Delivery Date:</span> {deliveryDate} <br />
-                          <span>Delivery Time:</span> {deliveryTime}
-                        </p>
+                  return (
+                    <div key={product} className="cart-table-row">
+                      <div className="row-product-cont">
+                        <img src={image} alt={name} />
                       </div>
 
-                      <div className="row-price">
-                        <span className="peso-sign">&#8369;</span>
-                        {varPrice}.00
-                      </div>
+                      <div className="product-cart-info">
+                        <div className="row-product-info-cont">
+                          <Link to={`/products/${product}`}>
+                            <h4>{name}</h4>
+                          </Link>
+                          <p className="product-sched">
+                            <span>Delivery Date:</span> {deliveryDate} <br />
+                            <span>Delivery Time:</span> {deliveryTime}
+                          </p>
+                        </div>
 
-                      <div className="row-price">
-                        <p className="var-text">
-                          <span>{variation}: </span>
-                          {varName}
-                        </p>
-                      </div>
+                        <div className="row-price">
+                          <span className="peso-sign">&#8369;</span>
+                          {varPrice}.00
+                        </div>
 
-                      <div className="row-qty">
-                        <select
-                          id="qty"
-                          value={qty}
-                          onChange={(e) =>
-                            dispatch(
-                              addToCart(
-                                product,
-                                Number(e.target.value),
-                                varPrice,
-                                varName,
-                                variation,
-                                deliveryDate,
-                                deliveryTime
+                        <div className="row-price">
+                          <p className="var-text">
+                            <span>{variation}: </span>
+                            {varName}
+                          </p>
+                        </div>
+
+                        <div className="row-qty">
+                          <select
+                            id="qty"
+                            value={qty}
+                            onChange={(e) =>
+                              dispatch(
+                                addToCart(
+                                  product,
+                                  Number(e.target.value),
+                                  varPrice,
+                                  varName,
+                                  variation,
+                                  deliveryDate,
+                                  deliveryTime
+                                )
                               )
-                            )
-                          }
-                        >
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                      </div>
+                            }
+                          >
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
 
-                      <div className="row-total">
-                        <span className="peso-sign">&#8369;</span>
-                        {varPrice * qty}.00
+                        <div className="row-total">
+                          <span className="peso-sign">&#8369;</span>
+                          {varPrice * qty}.00
+                        </div>
+                      </div>
+                      <div
+                        className="row-remove-btn"
+                        onClick={() => removeFromCartHandler(item.product)}
+                      >
+                        <IoMdClose />
                       </div>
                     </div>
-                    <div
-                      className="row-remove-btn"
-                      onClick={() => removeFromCartHandler(item.product)}
-                    >
-                      <IoMdClose />
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })
+                .reverse()}
               <Link to="/products" className="arrow-back-button-small">
                 <BsArrowLeft />
                 Continue shopping

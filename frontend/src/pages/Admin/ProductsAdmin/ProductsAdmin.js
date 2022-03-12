@@ -133,27 +133,28 @@ const ProductsAdmin = () => {
                 {/* <div>Action</div> */}
               </div>
               <div className="table-body">
-                {products.map((product) => {
-                  const { _id: id, name, category, price, image } = product;
-                  return (
-                    <div
-                      key={id}
-                      className={`${
-                        !product.disabled ? 'table-row' : 'table-row disabled'
-                      }`}
-                    >
-                      <div>{id}</div>
-                      <div className="image-div">
-                        <img src={image} alt="" />
-                      </div>
-                      <div className="name-div">{name}</div>
-                      <div>
-                        <span className="peso-sign">&#8369;</span>
-                        {price[0].price}.00
-                      </div>
-                      <div>{category}</div>
-                      <div>
-                        {/* <button className="action-edit-btn">
+                {products
+                  .map((product) => {
+                    const { _id: id, name, category, price, image } = product;
+                    return (
+                      <div
+                        key={id}
+                        className={`${
+                          !product.disabled ? 'table-row' : 'table-row disabled'
+                        }`}
+                      >
+                        <div>{id}</div>
+                        <div className="image-div">
+                          <img src={image} alt="" />
+                        </div>
+                        <div className="name-div">{name}</div>
+                        <div>
+                          <span className="peso-sign">&#8369;</span>
+                          {price[0].price}.00
+                        </div>
+                        <div>{category}</div>
+                        <div>
+                          {/* <button className="action-edit-btn">
                           <FaEdit />
                         </button>
                         <button
@@ -162,16 +163,17 @@ const ProductsAdmin = () => {
                         >
                           <AiFillDelete />
                         </button> */}
-                        <button
-                          className="action-disable-btn"
-                          onClick={() => disableProduct(id)}
-                        >
-                          Disable
-                        </button>
+                          <button
+                            className="action-disable-btn"
+                            onClick={() => disableProduct(id)}
+                          >
+                            Disable
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })
+                  .reverse()}
               </div>
             </div>
           </div>
