@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+
 // router
 const products = require('./routes/productsRoute');
 const orders = require('./routes/orderRoute');
@@ -24,6 +26,16 @@ app.use('/api/v1/config', config);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
+
+// serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // set static folder
+  app.use(express.static('../frontend/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
 
 // connecting to db before to start server
 const port = process.env.PORT || 5000;
