@@ -7,7 +7,6 @@ const products = require('./routes/productsRoute');
 const orders = require('./routes/orderRoute');
 const user = require('./routes/userRoutes');
 const config = require('./routes/configRoute');
-const all = require('./routes/allRoute');
 // db
 const connectDB = require('./db/connect');
 require('dotenv').config();
@@ -33,7 +32,9 @@ if (process.env.NODE_ENV === 'production') {
   // set static folder
   app.use(express.static('../frontend/build'));
 
-  app.use('/', all);
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
 }
 
 // connecting to db before to start server
