@@ -5,7 +5,7 @@
   "main": "server.js",
   "engines": {
     "node": "16.x"
-  }
+  },
   "scripts": {
     "client-install": "npm install --prefix frontend",
     "start": "cd backend && node server.js",
