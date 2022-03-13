@@ -2,14 +2,16 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+require('dotenv').config();
 // router
 const products = require('./routes/productsRoute');
 const orders = require('./routes/orderRoute');
 const user = require('./routes/userRoutes');
 const config = require('./routes/configRoute');
 // db
+
 const connectDB = require('./db/connect');
-require('dotenv').config();
+
 // middleware
 const notFound = require('./middleware/notFound');
 const errorHandlerMiddleware = require('./middleware/errorHandler');
