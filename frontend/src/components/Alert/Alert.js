@@ -7,7 +7,7 @@ const Alert = ({ type, msg, removeAlert }) => {
       removeAlert();
     }, 2000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [removeAlert]);
 
   return (
     <div className="alert-overlay">

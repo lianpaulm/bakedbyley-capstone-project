@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { dataSlider } from '../../data';
 import './HeroSlider.css';
-import {
-  MdOutlineArrowForwardIos,
-  MdOutlineArrowBackIos,
-} from 'react-icons/md';
+// import {
+//   MdOutlineArrowForwardIos,
+//   MdOutlineArrowBackIos,
+// } from 'react-icons/md';
 
 const HeroSlider = () => {
   const [cakes, setCakes] = useState(dataSlider);
@@ -36,7 +36,7 @@ const HeroSlider = () => {
   return (
     <div className="slider">
       {cakes.map((cake, cakeIndex) => {
-        const { id, image, name, price } = cake;
+        const { id, image, name } = cake;
 
         let position = 'nextSlide';
         if (cakeIndex === index) {
