@@ -183,7 +183,7 @@ export const testimonials = [
     image:
       'https://res.cloudinary.com/dspuu6dpz/image/upload/v1647098595/testimonials%20user/151208219_1288305071555718_1994082708347678621_n_plgfa0.jpg',
     testimony:
-      'Highly recommended! Thank you for  the budget friendly cake and cupcakes. Maganda ang design ng cake/cupcakes at ang sarap pa! Definitely, will order again. God bless to your business maaa! 👏😊',
+      "Highly recommended  the sweetness of her cupcakes was just right, she didn't skimp on the ingredients, they were delicious and affordable.",
   },
   {
     _id: '4',

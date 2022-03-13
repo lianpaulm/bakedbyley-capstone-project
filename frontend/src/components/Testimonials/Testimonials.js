@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+
 import './Testimonials.css';
 import { testimonials } from '../../data';
 import { FaQuoteLeft } from 'react-icons/fa';
@@ -29,8 +28,6 @@ function FeaturedPrevArrow(props) {
 }
 
 const Testimonials = () => {
-  const [testimonialsData, setTestimonialsData] = useState(testimonials);
-
   var settings = {
     dots: true,
     speed: 500,
@@ -70,7 +67,7 @@ const Testimonials = () => {
 
         <div className="testimonials-carousel">
           <Slider {...settings}>
-            {testimonialsData.map((item) => {
+            {testimonials.map((item) => {
               const { _id: id, name, image, testimony } = item;
               return (
                 <div className="tes-card" key={id}>

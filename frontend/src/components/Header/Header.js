@@ -39,7 +39,7 @@ const Header = () => {
         </button>
 
         <NavLink to="/" className="brand">
-          {/* <img className="logo-img" src="./images/logo1.jpg" alt="" /> */}
+          {/* <img className="logo-img" src="https://res.cloudinary.com/dspuu6dpz/image/upload/v1647152736/logo_uti6os.jpg" alt="" /> */}
           BakedbyLey
         </NavLink>
 
