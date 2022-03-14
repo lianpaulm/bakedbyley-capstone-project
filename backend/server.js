@@ -36,12 +36,6 @@ app.use(errorHandlerMiddleware);
 //   });
 // }
 
-const port = process.env.PORT || 5000;
-
-process.env.NODE_ENV === 'production'
-  ? (url = 'http://localhost:3000')
-  : (url = 'http://localhost:3000');
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));
 
@@ -49,6 +43,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
   });
 }
+const port = process.env.PORT || 5000;
 
 // connecting to db before to start server
 // const port = process.env.PORT || 5000;
