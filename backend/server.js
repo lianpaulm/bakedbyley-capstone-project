@@ -26,8 +26,9 @@ app.use('/api/v1/config', config);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
+
 // serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV == 'production') {
   app.use(express.static('../frontend/build'));
   // set static folder
 
