@@ -47,7 +47,7 @@ function App() {
         <Route path="/placeorder" element={<PlaceOrder />}></Route>
         <Route path="/order/:id" element={<Order />}></Route>
         <Route path="/orderhistory" element={<OrderHistory />}></Route>
-        {/* <Route path="*" element={<ErrorPage />}></Route> */}
+        <Route path="*" element={<ErrorPage />}></Route>
 
         {/* admin path */}
         <Route path="/admin/dashboard" element={<Dashboard />}></Route>
