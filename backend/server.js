@@ -39,7 +39,7 @@ app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 5000;
 
 process.env.NODE_ENV === 'production'
-  ? (url = '')
+  ? (url = 'http://localhost:3000')
   : (url = 'http://localhost:3000');
 
 if (process.env.NODE_ENV === 'production') {
