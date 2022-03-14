@@ -40,9 +40,6 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running');
   });
 }
-app.get('/', (req, res) => {
-  res.send('API is running');
-});
 
 // connecting to db before to start server
 const port = process.env.PORT || 5000;
