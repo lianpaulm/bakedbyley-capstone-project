@@ -79,36 +79,28 @@ export const dataSlider = [
 export const dataQuestions = [
   {
     id: 1,
-    title: 'Can I see a menu?',
-    info: 'You can visit our social media networking sites for more menus.',
+    title: 'Do you decorate or personalize your cakes?',
+    info: 'Yes we can decorate and personalize the cake you want.',
   },
   {
     id: 2,
-    title: 'Can I make a reservation?',
-    info: `Yes just contact us here:
-    Email: @nettepasuquin@gmail.com
-    Facebook: Raili's Sweet Things
-    Instagram: @railissweethings
-    Contact Number: 09055573484/09396516128`,
+    title: 'Where can I find your pricing?',
+    info: `Just visit this website to see the price of the cake you wish.`,
   },
   {
     id: 3,
-    title: 'Where are you located?',
-    info: 'Isaiah Street, 3023 San Jose del Monte, Bulacan, Philippines',
+    title: 'Do you deliver?',
+    info: 'Yes we deliver, around Quezon city only',
   },
   {
     id: 4,
-    title: 'Do you deliver?',
-    info: `Yes we deliver, just contact us at:
-    Email: @nettepasuquin@gmail.com
-    Facebook: Raili's Sweet Things
-    Instagram: @railissweetthings
-    Contact Number: 09055573484/09396516128`,
+    title: 'What payment method do you accept?',
+    info: `We accept Cash on Delivery or COD and PayPal`,
   },
   {
     id: 5,
-    title: 'When do I recieve a password ordered by letter?',
-    info: 'Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan ',
+    title: 'How do I place an order?',
+    info: 'You should create an account here in our website to place your order, you can message us on our Facebook page and Instagram account.',
   },
 ];
 
