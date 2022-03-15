@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
+app.use(cors());
 
 // router
 const products = require('./routes/productsRoute');
@@ -27,13 +29,18 @@ app.use('/api/v1/config', config);
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('../frontend/build'));
 
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
-  });
-}
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
+//   });
+// }
+
+app.use(express.static(path.join(__dirname, '../build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build'));
+});
 
 // connecting to db before to start server
 const port = process.env.PORT || 5000;
