@@ -21,7 +21,7 @@ const OrderHistory = () => {
       navigate('/login');
     }
     dispatch(listOrderMine());
-  }, [dispatch, navigate]);
+  }, [dispatch, navigate, userInfo]);
 
   return (
     <>

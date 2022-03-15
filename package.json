@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/lianpaulm/bakedbyley-capstone-project/issues"
   },
-  "homepage": "https://github.com/lianpaulm/bakedbyley-capstone-project#readme",
+  "homepage": ".",
   "dependencies": {
     "axios": "^0.25.0",
     "bcryptjs": "^2.4.3",

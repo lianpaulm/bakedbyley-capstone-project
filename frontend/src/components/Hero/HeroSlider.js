@@ -7,19 +7,18 @@ import './HeroSlider.css';
 // } from 'react-icons/md';
 
 const HeroSlider = () => {
-  const [cakes, setCakes] = useState(dataSlider);
   const [index, setIndex] = useState(0);
 
   // if the index is surpass the length of an array or below
   useEffect(() => {
-    const lastIndex = cakes.length - 1;
+    const lastIndex = dataSlider.length - 1;
     if (index < 0) {
       setIndex(lastIndex);
     }
     if (index > lastIndex) {
       setIndex(0);
     }
-  }, [cakes, index]);
+  }, [index]);
 
   // auto slide
   useEffect(() => {
@@ -35,7 +34,7 @@ const HeroSlider = () => {
 
   return (
     <div className="slider">
-      {cakes.map((cake, cakeIndex) => {
+      {dataSlider.map((cake, cakeIndex) => {
         const { id, image, name } = cake;
 
         let position = 'nextSlide';
@@ -44,7 +43,7 @@ const HeroSlider = () => {
         }
         if (
           cakeIndex === index - 1 ||
-          (cakeIndex === 0 && cakeIndex === cakes.length - 1)
+          (cakeIndex === 0 && cakeIndex === dataSlider.length - 1)
         ) {
           position = 'lastSlide';
         }
@@ -65,7 +64,7 @@ const HeroSlider = () => {
       </button> */}
 
       <div className="container-dots">
-        {Array.from({ length: cakes.length }).map((item, dotIndex) => {
+        {Array.from({ length: dataSlider.length }).map((item, dotIndex) => {
           return (
             <div
               key={dotIndex}

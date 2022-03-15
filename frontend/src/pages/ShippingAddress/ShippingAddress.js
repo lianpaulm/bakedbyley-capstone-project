@@ -19,7 +19,7 @@ const ShippingAddress = () => {
     if (!userInfo) {
       navigate('/login');
     }
-  }, []);
+  }, [navigate, userInfo]);
 
   const [fullName, setFullName] = useState(shippingAddress.fullName || '');
   const [phoneNumber, setPhoneNumber] = useState(

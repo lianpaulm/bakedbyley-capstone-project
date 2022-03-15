@@ -2,7 +2,7 @@ import React from 'react';
 import './SidebarAdmin.css';
 import { FiUsers } from 'react-icons/fi';
 import { CgClipboard } from 'react-icons/cg';
-import { RiCake2Line, RiDashboardLine } from 'react-icons/ri';
+import { RiCake2Line } from 'react-icons/ri';
 
 import { Navigation } from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';

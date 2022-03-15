@@ -68,7 +68,6 @@ const Orders = () => {
                     const {
                       _id: id,
                       createdAt,
-                      totalPrice,
                       isPaid,
                       paidAt,
                       isDelivered,

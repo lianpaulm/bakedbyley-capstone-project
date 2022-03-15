@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -9,7 +9,6 @@ import { dataQuestions } from '../../data';
 import './Faq.css';
 
 const Faq = () => {
-  const [questions, setQuestions] = useState(dataQuestions);
   return (
     <>
       <Header />
@@ -17,7 +16,7 @@ const Faq = () => {
         <section className="faq-section">
           <h3>Frequently asked questions</h3>
           <div className="question-info">
-            {questions.map((question) => {
+            {dataQuestions.map((question) => {
               return <Question key={question.id} {...question} />;
             })}
           </div>

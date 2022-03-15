@@ -19,7 +19,7 @@ const OrderAdmin = () => {
   const { id: orderId } = useParams();
 
   const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error } = orderDetails;
+  const { order, loading } = orderDetails;
 
   const orderDeliver = useSelector((state) => state.orderDeliver);
   const {
