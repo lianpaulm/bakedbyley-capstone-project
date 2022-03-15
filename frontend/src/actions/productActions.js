@@ -10,7 +10,9 @@ export const listProducts = () => async (dispatch) => {
     type: PRODUCT_LIST_REQUEST,
   });
   try {
-    const { data } = await axios.get('/api/v1/products');
+    const { data } = await axios.get(
+      'https://bakedbyley.herokuapp.com/api/v1/products'
+    );
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: data.products,
