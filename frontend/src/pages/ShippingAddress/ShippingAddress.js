@@ -51,6 +51,7 @@ const ShippingAddress = () => {
         <div className="form-control">
           <label htmlFor="fullName">Full Name</label>
           <input
+            required
             type="text"
             id="fullName"
             placeholder="Enter full name"
@@ -62,6 +63,7 @@ const ShippingAddress = () => {
         <div className="form-control">
           <label htmlFor="phoneNumber">Phone Number</label>
           <input
+            required
             type="text"
             id="phoneNumber"
             placeholder="Enter phone number"
@@ -73,6 +75,7 @@ const ShippingAddress = () => {
         <div className="form-control">
           <label htmlFor="address">Address</label>
           <input
+            required
             type="text"
             id="address"
             placeholder="Enter address"
@@ -81,20 +84,10 @@ const ShippingAddress = () => {
           />
         </div>
 
-        {/* <div className="form-control">
-          <label htmlFor="city">City</label>
-          <input
-            type="text"
-            id="city"
-            placeholder="Enter city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-        </div> */}
-
         <div className="form-control">
           <label htmlFor="city">City</label>
           <select
+            required
             id="city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -121,6 +114,7 @@ const ShippingAddress = () => {
         <div className="form-control">
           <label htmlFor="postalCode">Postal Code</label>
           <input
+            required
             type="text"
             id="postalCode"
             placeholder="Enter postal code"
