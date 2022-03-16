@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { register } from '../../actions/userActions';
+import './Signup.css';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordAlert, setPasswordAlert] = useState(false);
   const location = useLocation();
   const redirect = location.search
     ? location.search.split('=')[1]
@@ -18,7 +20,12 @@ const Signup = () => {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(register(name, email, password));
+    if (password !== confirmPassword) {
+      setPasswordAlert(true);
+    } else {
+      setPasswordAlert(false);
+      dispatch(register(name, email, password));
+    }
   };
 
   const navigate = useNavigate();
@@ -34,7 +41,7 @@ const Signup = () => {
         <section className="user-form-section">
           <div className="col-1">
             <form className="form user-form" onSubmit={submitHandler}>
-              <div className="header">
+              <div className="header signup-header">
                 <Link to="/" className="brand">
                   BakedbyLey
                 </Link>
@@ -43,6 +50,11 @@ const Signup = () => {
               </div>
               {loading && <div className="form-loading">Loading...</div>}
               {error && <p className="form-error-alert">{error}</p>}
+              {passwordAlert && (
+                <p className="form-error-alert">
+                  Password and confirm password are not match
+                </p>
+              )}
               <div className="form-control">
                 <label htmlFor="name">Your Name</label>
                 <input
@@ -71,6 +83,16 @@ const Signup = () => {
                   placeholder="Enter Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="form-control">
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="Enter Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
               {/* sumbmit btn */}
