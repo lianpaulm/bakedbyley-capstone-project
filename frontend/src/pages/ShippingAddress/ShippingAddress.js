@@ -81,7 +81,7 @@ const ShippingAddress = () => {
           />
         </div>
 
-        <div className="form-control">
+        {/* <div className="form-control">
           <label htmlFor="city">City</label>
           <input
             type="text"
@@ -90,6 +90,32 @@ const ShippingAddress = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
+        </div> */}
+
+        <div className="form-control">
+          <label htmlFor="city">City</label>
+          <select
+            id="city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          >
+            <option value="" disabled selected style={{ color: 'grey' }}>
+              Select your city
+            </option>
+            <option value="Quezon City">Quezon City</option>
+            <option value="Caloocan">Caloocan</option>
+            <option value="Makati">Makati</option>
+            <option value="Malabon">Malabon</option>
+            <option value="Mandaluyong">Mandaluyong</option>
+            <option value="Manila">Manila</option>
+            <option value="Marikina">Marikina</option>
+            <option value="Navotas">Navotas</option>
+            <option value="Paranaque">Paranaque</option>
+            <option value="Pasay">Pasay</option>
+            <option value="Pasig">Pasig</option>
+            <option value="Taguig">Taguig</option>
+            <option value="Valenzuela">Valenzuela</option>
+          </select>
         </div>
 
         <div className="form-control">

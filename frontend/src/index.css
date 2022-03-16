@@ -215,8 +215,13 @@ form
   color: var(--clr-grey-9);
   margin-bottom: 0.1rem;
 }
-.form-control input {
+.form-control input,
+.form-control select {
   padding: 0.5rem 0.5rem;
+}
+
+option[value=''][disabled] {
+  display: none;
 }
 input,
 select,
