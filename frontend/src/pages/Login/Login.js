@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { login } from '../../actions/userActions';
+import usePasswordToggle from '../../hooks/usePasswordToggle';
 import './Login.css';
 
 const Login = () => {
+  const [PasswordInputType, ToggleIcon] = usePasswordToggle();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -59,12 +62,13 @@ const Login = () => {
               <div className="form-control">
                 <label htmlFor="password">Password</label>
                 <input
-                  type="password"
+                  type={PasswordInputType}
                   id="password"
                   placeholder="Enter Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <span className="password-toggle-icon">{ToggleIcon}</span>
               </div>
               {/* sumbmit btn */}
               <div className="form-control">

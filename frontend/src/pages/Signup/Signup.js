@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import usePasswordToggle from '../../hooks/usePasswordToggle';
 import { register } from '../../actions/userActions';
 import './Signup.css';
 
 const Signup = () => {
+  const [PasswordInputType, ToggleIcon] = usePasswordToggle();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordAlert, setPasswordAlert] = useState(false);
+  // const [confirmPassword, setConfirmPassword] = useState('');
+  // const [passwordAlert, setPasswordAlert] = useState(false);
   const location = useLocation();
   const redirect = location.search
     ? location.search.split('=')[1]
@@ -20,12 +23,12 @@ const Signup = () => {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setPasswordAlert(true);
-    } else {
-      setPasswordAlert(false);
-      dispatch(register(name, email, password));
-    }
+    // if (password !== confirmPassword) {
+    //   setPasswordAlert(true);
+    // } else {
+    //   setPasswordAlert(false);
+    // }
+    dispatch(register(name, email, password));
   };
 
   const navigate = useNavigate();
@@ -50,11 +53,11 @@ const Signup = () => {
               </div>
               {loading && <div className="form-loading">Loading...</div>}
               {error && <p className="form-error-alert">{error}</p>}
-              {passwordAlert && (
+              {/* {passwordAlert && (
                 <p className="form-error-alert">
                   Password and confirm password are not match
                 </p>
-              )}
+              )} */}
               <div className="form-control">
                 <label htmlFor="name">Your Name</label>
                 <input
@@ -78,23 +81,25 @@ const Signup = () => {
               <div className="form-control">
                 <label htmlFor="password">Password</label>
                 <input
-                  type="password"
+                  type={PasswordInputType}
                   id="password"
                   placeholder="Enter Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <span className="password-toggle-icon">{ToggleIcon}</span>
               </div>
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <input
-                  type="password"
+                  type={PasswordInputType}
                   id="confirmPassword"
                   placeholder="Enter Confirm Password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-              </div>
+                <span className="password-toggle-icon">{ToggleIcon}</span>
+              </div> */}
               {/* sumbmit btn */}
               <div className="form-control">
                 <button type="submit" className="form-submit-btn">

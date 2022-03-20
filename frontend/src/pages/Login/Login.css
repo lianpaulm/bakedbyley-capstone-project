@@ -28,7 +28,7 @@
 }
 .user-form .form-submit-btn {
   background: var(--clr-primary-5);
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
   margin-bottom: 2.8rem;
   transition: background 0.3s;
 }
@@ -64,6 +64,18 @@
 .user-form-section .col-2 .signup-svg {
   width: 32rem;
 }
+.user-form .form-control {
+  position: relative;
+}
+.password-toggle-icon {
+  position: absolute;
+  top: 26px;
+  cursor: pointer;
+  z-index: 100;
+  right: 12px;
+  font-size: 1.5rem;
+  color: var(--clr-grey-9);
+}
 
 @media screen and (min-height: 780px) {
   .user-form-section {
@@ -92,5 +104,10 @@
   }
   .new-customer {
     font-size: 0.8rem;
+  }
+  .password-toggle-icon {
+    top: 23px;
+    right: 11px;
+    font-size: 1.4rem;
   }
 }
