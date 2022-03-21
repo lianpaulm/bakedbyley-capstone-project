@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const asyncWrapper = require('../middleware/asyncWrapper');
+const validator = require('validator');
 
 // register a user
 const registerUser = asyncWrapper(async (req, res) => {
@@ -9,6 +10,9 @@ const registerUser = asyncWrapper(async (req, res) => {
       .status(400)
       .json({ message: 'Please enter name, email and password' });
   }
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({ message: 'Please enter a valid email' });
+  }
   if (name.length < 4) {
     return res
       .status(400)
@@ -17,7 +21,7 @@ const registerUser = asyncWrapper(async (req, res) => {
   if (password.length <= 6) {
     return res
       .status(400)
-      .json({ message: 'Password should be greater than 6 characters' });
+      .json({ message: 'Password should be at least 8 characters' });
   }
 
   const user = await User.create(req.body);

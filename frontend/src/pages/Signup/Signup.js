@@ -59,11 +59,11 @@ const Signup = () => {
                 </p>
               )} */}
               <div className="form-control">
-                <label htmlFor="name">Your Name</label>
+                <label htmlFor="name">Your Username</label>
                 <input
                   type="text"
                   id="name"
-                  placeholder="Enter Name"
+                  placeholder="Enter Username"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
