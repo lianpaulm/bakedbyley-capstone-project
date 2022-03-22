@@ -5,24 +5,37 @@ const validator = require('validator');
 // register a user
 const registerUser = asyncWrapper(async (req, res) => {
   const { name, email, password } = req.body;
+
   if (!name || !email || !password) {
     return res
       .status(400)
       .json({ message: 'Please enter name, email and password' });
   }
-  if (!validator.isEmail(email)) {
-    return res.status(400).json({ message: 'Please enter a valid email' });
-  }
+
   if (name.length < 4) {
     return res
       .status(400)
       .json({ message: 'Name should be at least 4 characters' });
   }
-  if (password.length <= 6) {
-    return res
-      .status(400)
-      .json({ message: 'Password should be at least 8 characters' });
+
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({ message: 'Please enter a valid email' });
   }
+
+  // password validation regex
+  const isValidPass =
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+  if (!isValidPass.test(password)) {
+    return res.status(400).json({
+      message:
+        'The minimum password length is 8 characters and must contain at least 1 lowercase letter, 1 capital letter, 1 number and 1 special character.',
+    });
+  }
+
+  // const isEmailExist = await User.find({ email: email });
+  // if (isEmailExist) {
+  //   return res.status(400).json({ message: 'Email already exists' });
+  // }
 
   const user = await User.create(req.body);
   res.status(201).json({ user });
