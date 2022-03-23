@@ -216,9 +216,13 @@ const Order = () => {
           )}
 
           {order.isDelivered && order.isPaid ? (
-            <div className="order-completed">COMPLETED</div>
+            <div>
+              Order status: <span className="order-status-text">COMPLETED</span>
+            </div>
           ) : (
-            <div className="order-pending">PENDING</div>
+            <div>
+              Order status: <span className="order-status-text">PENDING</span>
+            </div>
           )}
         </div>
       </div>

@@ -15,7 +15,7 @@ const registerUser = asyncWrapper(async (req, res) => {
   if (name.length < 4) {
     return res
       .status(400)
-      .json({ message: 'Name should be at least 4 characters' });
+      .json({ message: 'Username should contain at least 4 characters' });
   }
 
   if (!validator.isEmail(email)) {

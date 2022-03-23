@@ -8,3 +8,8 @@
   padding: 0.3rem;
   margin-bottom: 1rem;
 }
+.order-status-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--clr-grey-8);
+}

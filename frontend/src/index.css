@@ -235,7 +235,8 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid var(--clr-green);
+  /* outline: 2px solid var(--clr-green); */
+  outline: none;
 }
 
 .form-submit-btn {
@@ -311,6 +312,14 @@ textarea:focus {
   letter-spacing: 1px;
   padding-bottom: 0.5rem;
 }
+.invalid-border {
+  border: 1px solid var(--clr-red-light);
+}
+.text-danger {
+  padding-top: 0.2px;
+  font-size: 0.8rem;
+  color: var(--clr-red-dark);
+}
 @media screen and (max-width: 980px) {
   .form-error-alert-danger {
     font-size: 0.9rem;
@@ -370,13 +379,27 @@ table
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.form-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.form-flex-address {
+  grid-template-columns: 0.6fr 0.4fr;
+}
+.form-flex-address .form-control:last-child label {
+  color: transparent;
+}
+.form-flex > .form-control input {
+  width: 100%;
+}
 .table-row .image-div img {
   width: 4rem;
   height: 4rem;
   object-fit: cover;
 }
 .table-row:hover {
-  background: var(--clr-primary-9);
+  background: var(--clr-primary-10);
 }
 .table-action-btn {
   padding: 0.4em 1.5em;
