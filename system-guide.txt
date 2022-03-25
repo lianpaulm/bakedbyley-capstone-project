@@ -1,0 +1,30 @@
+Install dependencies
+For backend - npm install
+For frontend - client-install
+
+
+Make sure to create a .env file in backend directory and add appropriate variables in order to use the app.
+Essential variables:
+MONGO_URI=mongodb+srv://lianpaul:09194373912lian@cluster0.vcjqr.mongodb.net/Ecommerce?retryWrites=true&w=majority
+PAYPAL_CLIENT_ID=AbZ2jKGjumauU61Eslc1kD61hVDrHohA4b9v8OsLraMfDKAmqYgYsrQp-5-p2-3ObAOrKTrwzj9SuA6O
+
+
+To run app type this command - npm run dev
+
+
+Github repository 
+https://github.com/lianpaulm/bakedbyley-capstone-project.git
+
+
+Technology we used 
+For frontend - HTML
+               CSS
+ 	       ReactJS (JS library)
+
+For backend - NodeJS (JS runtime) 
+              ExpressJS (NodeJS framework)
+         
+For database - MongoDB Atlas (Cloud database)
+               Mongoose (MongoDB library)
+
+        
