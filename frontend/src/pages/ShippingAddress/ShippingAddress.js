@@ -163,10 +163,6 @@ const ShippingAddress = () => {
               // onChange={(e) => setAddress(e.target.value)}
               {...register('address', {
                 required: 'Address is required',
-                minLength: {
-                  value: 5,
-                  message: 'Minimum required length is 8 characters',
-                },
                 maxLength: {
                   value: 150,
                   message: 'The max length of 150 characters is reached',
@@ -192,10 +188,6 @@ const ShippingAddress = () => {
               // onChange={(e) => setAddress(e.target.value)}
               {...register('barangay', {
                 required: 'Address is required',
-                minLength: {
-                  value: 4,
-                  message: 'Minimum required length is 4 characters',
-                },
                 pattern: {
                   value: /^[#.0-9a-zA-Z\s,-]+$/,
                   message: 'Invalid address',
