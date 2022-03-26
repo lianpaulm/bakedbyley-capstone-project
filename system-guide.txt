@@ -1,7 +1,12 @@
-To run app type this command - npm run dev
+If you don't have Node JS in your pc, please install the nodejs to be able to run this website. I provide the nodejs installer in main folder.
+
+
+To run this website type this command - npm run dev
+
 
 You can now view in the browser
 Local: http://localhost:3000
+
 
 Admin login
 Email - admin@gmail.com
@@ -17,6 +22,8 @@ For backend - NodeJS (JS runtime)
         
 For database - MongoDB Atlas (Cloud database)
                Mongoose (MongoDB library)
+
+Editor - Visual Studio Code
 
 
 Github repository 
