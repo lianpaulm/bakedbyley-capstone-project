@@ -13,7 +13,7 @@ An e-commerce website for cake ordering system , developed as a capstone project
 6. View order history and status
     
 ## Admin functionality
-    1.Login/Signup (JWT web tokens) 2. Create, Read, Update and Delete products, 3. Process Orders 4. Add another user
+1.Login/Signup (JWT web tokens) 2. Create, Read, Update and Delete products, 3. Process Orders 4. Add another user
 
 ## Tools
 1. React
