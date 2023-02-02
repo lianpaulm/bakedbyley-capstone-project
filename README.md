@@ -2,7 +2,7 @@
 
 ## Introduction
 
-An e-commerce website for cake ordering system , developed as a capstone project for college. This e-commerce website allows customers to browse and order a variety of cakes in BakedbyLey's cake shop. 
+An e-commerce website for cake ordering system , developed as a capstone project for college. This e-commerce website allows customers to browse and order a variety of cakes from BakedbyLey's cake shop. 
 
 ## Features
 1. User registration and login
